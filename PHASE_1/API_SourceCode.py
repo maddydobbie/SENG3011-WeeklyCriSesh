@@ -2,6 +2,8 @@ import flask
 from flask import request, jsonify
 import json
 from requests.models import Response
+from datetime import datetime
+from WebScraper import WebScraper
 
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
@@ -88,4 +90,7 @@ def api_some():
 	
 	return response
 
+    scraper = WebScraper("webScraper", datetime.now())
+    scraper.returnScrapeData()
+    return jsonify(request.data.decode("utf-8"))
 app.run()
