@@ -90,13 +90,3 @@ class crawlerWHO:
 											address = link["href"]
 											articleLinks.append(c.homeURL + address)
 		return articleLinks
-
-
-c = crawlerWHO()
-startDate = "2008-01-01T00:00:00"
-endDate = "2009-01-01T00:00:00"
-keywords = ["cholera"]
-location = ["Iraq"]
-links = c.searchPage(location, keywords, startDate, endDate)
-for link in links:
-	print(link)
