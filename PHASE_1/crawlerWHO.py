@@ -75,7 +75,9 @@ class crawlerWHO:
 										for word in keywords:
 											if word.lower() in desc.lower():
 												address = link["href"]
-												articleLinks.append(c.homeURL + address)
+												if address not in articleLinks:
+													articleLinks.append(self._homeURL + address)
+													break
 						# if there are keywords OR a location but not both
 						else:
 							filterParams = keywords + location
@@ -88,5 +90,7 @@ class crawlerWHO:
 									for word in filterParams:
 										if word.lower() in desc.lower():
 											address = link["href"]
-											articleLinks.append(c.homeURL + address)
+											if address not in articleLinks:
+												articleLinks.append(self._homeURL + address)
+												break
 		return articleLinks
