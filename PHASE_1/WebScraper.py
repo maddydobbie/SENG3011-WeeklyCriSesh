@@ -76,15 +76,10 @@ class WebScraper():
             page = requests.get(URL)
             pageParse = BeautifulSoup(page.content, 'html.parser')
 
-            pageURl = page.url #url used for date
+            pageURL = page.url #url used for date
             title = (pageParse.find_all(class_="headline")[0]).text
-            dateString = self.checkDate(pageURl)
-            country = self.checkCountry(title)
-
-            print("URL:", pageURl)
-            print("Title:", title)
-            print("Date:", dateString)
-            print("Country:", country)
+            dateString = self.checkDate(pageURL)
+            country = self.checkCountry(title).strip()
 
             symptoms = []
             diseases = []
@@ -107,5 +102,8 @@ class WebScraper():
                         # add if it is not already in the list
                         if disease['name'].lower() not in diseases:
                             diseases.append(disease['name'].lower())
-            articles.append([{"symptoms":symptoms},{"diseases":diseases}])
+            eventDate = "Not Found"
+            mainText = "Not Found"
+            reports = [{"diseases":diseases,"syndromes":symptoms,"event_date":eventDate,"locations":[country]}]
+            articles.append([{"url":pageURL,"date_of_publication":dateString,"headline":title,"main_text":mainText,"reports":reports}])
         return articles
