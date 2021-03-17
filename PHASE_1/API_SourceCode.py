@@ -110,8 +110,9 @@ def api_some():
 	else:
 		response.error_type = "Success"
 		response.status_code = 200
-		print(jsonify(articles))
-		#response._content = articles
+		print(type(jsonify(articles)))
+		print(type(articles))
+		response._content = json.dumps(articles).encode()
 		return (response.text, response.status_code, response.headers.items())
 	return jsonify("{'Maddy':'Yeah'}")
 
