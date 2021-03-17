@@ -5,6 +5,7 @@ import json
 from requests.models import Response
 from datetime import datetime
 from WebScraper import WebScraper
+import re
 
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
@@ -35,79 +36,61 @@ def api_some():
 		response.error_type = "Bad Request"
 		response.status_code = 400
 		response._content = b'{ "reason" : "No start date." }'
-		return (response.text, response.status_code, response.headers.items())
 	# no end date
-	if not 'endDate' in jsonData:
+	elif not 'endDate' in jsonData:
 		response.error_type = "Bad Request"
 		response.status_code = 400
 		response._content = b'{ "reason" : "No end date." }'
-		return (response.text, response.status_code, response.headers.items())
 	# check start date in correct format
-	print(jsonData["startDate"])
-	print(type(jsonData["startDate"]))
-	startDateObj = datetime.fromisoformat(jsonData["startDate"])
-	print(startDateObj)
-	try:
-		print(jsonData["startDate"])
-		print(type(jsonData["startDate"]))
-		startDateObj = datetime.fromisoformat(jsonData["startDate"])
-		print(startDateObj)
-	except:
+	elif not re.findall("[1-2][0-9][0-9][0-9]-[0-1][0-9]-[0-3][0-9]T[0-2][0-9]:[0-5][0-9]:[0-5][0-9]", jsonData['startDate']):
 		response.error_type = "Bad Request"
 		response.status_code = 400
 		response._content = b'{ "reason" : "Start date in incorrect format." }'
-		return (response.text, response.status_code, response.headers.items())
 	# check end date in correct format
-	try:
-		endDateObj = datetime.fromisoformat(jsonData["endDate"])
-	except:
+	elif not re.findall("[1-2][0-9][0-9][0-9]-[0-1][0-9]-[0-3][0-9]T[0-2][0-9]:[0-5][0-9]:[0-5][0-9]", jsonData['endDate']):
 		response.error_type = "Bad Request"
 		response.status_code = 400
 		response._content = b'{ "reason" : "End date in incorrect format." }'
-		return (response.text, response.status_code, response.headers.items())
 	# check correct order 
 	# check either date isn't in the future 
-	if startDateObj > endDateObj:
+	elif datetime.fromisoformat(jsonData['startDate']) > datetime.fromisoformat(jsonData['endDate']):
 		response.error_type = "Bad Request"
 		response.status_code = 400
 		response._content = b'{ "reason" : "End date before start date." }'
-		return (response.text, response.status_code, response.headers.items())
-	if datetime.now() < startDateObj or datetime.now() < endDateObj:
+	elif datetime.now() < datetime.fromisoformat(jsonData['startDate']) or datetime.now() < datetime.fromisoformat(jsonData['endDate']):
 		response.error_type = "Bad Request"
 		response.status_code = 400
 		response._content = b'{ "reason" : "Dates are in the future." }'
-		return (response.text, response.status_code, response.headers.items())
-	# if there are no keywords then create an empty list
-	if not 'keywords' in jsonData:
-		keywords = []
 	else:
-		keywords = [jsonData['keywords']]
-	# if there is no location then create an empty list
-	if not 'location' in jsonData:
-		location = []
-	else:
-		location = [jsonData['location']]
+		# if there are no keywords then create an empty list
+		if not 'keywords' in jsonData:
+			keywords = []
+		else:
+			keywords = [jsonData['keywords']]
+		# if there is no location then create an empty list
+		if not 'location' in jsonData:
+			location = []
+		else:
+			location = [jsonData['location']]
 
-	# call crawler here
-	crawler = crawlerWHO()
-	relevantLinks = crawler.searchPage(location, keywords, jsonData['startDate'], jsonData['endDate'])
-	# call the scraper here
-	scraper = WebScraper("scraper", datetime.now())
-	articles = scraper.returnScrapeData(relevantLinks)
+		# call crawler here
+		crawler = crawlerWHO()
+		relevantLinks = crawler.searchPage(location, keywords, jsonData['startDate'], jsonData['endDate'])
+		# call the scraper here
+		scraper = WebScraper("scraper", datetime.now())
+		articles = scraper.returnScrapeData(relevantLinks)
 
-	# if there is gibberish in location or disease: 404
-	if not articles:
-		response.error_type = "Not Found"
-		response.status_code = 404
-		response._content = b'{ "reason" : "Filtered data for location/disease returned no matching articles." }'
-		return (response.text, response.status_code, response.headers.items())
-	else:
-		response.error_type = "Success"
-		response.status_code = 200
-		print(type(jsonify(articles)))
-		print(type(articles))
-		response._content = json.dumps(articles).encode()
-		return (response.text, response.status_code, response.headers.items())
-	return jsonify("{'Maddy':'Yeah'}")
+		# if there is gibberish in location or disease: 404
+		if not articles:
+			response.error_type = "Not Found"
+			response.status_code = 404
+			response._content = b'{ "reason" : "Filtered data for location/disease returned no matching articles." }'
+		else:
+			response.error_type = "Success"
+			response.status_code = 200
+			print(type(jsonify(articles)))
+			print(type(articles))
+			response._content = json.dumps(articles).encode()
+	return (response.text, response.status_code, response.headers.items())
 
 app.run()
