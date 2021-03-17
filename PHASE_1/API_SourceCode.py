@@ -83,11 +83,26 @@ def api_some():
 		response.status_code = 400
 		response._content = b'{ "reason" : "Dates are in the future." }'
 		return (response.text, response.status_code, response.headers.items())
+	# if there are no keywords then create an empty list
+	if not 'keywords' in jsonData:
+		keywords = []
+	else:
+		keywords = jsonData['keywords']
+	# if there is no location then create an empty list
+	if not 'location' in jsonData:
+		location = []
+	else:
+		location = [jsonData['location']]
 
 	# call crawler here
+	crawler = crawlerWHO()
+	relevantLinks = crawler.searchPage(location, keywords, jsonData['startDate'], jsonData['endDate'])
+	# call the scraper here
+	scraper = WebScraper("scraper", datetime.now())
+	articles = scraper.returnScrapeData(relevantLinks)
 
 	# if there is gibberish in location or disease: 404
-	if "GIBBERISH" == True:
+	if not articles:
 		response.error_type = "Not Found"
 		response.status_code = 404
 		response._content = b'{ "reason" : "Filtered data for location/disease returned no matching articles." }'
@@ -95,7 +110,9 @@ def api_some():
 	else:
 		response.error_type = "Success"
 		response.status_code = 200
-		response._content = b'{ "_" : "_" }'
+		print(jsonify(articles))
+		#response._content = articles
 		return (response.text, response.status_code, response.headers.items())
+	return jsonify("{'Maddy':'Yeah'}")
 
 app.run()

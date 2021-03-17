@@ -42,5 +42,5 @@ class WebScraper():
                         # add if it is not already in the list
                         if disease['name'].lower() not in diseases:
                             diseases.append(disease['name'].lower())
-            articles.append([title, symptoms, diseases])
+            articles.append([{"symptoms":symptoms},{"diseases":diseases}])
         return articles

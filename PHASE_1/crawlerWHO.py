@@ -62,7 +62,7 @@ class crawlerWHO:
 						# if there are no keywords or a location then return all articles within the time period
 						if not keywords:
 							address = link["href"]
-							articleLinks.append(c.homeURL + address)
+							articleLinks.append(self._homeURL + address)
 						# if there are keyword AND a location
 						elif location and keywords:
 							# loop the element siblings to find the span with the description
