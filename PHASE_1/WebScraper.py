@@ -69,6 +69,52 @@ class WebScraper():
             country = "Cannot be found."
         return country
 
+    def checkSymptomsAndDiseases(self, pageParse):
+        symptoms = []
+        diseases = []
+        # isolate the body of the html
+        body = pageParse.find(id='primary')
+        # loop through each of the children to find each paragraph
+        children = body.find_all("p", recursive=False)
+        for child in children:
+            # loop through each symptom to see if it appears in the paragraph
+            # if it does add it to the symptoms list
+            for symptom in self._symptoms:
+                if symptom['name'].lower() in child.text.lower():
+                    # add if it is not already in the list
+                    if symptom['name'].lower() not in symptoms:
+                        symptoms.append(symptom['name'].lower())
+            # loop through each symptom to see if it appears in the paragraph
+            # if it does add it to the symptoms list
+            for disease in self._diseases:
+                if disease['name'].lower() in child.text.lower():
+                    # add if it is not already in the list
+                    if disease['name'].lower() not in diseases:
+                        diseases.append(disease['name'].lower())
+        return symptoms, diseases
+
+    def getBody(self, pageParse):
+        bodyText = ""
+        # isolate the body of the html
+        try:
+            body = pageParse.find(id='primary')
+            body = body.find_all(['h3','p'], recursive=False)
+            for child in body:
+                if child.name == "h3":
+                    break
+                elif child.name == "p":
+                    bodyText = bodyText + child.text
+                else:
+                    continue
+        finally:
+            return bodyText
+
+    def getEventDate(self, body):
+        dates = re.findall("[0-9]{1,2} [JFMASOND][aepuco][nbrylgptvc][urcieyut]?[auhlsebm]?[ratmeb][yrbe]?[yer]?[r]? [1-2][0-9]{3}", body)
+        if dates:
+            return dates[0]
+        else:
+            return "Not Found"
 
     def returnScrapeData(self, links):
         articles = []
@@ -80,30 +126,12 @@ class WebScraper():
             title = (pageParse.find_all(class_="headline")[0]).text
             dateString = self.checkDate(pageURL)
             country = self.checkCountry(title).strip()
+            symptoms, diseases = self.checkSymptomsAndDiseases(pageParse)
 
-            symptoms = []
-            diseases = []
-            # isolate the body of the html
-            body = pageParse.find(id='primary')
-            # loop through each of the children to find each paragraph
-            children = body.find_all("p", recursive=False)
-            for child in children:
-                # loop through each symptom to see if it appears in the paragraph
-                # if it does add it to the symptoms list
-                for symptom in self._symptoms:
-                    if symptom['name'].lower() in child.text.lower():
-                        # add if it is not already in the list
-                        if symptom['name'].lower() not in symptoms:
-                            symptoms.append(symptom['name'].lower())
-                # loop through each symptom to see if it appears in the paragraph
-                # if it does add it to the symptoms list
-                for disease in self._diseases:
-                    if disease['name'].lower() in child.text.lower():
-                        # add if it is not already in the list
-                        if disease['name'].lower() not in diseases:
-                            diseases.append(disease['name'].lower())
-            eventDate = "Not Found"
-            mainText = "Not Found"
+            mainText = self.getBody(pageParse)
+
+            eventDate = self.getEventDate(mainText)
+
             reports = [{"diseases":diseases,"syndromes":symptoms,"event_date":eventDate,"locations":[country]}]
-            articles.append([{"url":pageURL,"date_of_publication":dateString,"headline":title,"main_text":mainText,"reports":reports}])
+            articles.append({"url":pageURL,"date_of_publication":dateString,"headline":title,"main_text":mainText,"reports":reports})
         return articles
