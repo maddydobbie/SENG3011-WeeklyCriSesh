@@ -1,0 +1,39 @@
+(lp0
+(dp1
+Vname
+p2
+VHaemorrhagic Fever
+p3
+sa(dp4
+g2
+VAcute Flacid Paralysis
+p5
+sa(dp6
+g2
+VAcute gastroenteritis
+p7
+sa(dp8
+g2
+VAcute respiratory syndrome
+p9
+sa(dp10
+g2
+VInfluenza-like illness
+p11
+sa(dp12
+g2
+VAcute fever and rash
+p13
+sa(dp14
+g2
+VFever of unknown Origin
+p15
+sa(dp16
+g2
+VEncephalitis
+p17
+sa(dp18
+g2
+VMeningitis
+p19
+sa.
