@@ -17,8 +17,8 @@ def home():
 <p>A prototype API for obtaining article data from WHO</p>'''
 
 # testing taking params in the body
-@app.route('/some', methods=['GET'])
-def api_some():
+@app.route('/queryWHO', methods=['GET'])
+def api_queryWHO():
 	response = Response()
 
 	if not request.data:
