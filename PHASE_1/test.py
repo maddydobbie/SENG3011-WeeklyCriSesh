@@ -32,5 +32,5 @@ resp = requests.get("http://127.0.0.1:5000/queryWHO", json={'startDate':'2021-03
 
 resp = requests.get("http://127.0.0.1:5000/queryWHO", json={'startDate':'2022-03-01T00:00:00', 'endDate':'2023-01-01T00:00:00'})
 
-resp = requests.get("http://127.0.0.1:5000/queryWHO", json={'startDate':'2021-01-01T00:00:00', 'endDate':'2021-03-01T00:00:00', 'keywords':'Ebola', 'location':'Congo'})
+resp = requests.get("http://127.0.0.1:5000/queryWHO", json={'startDate':'2021-01-01T00:00:00', 'endDate':'2021-03-01T00:00:00'})
 print(json.dumps(resp.json(), indent=4))
