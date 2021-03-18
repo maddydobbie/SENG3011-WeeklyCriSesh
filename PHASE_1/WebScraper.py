@@ -110,9 +110,9 @@ class WebScraper():
             return bodyText
 
     def getEventDate(self, body):
-        dates = re.findall("[0-9]{1,2} [JFMASOND][aepuco][nbrylgptvc][urcieyut]?[auhlsebm]?[ratmeb][yrbe]?[yer]?[r]?[, ][1-2][0-9]{3}", body)
+        dates = re.findall("[0-9]{1,2} [JFMASOND][aepuco][nbrylgptvc][urcieyut]?[auhlsebm]?[ratmeb][yrbe]?[yer]?[r]?[,]? [1-2][0-9]{3}", body)
         if dates:
-            return dates[0]
+            return dates[0].replace(",", "")
         else:
             return "Not Found"
 
