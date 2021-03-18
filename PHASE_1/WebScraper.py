@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import pickle
 import re
+from datetime import datetime
 
 class WebScraper():
     def __init__(self, name, creationTime):
@@ -133,5 +134,5 @@ class WebScraper():
             eventDate = self.getEventDate(mainText)
 
             reports = [{"diseases":diseases,"syndromes":symptoms,"event_date":eventDate,"locations":[country]}]
-            articles.append({"url":pageURL,"date_of_publication":dateString,"headline":title,"main_text":mainText,"reports":reports})
+            articles.append({"url":pageURL,"date_of_publication":dateString,"headline":title,"datetime_accessed":datetime.now().strftime("%Y-%m-%dT%H:%M:%S"),"data_gathered_by":"Weekly_Cri_Sesh","main_text":mainText,"reports":reports})
         return articles

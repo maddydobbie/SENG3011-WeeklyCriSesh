@@ -17,10 +17,27 @@ def home():
 <p>A prototype API for obtaining article data from WHO</p>'''
 
 # testing taking params in the body
-@app.route('/queryWHO', methods=['GET'])
-def api_queryWHO():
+@app.route('/articles', methods=['GET'])
+def api_articles():
 	response = Response()
+	# append log file to store the request and request data
+	try:
+		f = open("logs/log.txt", "a")
+		now = datetime.now()
+		f.write("############################################################\n")
+		f.write(str(request) + '\n')
+		f.write("Time: " + datetime.now().strftime("%Y-%m-%dT%H:%M:%S") + '\n')
+		if not request.data:
+			f.write("No request content specifying parameters\n")
+		else:
+			f.write("Request Content Body:\n")
+			resp = request.data.decode()
+			f.write(resp + '\n')
+		f.close()
+	except:
+		print("ERROR: Log File Not Found\nUnable to record request")
 
+	print(request)
 	if not request.data:
 		response.error_type = "Bad Request"
 		response.status_code = 400
@@ -87,6 +104,11 @@ def api_queryWHO():
 				response.error_type = "Success"
 				response.status_code = 200
 				response._content = json.dumps(articles).encode()
-	return (response.text, response.status_code, response.headers.items())
+	try:
+		f = open("logs/log.txt", "a")
+		f.write("Response Status Code: " + str(response.status_code) + "\n")
+		f.close()
+	finally:
+		return (response.text, response.status_code, response.headers.items())
 
 app.run()
