@@ -1,3 +1,3 @@
 # Getting Started
 
-The beginning of an awesome article...
+Welcome to Weekly Cri Sesh's API documentation! 
