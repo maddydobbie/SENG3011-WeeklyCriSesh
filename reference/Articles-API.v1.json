@@ -3,7 +3,7 @@
   "info": {
     "title": "Articles API",
     "version": "1.0",
-    "description": "An API to get information from articles"
+    "description": "This API accesses disease reports from WHO and returns information matching given location and keywords within a start and end date"
   },
   "servers": [
     {
@@ -182,7 +182,7 @@
           }
         },
         "operationId": "get-articles",
-        "description": "Gets articles",
+        "description": "Returns article information given relevant location and keywords within start and end dates",
         "parameters": [
           {
             "schema": {
