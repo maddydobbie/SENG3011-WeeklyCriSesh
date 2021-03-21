@@ -1,17 +1,19 @@
 import requests
 from bs4 import BeautifulSoup
-import pickle
 import re
 from datetime import datetime
+import json
 
 class WebScraper():
     def __init__(self, name, creationTime):
         self.name = name
         self.creationTime = creationTime
-        with open('objects/symptoms' + '.pkl', 'rb') as f:
-            self._symptoms = pickle.load(f)
-        with open('objects/diseases' + '.pkl', 'rb') as f:
-            self._diseases = pickle.load(f)
+        with open('objects/symptoms.txt') as json_file:
+            self._symptoms = json.load(json_file)
+        with open('objects/diseases.txt') as json_file:
+            self._diseases = json.load(json_file)
+        #with open('objects/diseases' + '.pkl', 'rb') as f:
+        #    self._diseases = pickle.load(f)
 
     def checkRegexString(self, regexString, text):
         if (re.search(regexString, text)):
@@ -51,12 +53,14 @@ class WebScraper():
 
     def checkDate(self, URL):
         if (self.checkRegexString(r"[0-9]{2}-[a-z]+-[0-9]+", URL)):
-            Date = self.getDateFromRegex(r"[0-9]{2}-[a-z]+-[0-9]+", URL)
+            date = self.getDateFromRegex(r"[0-9]{2}-[a-z]+-[0-9]+", URL)
+            date = datetime.strptime(date.title(), "%d %B %Y").strftime("%Y-%m-%d") + " xx:xx:xx"
         elif (self.checkRegexString(r"[0-9]{4}_[0-9]{2}_[0-9]{2}",URL)):
-            Date = self.getDateFromRegex(r"[0-9]{4}_[0-9]{2}_[0-9]{2}", URL)
+            date = self.getDateFromRegex(r"[0-9]{4}_[0-9]{2}_[0-9]{2}", URL)
+            date = datetime.strptime(date.title(), "%d %B %Y").strftime("%Y-%m-%d") + " xx:xx:xx"
         else:
-            Date = "Could not be found"
-        return Date
+            date = "Could not be found"
+        return date
 
     def checkCountry(self, title):
         if (self.checkRegexString(r"in\s[a-zA-z\s]*", title)):
@@ -66,7 +70,6 @@ class WebScraper():
             country = (re.search(r"– .+", title))[0]
             country = country[2:]
         else:
-            print("Country cannot be found")
             country = "Cannot be found."
         return country
 
@@ -76,8 +79,11 @@ class WebScraper():
         # isolate the body of the html
         body = pageParse.find(id='primary')
         # loop through each of the children to find each paragraph
-        children = body.find_all("p", recursive=False)
+        children = body.find_all(['h3','p'], recursive=False)
         for child in children:
+            # Break if the child is a title indicating that it has passed the main body
+            if child.name == "h3":
+                break
             # loop through each symptom to see if it appears in the paragraph
             # if it does add it to the symptoms list
             for symptom in self._symptoms:
@@ -110,12 +116,38 @@ class WebScraper():
         finally:
             return bodyText
 
-    def getEventDate(self, body):
+    def getEventDate(self, body, date):
         dates = re.findall("[0-9]{1,2} [JFMASOND][aepuco][nbrylgptvc][urcieyut]?[auhlsebm]?[ratmeb][yrbe]?[yer]?[r]?[,]? [1-2][0-9]{3}", body)
         if dates:
-            return dates[0].replace(",", "")
+            dateObjs = []
+            for date in dates:
+                dateObjs.append(datetime.strptime(date.replace(",",""),"%d %B %Y"))
+            dateObjs.sort()
+            if len(dateObjs) > 1 and dateObjs[0].strftime("%Y-%m-%d") != dateObjs[-1].strftime("%Y-%m-%d"):
+                dateRange = dateObjs[0].strftime("%Y-%m-%d") + " xx:xx:xx to " + dateObjs[-1].strftime("%Y-%m-%d") + " xx:xx:xx"
+                return dateRange
+            else:
+                return dateObjs[0].strftime("%Y-%m-%d") + " xx:xx:xx"
         else:
-            return "Not Found"
+            return date
+
+    def getReports(self, country, body):
+        reports = []
+        last = -1
+        # get a iterator of all matches
+        dateMatches = re.finditer("[0-9]{1,2} [JFMASOND][aepuco][nbrylgptvc][urcieyut]?[auhlsebm]?[ratmeb][yrbe]?[yer]?[r]?[,]? [1-2][0-9]{3}", body)
+        # iterate through all the date matches
+        for match in dateMatches:
+            s = match.start()
+            e = match.end()
+            # if not the first iteration try find a disease in the space between the dates
+            if last != -1:
+                for disease in self._diseases:
+                    if disease in body[last[1]:s]:
+                        pass
+            else:
+                last = [s, e]
+
 
     def returnScrapeData(self, links):
         articles = []
@@ -126,13 +158,15 @@ class WebScraper():
             pageURL = page.url #url used for date
             title = (pageParse.find_all(class_="headline")[0]).text
             dateString = self.checkDate(pageURL)
-            country = self.checkCountry(title).strip()
-            symptoms, diseases = self.checkSymptomsAndDiseases(pageParse)
-
             mainText = self.getBody(pageParse)
 
-            eventDate = self.getEventDate(mainText)
 
-            reports = [{"diseases":diseases,"syndromes":symptoms,"event_date":eventDate,"locations":[country]}]
+            country = self.checkCountry(title).strip()
+            self.getReports(country, mainText)
+
+            symptoms, diseases = self.checkSymptomsAndDiseases(pageParse)
+            eventDate = self.getEventDate(mainText, dateString)
+
+            reports = [{"diseases":diseases,"syndromes or symptoms":symptoms,"event_date":eventDate,"locations":[country]}]
             articles.append({"url":pageURL,"date_of_publication":dateString,"headline":title,"datetime_accessed":datetime.now().strftime("%Y-%m-%dT%H:%M:%S"),"data_gathered_by":"Weekly_Cri_Sesh","main_text":mainText,"reports":reports})
         return articles

@@ -1,0 +1,14 @@
+[
+	{ "name": "Haemorrhagic Fever" },
+	{ "name": "Flacid Paralysis" },
+	{ "name": "Gastroenteritis" },
+	{ "name": "Respiratory syndrome" },
+	{ "name": "Encephalitis" },
+	{ "name": "Fever" },
+	{ "name": "Headache" },
+	{ "name": "Vomiting" },
+	{ "name": "Nausea" },
+	{ "name": "Weakness" },
+	{ "name": "Loss of Appetite" },
+	{ "name": "Liquid Stool" }
+]
