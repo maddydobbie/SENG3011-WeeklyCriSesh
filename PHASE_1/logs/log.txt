@@ -5256,3 +5256,3011 @@ Time: 2021-03-22T02:34:23
 Request Content Body:
 {"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "keywords": "rift", "location": "kenya"}
 Response Status Code: 200
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T11:57:31
+Request Content Body:
+{"maddy": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T11:57:32
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T11:57:32
+Request Content Body:
+{"endDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T11:57:32
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T11:57:32
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T11:57:32
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T11:57:32
+Request Content Body:
+{"startDate": "2020-03-01T00:00jhjhhjjh:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T11:57:32
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00hhujh:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T11:57:32
+Request Content Body:
+{"startDate": "2020-03-01Tgh00:00:70", "endDate": "2021-01-01T00:00ggg:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T11:57:32
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T11:57:32
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T11:57:32
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2022-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T11:57:32
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2023-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T11:57:32
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "keywords": "rift", "location": "kenya"}
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T11:58:54
+Request Content Body:
+{"maddy": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T11:58:55
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T11:58:55
+Request Content Body:
+{"endDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T11:58:55
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T11:58:55
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T11:58:55
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T11:58:55
+Request Content Body:
+{"startDate": "2020-03-01T00:00jhjhhjjh:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T11:58:55
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00hhujh:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T11:58:55
+Request Content Body:
+{"startDate": "2020-03-01Tgh00:00:70", "endDate": "2021-01-01T00:00ggg:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T11:58:55
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T11:58:55
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T11:58:55
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2022-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T11:58:55
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2023-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T11:58:55
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "keywords": "rift", "location": "kenya"}
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T11:59:06
+Request Content Body:
+{"maddy": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T11:59:06
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T11:59:06
+Request Content Body:
+{"endDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T11:59:06
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T11:59:06
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T11:59:06
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T11:59:06
+Request Content Body:
+{"startDate": "2020-03-01T00:00jhjhhjjh:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T11:59:06
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00hhujh:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T11:59:06
+Request Content Body:
+{"startDate": "2020-03-01Tgh00:00:70", "endDate": "2021-01-01T00:00ggg:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T11:59:06
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T11:59:06
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T11:59:07
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2022-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T11:59:07
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2023-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T11:59:07
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "keywords": "rift", "location": "kenya"}
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:01:59
+Request Content Body:
+{"maddy": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:01:59
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:01:59
+Request Content Body:
+{"endDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:01:59
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:01:59
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:01:59
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:01:59
+Request Content Body:
+{"startDate": "2020-03-01T00:00jhjhhjjh:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:01:59
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00hhujh:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:01:59
+Request Content Body:
+{"startDate": "2020-03-01Tgh00:00:70", "endDate": "2021-01-01T00:00ggg:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:01:59
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:01:59
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:01:59
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2022-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:02:00
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2023-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:02:00
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "keywords": "rift", "location": "kenya"}
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:02:10
+Request Content Body:
+{"maddy": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:02:10
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:02:10
+Request Content Body:
+{"endDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:02:10
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:02:10
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:02:11
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:02:11
+Request Content Body:
+{"startDate": "2020-03-01T00:00jhjhhjjh:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:02:11
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00hhujh:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:02:11
+Request Content Body:
+{"startDate": "2020-03-01Tgh00:00:70", "endDate": "2021-01-01T00:00ggg:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:02:11
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:02:11
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:02:11
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2022-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:02:11
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2023-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:02:11
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "keywords": "rift", "location": "kenya"}
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:02:29
+Request Content Body:
+{"maddy": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:02:29
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:02:29
+Request Content Body:
+{"endDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:02:29
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:02:29
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:02:29
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:02:29
+Request Content Body:
+{"startDate": "2020-03-01T00:00jhjhhjjh:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:02:30
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00hhujh:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:02:30
+Request Content Body:
+{"startDate": "2020-03-01Tgh00:00:70", "endDate": "2021-01-01T00:00ggg:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:02:30
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:02:30
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:02:30
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2022-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:02:30
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2023-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:02:30
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "keywords": "rift", "location": "kenya"}
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:03:27
+Request Content Body:
+{"maddy": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:03:28
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:03:28
+Request Content Body:
+{"endDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:03:28
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:03:28
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:03:28
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:03:28
+Request Content Body:
+{"startDate": "2020-03-01T00:00jhjhhjjh:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:03:28
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00hhujh:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:03:28
+Request Content Body:
+{"startDate": "2020-03-01Tgh00:00:70", "endDate": "2021-01-01T00:00ggg:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:03:28
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:03:28
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:03:28
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2022-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:03:28
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2023-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:03:28
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "keywords": "rift", "location": "kenya"}
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:03:44
+Request Content Body:
+{"maddy": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:03:44
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:03:44
+Request Content Body:
+{"endDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:03:44
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:03:44
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:03:44
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:03:45
+Request Content Body:
+{"startDate": "2020-03-01T00:00jhjhhjjh:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:03:45
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00hhujh:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:03:45
+Request Content Body:
+{"startDate": "2020-03-01Tgh00:00:70", "endDate": "2021-01-01T00:00ggg:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:03:45
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:03:45
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:03:45
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2022-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:03:45
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2023-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:03:45
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "keywords": "rift", "location": "kenya"}
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:05:26
+Request Content Body:
+{"maddy": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:05:27
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:05:27
+Request Content Body:
+{"endDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:05:27
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:05:27
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:05:27
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:05:27
+Request Content Body:
+{"startDate": "2020-03-01T00:00jhjhhjjh:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:05:27
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00hhujh:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:05:27
+Request Content Body:
+{"startDate": "2020-03-01Tgh00:00:70", "endDate": "2021-01-01T00:00ggg:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:05:27
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:05:27
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:05:27
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2022-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:05:27
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2023-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:05:27
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "keywords": "rift", "location": "kenya"}
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:06:23
+Request Content Body:
+{"maddy": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:06:23
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:06:23
+Request Content Body:
+{"endDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:06:23
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:06:23
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:06:23
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:06:23
+Request Content Body:
+{"startDate": "2020-03-01T00:00jhjhhjjh:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:06:23
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00hhujh:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:06:23
+Request Content Body:
+{"startDate": "2020-03-01Tgh00:00:70", "endDate": "2021-01-01T00:00ggg:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:06:23
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:06:23
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:06:23
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2022-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:06:23
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2023-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:06:23
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "keywords": "rift", "location": "kenya"}
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:06:55
+Request Content Body:
+{"maddy": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:06:55
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:06:55
+Request Content Body:
+{"endDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:06:55
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:06:55
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:06:55
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:06:55
+Request Content Body:
+{"startDate": "2020-03-01T00:00jhjhhjjh:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:06:55
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00hhujh:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:06:55
+Request Content Body:
+{"startDate": "2020-03-01Tgh00:00:70", "endDate": "2021-01-01T00:00ggg:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:06:55
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:06:55
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:06:55
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2022-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:06:55
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2023-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:06:55
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "keywords": "rift", "location": "kenya"}
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:08:10
+Request Content Body:
+{"maddy": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:08:10
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:08:10
+Request Content Body:
+{"endDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:08:10
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:08:10
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:08:10
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:08:10
+Request Content Body:
+{"startDate": "2020-03-01T00:00jhjhhjjh:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:08:10
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00hhujh:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:08:10
+Request Content Body:
+{"startDate": "2020-03-01Tgh00:00:70", "endDate": "2021-01-01T00:00ggg:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:08:10
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:08:10
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:08:10
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2022-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:08:10
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2023-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:08:10
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "keywords": "rift", "location": "kenya"}
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:08:21
+Request Content Body:
+{"maddy": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:08:21
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:08:21
+Request Content Body:
+{"endDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:08:21
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:08:21
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:08:21
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:08:21
+Request Content Body:
+{"startDate": "2020-03-01T00:00jhjhhjjh:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:08:21
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00hhujh:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:08:21
+Request Content Body:
+{"startDate": "2020-03-01Tgh00:00:70", "endDate": "2021-01-01T00:00ggg:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:08:21
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:08:21
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:08:21
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2022-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:08:21
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2023-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:08:21
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "keywords": "rift", "location": "kenya"}
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:10:28
+Request Content Body:
+{"maddy": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:10:28
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:10:28
+Request Content Body:
+{"endDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:10:28
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:10:28
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:10:28
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:10:28
+Request Content Body:
+{"startDate": "2020-03-01T00:00jhjhhjjh:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:10:28
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00hhujh:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:10:28
+Request Content Body:
+{"startDate": "2020-03-01Tgh00:00:70", "endDate": "2021-01-01T00:00ggg:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:10:28
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:10:28
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:10:28
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2022-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:10:28
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2023-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:10:28
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "keywords": "rift", "location": "kenya"}
+Response Status Code: 200
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:10:59
+Request Content Body:
+{"maddy": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:10:59
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:10:59
+Request Content Body:
+{"endDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:10:59
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:10:59
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:10:59
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:11:00
+Request Content Body:
+{"startDate": "2020-03-01T00:00jhjhhjjh:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:11:00
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00hhujh:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:11:00
+Request Content Body:
+{"startDate": "2020-03-01Tgh00:00:70", "endDate": "2021-01-01T00:00ggg:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:11:00
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:11:00
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:11:00
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2022-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:11:00
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2023-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:11:00
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "keywords": "rift", "location": "kenya"}
+Response Status Code: 200
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:12:00
+Request Content Body:
+{"maddy": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:12:00
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:12:00
+Request Content Body:
+{"endDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:12:00
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:12:00
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:12:00
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:12:00
+Request Content Body:
+{"startDate": "2020-03-01T00:00jhjhhjjh:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:12:00
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00hhujh:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:12:00
+Request Content Body:
+{"startDate": "2020-03-01Tgh00:00:70", "endDate": "2021-01-01T00:00ggg:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:12:00
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:12:00
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:12:00
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2022-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:12:00
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2023-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:12:00
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "keywords": "rift", "location": "kenya"}
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:12:26
+Request Content Body:
+{"maddy": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:12:26
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:12:26
+Request Content Body:
+{"endDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:12:27
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:12:27
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:12:27
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:12:27
+Request Content Body:
+{"startDate": "2020-03-01T00:00jhjhhjjh:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:12:27
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00hhujh:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:12:27
+Request Content Body:
+{"startDate": "2020-03-01Tgh00:00:70", "endDate": "2021-01-01T00:00ggg:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:12:27
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:12:27
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:12:27
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2022-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:12:27
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2023-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:12:27
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "keywords": "rift", "location": "kenya"}
+Response Status Code: 200
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:13:44
+Request Content Body:
+{"maddy": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:13:59
+Request Content Body:
+{"maddy": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:13:59
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:13:59
+Request Content Body:
+{"endDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:13:59
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:13:59
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:13:59
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:13:59
+Request Content Body:
+{"startDate": "2020-03-01T00:00jhjhhjjh:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:14:00
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00hhujh:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:14:00
+Request Content Body:
+{"startDate": "2020-03-01Tgh00:00:70", "endDate": "2021-01-01T00:00ggg:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:14:00
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:14:00
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:14:00
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2022-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:14:00
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2023-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:14:00
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "keywords": "rift", "location": "kenya"}
+Response Status Code: 200
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:15:12
+Request Content Body:
+{"maddy": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:15:12
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:15:12
+Request Content Body:
+{"endDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:15:12
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:15:12
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:15:12
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:15:12
+Request Content Body:
+{"startDate": "2020-03-01T00:00jhjhhjjh:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:15:12
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00hhujh:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:15:12
+Request Content Body:
+{"startDate": "2020-03-01Tgh00:00:70", "endDate": "2021-01-01T00:00ggg:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:15:12
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:15:12
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:15:12
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2022-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:15:12
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2023-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:15:12
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "keywords": "rift", "location": "kenya"}
+Response Status Code: 200
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:20:49
+Request Content Body:
+{"maddy": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:20:49
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:20:49
+Request Content Body:
+{"endDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:20:49
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:20:49
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:20:49
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:20:49
+Request Content Body:
+{"startDate": "2020-03-01T00:00jhjhhjjh:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:20:49
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00hhujh:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:20:49
+Request Content Body:
+{"startDate": "2020-03-01Tgh00:00:70", "endDate": "2021-01-01T00:00ggg:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:20:49
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:20:49
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:20:49
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2022-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:20:49
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2023-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:20:49
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "keywords": "rift", "location": "kenya"}
+Response Status Code: 200
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:23:26
+Request Content Body:
+{"maddy": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:23:26
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:23:26
+Request Content Body:
+{"endDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:23:26
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:23:26
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:23:26
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:23:26
+Request Content Body:
+{"startDate": "2020-03-01T00:00jhjhhjjh:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:23:26
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00hhujh:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:23:26
+Request Content Body:
+{"startDate": "2020-03-01Tgh00:00:70", "endDate": "2021-01-01T00:00ggg:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:23:26
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:23:26
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:23:27
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2022-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:23:27
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2023-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:23:27
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "keywords": "rift", "location": "kenya"}
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:24:10
+Request Content Body:
+{"maddy": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:24:10
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:24:10
+Request Content Body:
+{"endDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:24:10
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:24:10
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:24:10
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:24:10
+Request Content Body:
+{"startDate": "2020-03-01T00:00jhjhhjjh:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:24:10
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00hhujh:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:24:10
+Request Content Body:
+{"startDate": "2020-03-01Tgh00:00:70", "endDate": "2021-01-01T00:00ggg:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:24:10
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:24:10
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:24:10
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2022-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:24:11
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2023-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:24:11
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "keywords": "rift", "location": "kenya"}
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:25:41
+Request Content Body:
+{"maddy": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:25:41
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:25:41
+Request Content Body:
+{"endDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:25:41
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:25:41
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:25:42
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:25:42
+Request Content Body:
+{"startDate": "2020-03-01T00:00jhjhhjjh:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:25:42
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00hhujh:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:25:42
+Request Content Body:
+{"startDate": "2020-03-01Tgh00:00:70", "endDate": "2021-01-01T00:00ggg:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:25:42
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:25:42
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:25:42
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2022-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:25:42
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2023-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:25:42
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "keywords": "rift", "location": "kenya"}
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:25:54
+Request Content Body:
+{"maddy": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:25:54
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:25:54
+Request Content Body:
+{"endDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:25:54
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:25:54
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:25:54
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:25:54
+Request Content Body:
+{"startDate": "2020-03-01T00:00jhjhhjjh:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:25:54
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00hhujh:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:25:54
+Request Content Body:
+{"startDate": "2020-03-01Tgh00:00:70", "endDate": "2021-01-01T00:00ggg:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:25:54
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:25:55
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:25:55
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2022-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:25:55
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2023-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:25:55
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "keywords": "rift", "location": "kenya"}
+Response Status Code: 200
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:26:43
+Request Content Body:
+{"maddy": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:26:43
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:26:43
+Request Content Body:
+{"endDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:26:43
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:26:43
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:26:43
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:26:43
+Request Content Body:
+{"startDate": "2020-03-01T00:00jhjhhjjh:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:26:43
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00hhujh:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:26:43
+Request Content Body:
+{"startDate": "2020-03-01Tgh00:00:70", "endDate": "2021-01-01T00:00ggg:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:26:43
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:26:43
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:26:43
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2022-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:26:43
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2023-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:26:43
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "keywords": "rift", "location": "kenya"}
+Response Status Code: 200
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:32:41
+Request Content Body:
+{"maddy": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:32:41
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:32:41
+Request Content Body:
+{"endDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:32:41
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:32:41
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:32:41
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:32:41
+Request Content Body:
+{"startDate": "2020-03-01T00:00jhjhhjjh:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:32:41
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00hhujh:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:32:41
+Request Content Body:
+{"startDate": "2020-03-01Tgh00:00:70", "endDate": "2021-01-01T00:00ggg:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:32:41
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:32:41
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:32:41
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2022-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:32:41
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2023-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:32:41
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "keywords": "rift", "location": "kenya"}
+Response Status Code: 200
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:33:34
+Request Content Body:
+{"maddy": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:33:34
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:33:34
+Request Content Body:
+{"endDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:33:34
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:33:34
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:33:34
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:33:34
+Request Content Body:
+{"startDate": "2020-03-01T00:00jhjhhjjh:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:33:35
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00hhujh:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:33:35
+Request Content Body:
+{"startDate": "2020-03-01Tgh00:00:70", "endDate": "2021-01-01T00:00ggg:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:33:35
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:33:35
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:33:35
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2022-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:33:35
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2023-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:33:35
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "keywords": "rift", "location": "kenya"}
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:34:26
+Request Content Body:
+{"maddy": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:34:26
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:34:26
+Request Content Body:
+{"endDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:34:26
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:34:26
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:34:26
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:34:26
+Request Content Body:
+{"startDate": "2020-03-01T00:00jhjhhjjh:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:34:27
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00hhujh:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:34:27
+Request Content Body:
+{"startDate": "2020-03-01Tgh00:00:70", "endDate": "2021-01-01T00:00ggg:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:34:27
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:34:27
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:34:27
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2022-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:34:27
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2023-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:34:27
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "keywords": "rift", "location": "kenya"}
+Response Status Code: 200
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:36:13
+Request Content Body:
+{"maddy": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:36:13
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:36:13
+Request Content Body:
+{"endDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:36:13
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:36:13
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:36:13
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:36:14
+Request Content Body:
+{"startDate": "2020-03-01T00:00jhjhhjjh:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:36:14
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00hhujh:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:36:14
+Request Content Body:
+{"startDate": "2020-03-01Tgh00:00:70", "endDate": "2021-01-01T00:00ggg:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:36:14
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:36:14
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:36:14
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2022-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:36:14
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2023-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:36:14
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "keywords": "rift", "location": "kenya"}
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:36:37
+Request Content Body:
+{"maddy": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:36:37
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:36:37
+Request Content Body:
+{"endDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:36:37
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:36:37
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:36:37
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:36:37
+Request Content Body:
+{"startDate": "2020-03-01T00:00jhjhhjjh:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:36:37
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00hhujh:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:36:37
+Request Content Body:
+{"startDate": "2020-03-01Tgh00:00:70", "endDate": "2021-01-01T00:00ggg:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:36:37
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:36:37
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:36:37
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2022-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:36:37
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2023-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:36:37
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "keywords": "rift", "location": "kenya"}
+Response Status Code: 200
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:38:14
+Request Content Body:
+{"maddy": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:38:14
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:38:14
+Request Content Body:
+{"endDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:38:14
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:38:14
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:38:14
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:38:14
+Request Content Body:
+{"startDate": "2020-03-01T00:00jhjhhjjh:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:38:14
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00hhujh:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:38:14
+Request Content Body:
+{"startDate": "2020-03-01Tgh00:00:70", "endDate": "2021-01-01T00:00ggg:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:38:14
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:38:14
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:38:14
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2022-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:38:14
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2023-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T12:38:14
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "keywords": "rift", "location": "kenya"}
+Response Status Code: 200
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T13:12:05
+Request Content Body:
+{"maddy": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T13:12:05
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T13:12:05
+Request Content Body:
+{"endDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T13:12:05
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T13:12:05
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T13:12:05
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T13:12:05
+Request Content Body:
+{"startDate": "2020-03-01T00:00jhjhhjjh:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T13:12:05
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00hhujh:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T13:12:06
+Request Content Body:
+{"startDate": "2020-03-01Tgh00:00:70", "endDate": "2021-01-01T00:00ggg:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T13:12:06
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T13:12:06
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T13:12:06
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2022-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T13:12:06
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2023-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T13:12:06
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "keywords": "rift", "location": "kenya"}
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:39:48
+Request Content Body:
+{"maddy": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:39:48
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:39:48
+Request Content Body:
+{"endDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:39:48
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:39:49
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:39:49
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:39:49
+Request Content Body:
+{"startDate": "2020-03-01T00:00jhjhhjjh:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:39:49
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00hhujh:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:39:49
+Request Content Body:
+{"startDate": "2020-03-01Tgh00:00:70", "endDate": "2021-01-01T00:00ggg:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:39:49
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:39:49
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:39:49
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2022-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:39:49
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2023-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:39:49
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "keywords": "rift", "location": "kenya"}
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:40:09
+Request Content Body:
+{"maddy": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:40:09
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:40:09
+Request Content Body:
+{"endDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:40:09
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:40:09
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:40:09
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:40:09
+Request Content Body:
+{"startDate": "2020-03-01T00:00jhjhhjjh:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:40:09
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00hhujh:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:40:10
+Request Content Body:
+{"startDate": "2020-03-01Tgh00:00:70", "endDate": "2021-01-01T00:00ggg:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:40:10
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:40:10
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:40:10
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2022-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:40:10
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2023-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:40:10
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "keywords": "rift", "location": "kenya"}
+Response Status Code: 200
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:40:52
+Request Content Body:
+{"maddy": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:40:52
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:40:52
+Request Content Body:
+{"endDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:40:52
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:40:52
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:40:52
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:40:52
+Request Content Body:
+{"startDate": "2020-03-01T00:00jhjhhjjh:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:40:53
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00hhujh:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:40:53
+Request Content Body:
+{"startDate": "2020-03-01Tgh00:00:70", "endDate": "2021-01-01T00:00ggg:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:40:53
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:40:53
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:40:53
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2022-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:40:53
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2023-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:40:53
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00"}
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:41:24
+Request Content Body:
+{"maddy": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:41:24
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:41:24
+Request Content Body:
+{"endDate": "2020-03-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:41:24
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:41:24
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:41:24
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:41:24
+Request Content Body:
+{"startDate": "2020-03-01T00:00jhjhhjjh:70", "endDate": "2021-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:41:24
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00hhujh:00:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:41:24
+Request Content Body:
+{"startDate": "2020-03-01Tgh00:00:70", "endDate": "2021-01-01T00:00ggg:70"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:41:24
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:41:25
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:41:25
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2022-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:41:25
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2023-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-03-22T15:41:25
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00"}
+Response Status Code: 200

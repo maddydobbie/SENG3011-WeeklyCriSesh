@@ -48,6 +48,7 @@
 	{ "name": "q fever" },
 	{ "name": "rabies" },
 	{ "name": "rift valley fever" },
+	{ "name": "RVF" },
 	{ "name": "rotavirus infection" },
 	{ "name": "rubella" },
 	{ "name": "salmonellosis" },
