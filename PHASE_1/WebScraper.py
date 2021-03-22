@@ -73,31 +73,21 @@ class WebScraper():
             country = "Cannot be found."
         return country
 
-    def checkSymptomsAndDiseases(self, pageParse):
+    def checkSymptomsAndDiseases(self, body):
         symptoms = []
         diseases = []
-        # isolate the body of the html
-        body = pageParse.find(id='primary')
-        # loop through each of the children to find each paragraph
-        children = body.find_all(['h3','p'], recursive=False)
-        for child in children:
-            # Break if the child is a title indicating that it has passed the main body
-            if child.name == "h3":
-                break
-            # loop through each symptom to see if it appears in the paragraph
-            # if it does add it to the symptoms list
-            for symptom in self._symptoms:
-                if symptom['name'].lower() in child.text.lower():
-                    # add if it is not already in the list
-                    if symptom['name'].lower() not in symptoms:
-                        symptoms.append(symptom['name'].lower())
-            # loop through each symptom to see if it appears in the paragraph
-            # if it does add it to the symptoms list
-            for disease in self._diseases:
-                if disease['name'].lower() in child.text.lower():
-                    # add if it is not already in the list
-                    if disease['name'].lower() not in diseases:
-                        diseases.append(disease['name'].lower())
+        for symptom in self._symptoms:
+            if symptom['name'].lower() in body.lower():
+                # add if it is not already in the list
+                if symptom['name'].lower() not in symptoms:
+                    symptoms.append(symptom['name'].lower())
+        # loop through each symptom to see if it appears in the paragraph
+        # if it does add it to the symptoms list
+        for disease in self._diseases:
+            if disease['name'].lower() in body.lower():
+                # add if it is not already in the list
+                if disease['name'].lower() not in diseases:
+                    diseases.append(disease['name'].lower())
         return symptoms, diseases
 
     def getBody(self, pageParse):
@@ -131,9 +121,13 @@ class WebScraper():
         else:
             return date
 
-    def getReports(self, country, body):
+    def getLocations(self, country):
+        locations = []
+        return locations
+
+    def getReports(self, country, body, date):
         reports = []
-        last = -1
+        last = [0, 0]
         # get a iterator of all matches
         dateMatches = re.finditer("[0-9]{1,2} [JFMASOND][aepuco][nbrylgptvc][urcieyut]?[auhlsebm]?[ratmeb][yrbe]?[yer]?[r]?[,]? [1-2][0-9]{3}", body)
         # iterate through all the date matches
@@ -141,12 +135,21 @@ class WebScraper():
             s = match.start()
             e = match.end()
             # if not the first iteration try find a disease in the space between the dates
-            if last != -1:
-                for disease in self._diseases:
-                    if disease in body[last[1]:s]:
-                        pass
-            else:
-                last = [s, e]
+            for disease in self._diseases:
+                if disease['name'].lower() in body[last[1]:s].lower():
+                    symptoms, diseases = self.checkSymptomsAndDiseases(body[last[1]:s])
+                    locations = self.getLocations(country)
+                    eventDate = self.getEventDate(body[last[1]:s], date)
+                    reports.append({"diseases":diseases,"syndromes or symptoms":symptoms,"event_date":eventDate,"locations":locations})
+                    last = [s, e]
+        # if there is only one match then there is only one date so process the report on the entire body of team
+        if len(reports) <= 1:
+            symptoms, diseases = self.checkSymptomsAndDiseases(body)
+            locations = self.getLocations(country)
+            eventDate = self.getEventDate(body, date)
+            reports.append({"diseases":diseases,"syndromes or symptoms":symptoms,"event_date":eventDate,"locations":locations})
+        return reports
+
 
 
     def returnScrapeData(self, links):
@@ -160,13 +163,8 @@ class WebScraper():
             dateString = self.checkDate(pageURL)
             mainText = self.getBody(pageParse)
 
-
             country = self.checkCountry(title).strip()
-            self.getReports(country, mainText)
+            reports = self.getReports(country, mainText, dateString)
 
-            symptoms, diseases = self.checkSymptomsAndDiseases(pageParse)
-            eventDate = self.getEventDate(mainText, dateString)
-
-            reports = [{"diseases":diseases,"syndromes or symptoms":symptoms,"event_date":eventDate,"locations":[country]}]
             articles.append({"url":pageURL,"date_of_publication":dateString,"headline":title,"datetime_accessed":datetime.now().strftime("%Y-%m-%dT%H:%M:%S"),"data_gathered_by":"Weekly_Cri_Sesh","main_text":mainText,"reports":reports})
         return articles
