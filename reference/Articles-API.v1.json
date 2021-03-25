@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "http://seng3011.pythonanywhere.com"
+      "url": "https://seng3011.pythonanywhere.com"
     }
   ],
   "paths": {
