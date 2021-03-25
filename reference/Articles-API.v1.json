@@ -1,0 +1,236 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Articles API",
+    "version": "1.0",
+    "description": "This API accesses disease reports from WHO and returns information matching given location and keywords within a start and end date"
+  },
+  "servers": [
+    {
+      "url": "https://seng3011.pythonanywhere.com"
+    }
+  ],
+  "paths": {
+    "articles": {
+      "get": {
+        "summary": "List Articles",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "",
+                  "type": "object",
+                  "properties": {
+                    "url": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "date_of_publication": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "headline": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "datetime_accessed": {},
+                    "main_text": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "reports": {
+                      "type": "array",
+                      "uniqueItems": true,
+                      "minItems": 1,
+                      "items": {
+                        "required": [
+                          "event_date"
+                        ],
+                        "properties": {
+                          "event_date": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "locations": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "minItems": 1,
+                            "items": {
+                              "required": [
+                                "country",
+                                "location"
+                              ],
+                              "properties": {
+                                "country": {
+                                  "type": "string",
+                                  "minLength": 1
+                                },
+                                "location": {
+                                  "type": "string",
+                                  "minLength": 1
+                                }
+                              }
+                            }
+                          },
+                          "diseases": {
+                            "type": "array",
+                            "items": {
+                              "required": [],
+                              "properties": {}
+                            }
+                          },
+                          "syndromes": {
+                            "type": "array",
+                            "items": {
+                              "required": [],
+                              "properties": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "url",
+                    "date_of_publication",
+                    "headline",
+                    "main_text",
+                    "reports"
+                  ]
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "url": "https://www.who.int/csr/don/17-january-2020-novel-coronavirus-japan-ex-china/en/",
+                      "date_of_publication": "2020-01-17 xx:xx:xx",
+                      "headline": "Novel Coronavirus – Japan (ex-China)",
+                      "datetime_accessed": null,
+                      "main_text": "On 15 January 2020, the Ministry of Health, Labour and Welfare, Japan (MHLW) reported an imported case of laboratory-confirmed 2019-novel coronavirus (2019-nCoV) from Wuhan, Hubei Province, China. The case-patient is male, between the age of 30-39 years, living in Japan. The case-patient travelled to Wuhan, China in late December and developed fever on 3 January 2020 while staying in Wuhan. He did not visit the Huanan Seafood Wholesale Market or any other live animal markets in Wuhan. He has indicated that he was in close contact with a person with pneumonia. On 6 January, he traveled back to Japan and tested negative for influenza when he visited a local clinic on the same day.",
+                      "reports": [
+                        {
+                          "event_date": "2020-01-03 xx:xx:xx to 2020-01-15",
+                          "locations": [
+                            {
+                              "country": "China",
+                              "location": "Wuhan, Hubei Province"
+                            },
+                            {
+                              "country": "Japan",
+                              "location": ""
+                            }
+                          ],
+                          "diseases": [
+                            "2019-nCoV"
+                          ],
+                          "syndromes": [
+                            "Fever of unknown Origin"
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "reason": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "reason": "Start date in incorrect format."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "reason": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "reason": "Filtered data for location/disease returned no matching articles."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-articles",
+        "description": "Returns article information given relevant location and keywords within start and end dates",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "example": "2020-03-01T00:00:00",
+              "minLength": 19,
+              "maxLength": 19
+            },
+            "in": "query",
+            "name": "startDate",
+            "required": true,
+            "description": "Start date of articles to be found"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "example": "2020-03-01T00:00:00",
+              "minLength": 19,
+              "maxLength": 19
+            },
+            "in": "query",
+            "name": "endDate",
+            "required": true,
+            "description": "End date of articles to be found"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "location",
+            "allowEmptyValue": true,
+            "description": "Location of articles to be found"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "keywords",
+            "description": "Disease or condition keywords"
+          }
+        ]
+      },
+      "parameters": []
+    }
+  },
+  "components": {
+    "schemas": {}
+  }
+}
