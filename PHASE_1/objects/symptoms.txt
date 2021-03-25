@@ -1,0 +1,183 @@
+[
+	{ "name": "Dalrymple's sign" }
+	{ "name": "Encephalitis" },
+	{ "name": "Fever" },
+	{ "name": "Flacid Paralysis" },
+	{ "name": "Gastroenteritis" },
+	{ "name": "Haemorrhagic Fever" },
+	{ "name": "Headache" },
+	{ "name": "Hematemesis" }
+	{ "name": "Janeway lesions and Osler's node" }
+	{ "name": "Lhermitte's sign" }
+	{ "name": "Liquid Stool" }
+	{ "name": "Loss of Appetite" },
+	{ "name": "Malaise" }
+	{ "name": "Nausea" },
+	{ "name": "Rectal tenesmus" }
+	{ "name": "Respiratory syndrome" },
+	{ "name": "Syncope" }
+	{ "name": "Vertigo" }
+	{ "name": "Vomiting" },
+	{ "name": "Weakness" },
+	{ "name": "abdominal pain" }
+	{ "name": "abnormal posturing" }
+	{ "name": "abnormal vaginal bleeding" }
+	{ "name": "abrasion" }
+	{ "name": "acalculia" }
+	{ "name": "agnosia" }
+	{ "name": "akathisia" }
+	{ "name": "akinesia" }
+	{ "name": "alexia" }
+	{ "name": "alopecia" }
+	{ "name": "amaurosis fugax" }
+	{ "name": "amaurosis" }
+	{ "name": "amenorrhea" }
+	{ "name": "amnesia" }
+	{ "name": "amusia" }
+	{ "name": "anasarca" }
+	{ "name": "anhedonia" }
+	{ "name": "anomia" }
+	{ "name": "anorexia" }
+	{ "name": "anosognosia" }
+	{ "name": "anxiety" }
+	{ "name": "apathy" }
+	{ "name": "aphasia and apraxia" }
+	{ "name": "apnea and hypopnea" }
+	{ "name": "apraxia" }
+	{ "name": "arthralgia" }
+	{ "name": "asthenia" }
+	{ "name": "ataxia" }
+	{ "name": "athetosis" }
+	{ "name": "back pain" }
+	{ "name": "ballismus" }
+	{ "name": "belching" }
+	{ "name": "bleeding into the skin" }
+	{ "name": "bleeding:" }
+	{ "name": "blepharospasm" }
+	{ "name": "blister" }
+	{ "name": "bloating" }
+	{ "name": "blood in stool" }
+	{ "name": "blurred vision" }
+	{ "name": "bradykinesia" }
+	{ "name": "bradypnea" }
+	{ "name": "cachexia" }
+	{ "name": "cataplexy" }
+	{ "name": "chills and shivering" }
+	{ "name": "chorea" }
+	{ "name": "confabulation" }
+	{ "name": "confusion" }
+	{ "name": "constipation" }
+	{ "name": "convulsions" }
+	{ "name": "cough" }
+	{ "name": "deformity" }
+	{ "name": "delusion" }
+	{ "name": "depression" }
+	{ "name": "diarrhea" }
+	{ "name": "discharge" }
+	{ "name": "dizziness" }
+	{ "name": "double vision" }
+	{ "name": "dry mouth" }
+	{ "name": "dysarthria" }
+	{ "name": "dysdiadochokinesia" }
+	{ "name": "dysgraphia" }
+	{ "name": "dyspepsia" }
+	{ "name": "dysphagia" }
+	{ "name": "dyspnea" }
+	{ "name": "dystonia" }
+	{ "name": "dysuria" }
+	{ "name": "ecchymosis and bruising" }
+	{ "name": "edema" }
+	{ "name": "epistaxis" }
+	{ "name": "euphoria" }
+	{ "name": "exophthalmos" }
+	{ "name": "fasciculation" }
+	{ "name": "fatigue" }
+	{ "name": "fecal incontinence" }
+	{ "name": "flapping tremor" }
+	{ "name": "flatulence" }
+	{ "name": "halitosis" }
+	{ "name": "hallucination" }
+	{ "name": "headache" }
+	{ "name": "hearing loss" }
+	{ "name": "heartburn" }
+	{ "name": "hematochezia" }
+	{ "name": "hematospermia" }
+	{ "name": "hematuria" }
+	{ "name": "hemoptysis" }
+	{ "name": "hirsutism" }
+	{ "name": "homicidal ideation" }
+	{ "name": "hyperkinetic movement disorder" }
+	{ "name": "hypertrichosis" }
+	{ "name": "hypokinetic movement disorder" }
+	{ "name": "hypothermia" }
+	{ "name": "impotence" }
+	{ "name": "infertility" }
+	{ "name": "insomnia" }
+	{ "name": "irritability" }
+	{ "name": "itching" }
+	{ "name": "jaundice" }
+	{ "name": "laceration" }
+	{ "name": "loss of consciousness" }
+	{ "name": "mania" }
+	{ "name": "melena" }
+	{ "name": "miosis" }
+	{ "name": "miscarriage" }
+	{ "name": "muscle cramps" }
+	{ "name": "muscle weakness" }
+	{ "name": "mydriasis" }
+	{ "name": "myoclonus" }
+	{ "name": "nasal discharge" }
+	{ "name": "nausea" }
+	{ "name": "neck stiffness" }
+	{ "name": "nystagmus" }
+	{ "name": "odynophagia" }
+	{ "name": "opisthotonus" }
+	{ "name": "opsoclonus" }
+	{ "name": "orthopnea and platypnea" }
+	{ "name": "otalgia" }
+	{ "name": "otorrhea" }
+	{ "name": "painful intercourse" }
+	{ "name": "paralysis and paresis" }
+	{ "name": "paranoid ideation" }
+	{ "name": "paresthesia" }
+	{ "name": "pelvic pain" }
+	{ "name": "petechia" }
+	{ "name": "phobia" }
+	{ "name": "pleuritic chest pain" }
+	{ "name": "polyuria" }
+	{ "name": "proctalgia fugax" }
+	{ "name": "prosopagnosia" }
+	{ "name": "purpura" }
+	{ "name": "pyrexia" }
+	{ "name": "pyrosis" }
+	{ "name": "rash" }
+	{ "name": "retrograde ejaculation" }
+	{ "name": "sciatica" }
+	{ "name": "somnolence" }
+	{ "name": "sore throat" }
+	{ "name": "sputum production" }
+	{ "name": "steatorrhea" }
+	{ "name": "strangury" }
+	{ "name": "suicidal ideation" }
+	{ "name": "sweats" }
+	{ "name": "swelling" }
+	{ "name": "swollen or painful lymph node" }
+	{ "name": "tachypnea" }
+	{ "name": "tic" }
+	{ "name": "tinnitus" }
+	{ "name": "toothache" }
+	{ "name": "tremor" }
+	{ "name": "trepopnea" }
+	{ "name": "trismus" }
+	{ "name": "urethral discharge" }
+	{ "name": "urinary frequency" }
+	{ "name": "urinary incontinence" }
+	{ "name": "urinary retention" }
+	{ "name": "urticaria" }
+	{ "name": "vaginal bleeding in early pregnancy" }
+	{ "name": "vaginal bleeding in late pregnancy" }
+	{ "name": "vaginal discharge" }
+	{ "name": "vomiting" }
+	{ "name": "weight gain" }
+	{ "name": "weight loss" }
+]
