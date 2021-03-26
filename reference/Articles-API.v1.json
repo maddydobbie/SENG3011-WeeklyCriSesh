@@ -11,7 +11,7 @@
     }
   ],
   "paths": {
-    "articles": {
+    "/articles": {
       "get": {
         "summary": "List Articles",
         "tags": [],
