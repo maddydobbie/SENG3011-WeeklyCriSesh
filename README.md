@@ -23,6 +23,4 @@ This document contains information about:
 
 URL: http://seng3011.pythonanywhere.com/
 
-API documentation: https://weeklycrisesh.stoplight.io/docs/seng3011/reference/Articles-API.v1.json
-
-Code for documentation is currently in Stoplight-Documentation branch (but will be moved to PHASE_1/API_Documentation by Week 6).
+API documentation: https://documenter.getpostman.com/view/9202518/TzCJe8ri
