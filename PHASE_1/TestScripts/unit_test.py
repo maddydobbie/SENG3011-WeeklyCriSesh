@@ -3,10 +3,10 @@ import requests
 import json
 import pytest
 
-# testing API
+# testing API error responses
 # endpoint at: http://seng3011.pythonanywhere.com/articles
 
-# Invalid dates: no dates
+# invalid dates: no dates
 def test_no_parameters():
     r = requests.get("http://seng3011.pythonanywhere.com/articles", json={})
     assert (r.json()["reason"]) == "No start date."
@@ -88,7 +88,7 @@ def test_good_dates_empty_location_with_keywords():
 
 # valid dates, and keywords, empty location - successful API call
 def test_good_dates_empty_keywords_with_location():
-    r = requests.get("http://seng3011.pythonanywhere.com/articles", json={'startDate':'2021-01-01T00:00:00', 'endDate':'2021-03-01T00:00:00', 'keywords':'', 'location':'Sydney'})
+    r = requests.get("http://seng3011.pythonanywhere.com/articles", json={'startDate':'2021-01-01T00:00:00', 'endDate':'2021-03-01T00:00:00', 'keywords':'', 'location':'Congo'})
     assert(r.status_code == 200)
 
 # valid dates, and keywords, and location - successful API call
@@ -96,7 +96,7 @@ def test_good_dates_empty_keywords_with_location():
 #    r = requests.get("http://seng3011.pythonanywhere.com/articles", json={'startDate':'2020-01-01T00:00:00', 'endDate':'2021-03-01T00:00:00', 'keywords':'covid', 'location':'China'})
 #    assert(r.status_code == 200)
 
-# valid dates, another input which is invalid is ognored - successful API call
-def test_good_dates_empty_keywords_with_location():
+# valid dates, another input which is invalid is ignored - successful API call
+def test_good_dates_invalid_input():
     r = requests.get("http://seng3011.pythonanywhere.com/articles", json={'startDate':'2021-01-01T00:00:00', 'endDate':'2021-03-01T00:00:00', 'invalid':''})
     assert(r.status_code == 200)

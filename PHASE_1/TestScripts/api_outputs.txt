@@ -1,0 +1,750 @@
+-----------------------------------------------------------------
+testing: no JSON input
+{
+    "reason": "No start date."
+}
+-----------------------------------------------------------------
+testing: no end date
+{
+    "reason": "No end date."
+}
+-----------------------------------------------------------------
+testing: 1 week of output
+[
+    {
+        "url": "https://www.who.int/csr/don/04-january-2021-cholera-togo/en/",
+        "date_of_publication": "2021-01-04 xx:xx:xx",
+        "headline": "Cholera \u2013 Togo",
+        "datetime_accessed": "2021-03-26T05:56:02",
+        "data_gathered_by": "Weekly_Cri_Sesh",
+        "main_text": "\nFrom 11 November to 28 December, 2020 a total of 67 suspected cholera cases presenting with diarrhea and vomiting, including two deaths a case fatality ratio (CFR: 3%) were reported from the municipalities \u201cGolfe 1\u201d and \u201cGolfe 6\u201d in Lom\u00e9, Togo. A total of four health areas (Katanga, Adakpam\u00e9, Gb\u00e9tsogb\u00e9 in Golfe 1, and Kangnikop\u00e9 in Golfe 6) in the affected municipalities reported at least one case.\nOn 17 November, cholera was confirmed by culture in the laboratory of the National Institute of Hygiene (INH) in Lom\u00e9, Togo and WHO was informed. On 19 November, the Minister of Health, Public Hygiene and Universal Access to Care of Togo issued a press release declaring a cholera outbreak and on 24 November WHO was officially notified. From 11 November to 28 December 2020, a total of 17 out of 41 stool samples tested positive for Vibrio cholerae O1 serotype Ogawa by culture in the National Institute of Hygiene (INH) in Lom\u00e9, Togo.\nThe daily number of cases peaked on 16 November with six cases, including one death. Then, after a decrease in the number of daily cases, they once again peaked with 6 cases reported on both 16 and 22of December. The cases with symptom onset between 11 to 15 November 2020 were found retrospectively by active case searches in health facilities from consultation registers. Of the 67 cases, 19 (28%) were fishermen who move frequently between Togo and neighboring countries (especially Ghana, Benin, and Nigeria). The male / female ratio is 1.48 (40 males and 27 females) with an average age of 24 years.",
+        "reports": [
+            {
+                "diseases": [
+                    "cholera"
+                ],
+                "syndromes or symptoms": [
+                    "vomiting",
+                    "diarrhea"
+                ],
+                "event_date": "2020-12-28 xx:xx:xx",
+                "locations": []
+            },
+            {
+                "diseases": [
+                    "cholera"
+                ],
+                "syndromes or symptoms": [],
+                "event_date": "2021-01-04 xx:xx:xx",
+                "locations": []
+            }
+        ]
+    },
+    {
+        "url": "https://www.who.int/csr/don/04-january-2021-influenza-a-brazil/en/",
+        "date_of_publication": "2021-01-04 xx:xx:xx",
+        "headline": "Influenza A(H1N2) variant virus \u2013 Brazil  ",
+        "datetime_accessed": "2021-03-26T05:56:02",
+        "data_gathered_by": "Weekly_Cri_Sesh",
+        "main_text": "\nOn 15 December 2020, the Brazil Ministry of Health reported the second confirmed human infection with influenza A(H1N2) variant virus [A(H1N2)v] in Brazil in 2020. The case was a 4 year-old female who lives on a farm which also functions as a swine slaughter in Irati municipality, Paran\u00e1 state. On 16 November 2020, the case had illness onset with a fever, cough, coryza, headache and dyspnea, and was provided ambulatory care on the same day at Darcy Vargas Hospital. He was treated with medication for fever and headache and has recovered. No symptomatic contacts were found among the case\u2019s family. \nOn 18 and 19 November, respiratory samples were collected for testing. The Parana State Laboratory detected an unsubtypeable influenza A virus and the samples were sent to the Oswaldo Cruz Institute (Fiocruz), the National Influenza Centre (NIC) in Rio de Janeiro for complete viral genome sequencing, where influenza A(H1N2)v virus was confirmed on 14 December. \nThe A(H1N2)v virus is genetically different from other variant viruses previously detected in humans in Brazil in 2015 and in April 2020, based on preliminary genetic analysis conducted by Fiocruz NIC. The preliminary analysis shows that all genes are most similar to those from currently circulating influenza A(H1N1)pdm09 viruses, except for neuraminidase which is most similar to those from influenza A(H3N2) viruses.  Further characterization of the virus is underway. All influenza type A viruses detected by sentinel surveillance and viruses submitted from non-sentinel sites (hospital and peripheral laboratories) in Brazil are subtyped by properties of hemagglutinin (H) and neuraminidase (N) surface proteins. To date, no other human infections with variant viruses have been reported in Brazil.\nThis case is the third human infection of influenza A(H1N2)v virus reported in Parana state and in Brazil. The first case was detected in 2015 and the second in April 2020. These two confirmed cases lived in rural areas with pig farming and one case worked in a pig slaughterhouse. ",
+        "reports": [
+            {
+                "diseases": [],
+                "syndromes or symptoms": [
+                    "fever",
+                    "headache",
+                    "cough",
+                    "dyspnea",
+                    "tic"
+                ],
+                "event_date": "2020-11-16 xx:xx:xx to 2020-12-15 xx:xx:xx",
+                "locations": []
+            }
+        ]
+    }
+]
+-----------------------------------------------------------------
+testing: location: China
+[
+    {
+        "url": "https://www.who.int/csr/don/26-feb-2021-influenza-a-russian-federation/en/",
+        "date_of_publication": "2021-02-26 xx:xx:xx",
+        "headline": "Human infection with avian influenza A (H5N8)  \u2013 the Russian Federation",
+        "datetime_accessed": "2021-03-26T05:56:04",
+        "data_gathered_by": "Weekly_Cri_Sesh",
+        "main_text": "\nOn 18 February 2021, the National IHR Focal Point for the Russian Federation notified WHO of detection of avian influenza A(H5N8) in seven human clinical specimens. These are the first reported detection of avian influenza A(H5N8) in humans. Positive clinical specimens were collected from poultry farm workers who participated in a response operation to contain an avian influenza A(H5N8) outbreak detected in a poultry farm in Astrakhan Oblast in the Russian Federation. The laboratory confirmation of the seven specimens were performed by the State Research Centre for Virology and Biotechnology VECTOR (WHO H5 Reference Laboratory). The age of seven positive cases ranged between 29 to 60 years and five were female.  \nBetween 3 and 11 December, a total of 101 000 of 900 000 egg laying hens on the farm died. This high mortality rate prompted an investigation. Samples were collected from these birds and an initial detection of avian influenza A(H5N8) was performed by the Russian regional veterinary laboratory. On 11 December, the outbreak was confirmed by the World Organisation for Animal Health (OIE) Reference laboratory, and the Federal Centre for Animal Health (FGBI-ARRIAH), in Vladimir, the Russian Federation. Outbreak containment operations started immediately and continued for several days due to the large size of the poultry farm.  \nIn addition to operations on the farm, acute and convalescent sera was collected from the seven positive human cases for serological testing. The results were suggestive of recent infection. \nThe cases remained asymptomatic for the whole follow-up duration (several weeks). Follow-up nasopharyngeal swabs were collected during medical observation period and were tested negative for avian influenza A(H5N8). No obvious clinical manifestations were reported from any farm workers under medical surveillance, their family members, or other close contacts of the seven cases. \nInfluenza A(H5N8) viruses isolated from this poultry outbreak in Astrakhan belonged to clade 2.3.4.4b of avian influenza A(H5Nx) viruses. In 2020, avian influenza A (H5N8) viruses were also detected in poultry or wild birds in Bulgaria, the Czech Republic, Egypt, Germany, Hungary, Iraq, Japan, Kazakhstan, the Netherlands, Poland, Romania, the United Kingdom, and the Russian Federation.",
+        "reports": [
+            {
+                "diseases": [],
+                "syndromes or symptoms": [
+                    "mania",
+                    "tic"
+                ],
+                "event_date": "2021-02-18 xx:xx:xx",
+                "locations": []
+            }
+        ]
+    },
+    {
+        "url": "https://www.who.int/csr/don/17-february-2021-ebola-gin/en/",
+        "date_of_publication": "2021-02-17 xx:xx:xx",
+        "headline": "Ebola virus disease \u2013 Guinea",
+        "datetime_accessed": "2021-03-26T05:56:04",
+        "data_gathered_by": "Weekly_Cri_Sesh",
+        "main_text": "\nOn 14 February 2021, the Ministry of Health (MoH) of Guinea informed WHO of a cluster of Ebola Virus Disease (EVD) cases in the sub-prefecture of Gou\u00e9ck\u00e9, Nz\u00e9r\u00e9kor\u00e9 Region, Guinea between 18 January  and 13 February 2021. The cases showed symptoms of diarrhea, vomiting and bleeding after attending the burial of another relative (a 51 year-old nurse) on 1 February 2021.\nThe index case of the cluster was a nurse who had originally presented at a health centre in Gou\u00e9ck\u00e9 on 18 January 2021 with headache, physical weakness, nausea, vomiting, loss of appetite, abdominal pain, and fever. She was diagnosed with typhoid.  She sought a second consultation at a health facility in Nz\u00e9r\u00e9kor\u00e9 on 23 January 2021 for fever, vomiting, liquid stools, and physical weakness, and she was diagnosed with malaria.  On 24 January she consulted a traditional practitioner in Nz\u00e9r\u00e9kor\u00e9, and she died on 28 January 2021.  She was buried unsafely on 1 February in Gou\u00e9ck\u00e9.  The other six cases are the five family members and the traditional practitioner she visited.   \nAmong the seven cases, five have died (4 probable and 1 confirmed). The other two confirmed cases are currently in isolation in dedicated health care facilities in Conakry and Gou\u00e9ck\u00e9, Nz\u00e9r\u00e9kor\u00e9 region. \nThe Ebolavirus species is not yet determined. Additional laboratory analyses are on-going to ascertain virus species. \nAs of 15 February, one hundred and ninety-two (192) contacts have been identified, including 164 contacts in N\u2019Z\u00e9r\u00e9kor\u00e9 Health District and 28 in Ratoma Health District, Conakry. To date, no contacts have been reported to have travelled in neighboring countries. However, Nz\u00e9r\u00e9kor\u00e9 is the second-largest city in Guinea and lies at the intersection of roads from Ganta (in Liberia), Danan\u00e9 (C\u00f4te d\u2019Ivoire), and roads to other major hubs in Guinea like Kankan and Macenta in (Guinea). Therefore, there is concern about the exportation of EVD cases into the neighboring countries.",
+        "reports": [
+            {
+                "diseases": [
+                    "ebola"
+                ],
+                "syndromes or symptoms": [],
+                "event_date": "2021-02-14 xx:xx:xx",
+                "locations": []
+            },
+            {
+                "diseases": [
+                    "malaria"
+                ],
+                "syndromes or symptoms": [
+                    "fever",
+                    "headache",
+                    "liquid stool",
+                    "loss of appetite",
+                    "nausea",
+                    "vomiting",
+                    "weakness",
+                    "abdominal pain",
+                    "diarrhea"
+                ],
+                "event_date": "2021-01-18 xx:xx:xx to 2021-02-01 xx:xx:xx",
+                "locations": []
+            }
+        ]
+    },
+    {
+        "url": "https://www.who.int/csr/don/12-february-2021-rift-valley-fever-kenya/en/",
+        "date_of_publication": "2021-02-12 xx:xx:xx",
+        "headline": "Rift Valley fever \u2013 Kenya",
+        "datetime_accessed": "2021-03-26T05:56:04",
+        "data_gathered_by": "Weekly_Cri_Sesh",
+        "main_text": "\nRift Valley fever (RVF) has been reported in Kenya in humans in Isiolo and Mandera counties and in animals in Isiolo, Mandera, Murang\u2019a and Garissa counties. As of 4 February 2021, there were a total of 32 human cases (14 confirmed positive), and 11 deaths (CFR 34 %).\nIsiolo County\nThe event is believed to have started on 19 November 2020, with deaths among herders presenting with symptoms of fever, headache, general malaise with or without nausea, epistaxis/hematemesis, and abdominal pain/diarrhoea reported to the County Department of Health in Isiolo. The first human case was reported in late November 2020 from Sericho ward in Garbatulla Subcounty. Deaths have been reported in Gafarsa and Erisaboru within Garbatulla subcounty as well Korbesa in Merti subcounty. On 16 December, RVF was confirmed by PCR at the National Virology Laboratory (NVL), Kenya Medical Research Institute (KEMRI). As of 4 February 2021, a total of 22 human cases had been reported (12 confirmed positive), and 10 deaths (three confirmed positive). Most cases were from Garbatulla subcounty, with the majority being herders, male, and aged 13 to 70 years old.\nSheep and goats were also reported sick on 19 November 2020 in Sericho subcounty, which is mainly pastoral. The communities in this area live in villages and livestock are grazed in communal grazing areas.  Animal samples tested IgM and real time PCR positive for RVF at the Central Veterinary Laboratory (CVL), Kabete and the Regional Veterinary Investigation Laboratory in Garissa. The event was officially confirmed on 7 January 2021 and reported to the World Organisation for Animal Health (OIE) on 15 January 2021 and later on 22 and 29 January 2021. As of 27 January, a total of 20 livestock samples (19 sheep and 1 camel) had tested positive for RVF by IgM-capture ELISA and real-time PCR.\nMandera County\nA patient from Kalmalab village, Mandera North subcounty fell ill after he was involved in the slaughter of four sick camels. He was evacuated to a Nairobi hospital with haemorrhagic symptoms on 18 January. He was later admitted to the Intensive Care Unit with multiple organ failure. RVF was confirmed on 21 January at the NVL. He died on 22 January 2021. As of 4 February 2021, a total of 10 cases (2 confirmed RVF positive), including 1 death had been reported from Mandera North sub county.\nKalmalab village borders the river Dawa which broke its banks following rains in the Ethiopian highlands. The RVF outbreak may be associated with this flooding, as it increases the risk of mosquito-borne zoonosis. Livestock samples have been submitted to CVL Kabete for testing.\nMurang\u2019a County\nLivestock with RVF syndromes (including bleeding and abortions) were first reported on 29 December 2020 in Gatanga subcounty, Kihumbuini ward. The first animal death was reported on 1 January 2021. Samples were collected from the same farm on 1 January and were confirmed RVF positive on 3 January at CVL Kabete using Elisa IgG/IgM testing. More suspected animal cases have been reported in Ng\u2019araria ward in Kandara subcounty. No human cases have been confirmed, however suspected cases were traced and samples from affected households were collected on 25 January for testing at NVL.\nGarissa County\nSamples from suspected livestock (sheep and goats) were collected from Masalani, Ijara Subcounty and Balambala, Balambala Subcountrym on 20 December 2020 for testing and were confirmed positive for RVF on 22 December using Elisa IgM testing. Field investigations are ongoing to determine the extent of the outbreak.\nSurveillance in livestock was initiated after the detection of the RVF outbreak in Isiolo. Outbreaks among animals were observed during this time period. In December 2020, results from CVL Kabete taken from 120 livestock revealed 20 (19 sheep out of which 10 died, and 1 camel) positive RVF cases confirmed by Elisa IgM testing. Further laboratory analysis are ongoing in both human and livestock samples.",
+        "reports": [
+            {
+                "diseases": [
+                    "rift valley fever",
+                    "rvf"
+                ],
+                "syndromes or symptoms": [
+                    "fever"
+                ],
+                "event_date": "2021-02-12 xx:xx:xx",
+                "locations": []
+            },
+            {
+                "diseases": [
+                    "rvf"
+                ],
+                "syndromes or symptoms": [
+                    "fever",
+                    "headache",
+                    "hematemesis",
+                    "malaise",
+                    "nausea",
+                    "abdominal pain",
+                    "epistaxis"
+                ],
+                "event_date": "2020-11-19 xx:xx:xx",
+                "locations": []
+            },
+            {
+                "diseases": [
+                    "rvf"
+                ],
+                "syndromes or symptoms": [],
+                "event_date": "2020-11-19 xx:xx:xx",
+                "locations": []
+            },
+            {
+                "diseases": [
+                    "rvf"
+                ],
+                "syndromes or symptoms": [],
+                "event_date": "2021-01-15 xx:xx:xx to 2021-01-29 xx:xx:xx",
+                "locations": []
+            },
+            {
+                "diseases": [
+                    "rvf"
+                ],
+                "syndromes or symptoms": [],
+                "event_date": "2021-02-04 xx:xx:xx",
+                "locations": []
+            },
+            {
+                "diseases": [
+                    "rvf"
+                ],
+                "syndromes or symptoms": [],
+                "event_date": "2021-01-01 xx:xx:xx",
+                "locations": []
+            }
+        ]
+    },
+    {
+        "url": "https://www.who.int/csr/don/10-february-2021-ebola-drc/en/",
+        "date_of_publication": "2021-02-10 xx:xx:xx",
+        "headline": "Ebola virus disease \u2013 Democratic Republic of the Congo ",
+        "datetime_accessed": "2021-03-26T05:56:04",
+        "data_gathered_by": "Weekly_Cri_Sesh",
+        "main_text": "\nOn 7 February 2021, the Minister of Health of the Democratic Republic of the Congo declared an outbreak of Ebola Virus Disease (EVD) after the laboratory confirmation of one case in North Kivu Province. The case was an adult female living in Biena Health Zone. To date the source of infection is still under investigation.\nOn 25 January 2021, the case presented with nasal bleeding. From 25 January to 1 February, she reportedly received outpatient care at a local health centre. From 1 to 3 February, she was admitted to a second health centre with signs of physical weakness, dizziness, joint pain, epigastric pain, liquid stools, headache and difficulty breathing. On 3 February, a blood sample was collected for EVD testing due to her epidemiological link with an EVD survivor. On the same day, she was referred to a hospital in Katwa Health Zone (part of Butembo city) following the deterioration of her condition. She was admitted to the intensive care unit the same day and died on 4 February. On 5 February, the body was buried in Musienene Health Zone, however not under safe burial practices.\nOn 6 February, Butembo laboratory confirmed the case positive for EVD by GeneXpert. On 7 February, the sample was shipped to Goma laboratory, and tested positive for EVD by GeneXpert on 8 February. Samples were sent to the Institut de Recherche Biomedicale for next generation sequencing in order to determine whether this recent Ebola case is linked to a new spill over event or to a resurgence of the outbreak that affected North Kivu, Ituri and South Kivu Provinces in 2018-2020. \nAs of 8 February 2021, a total of 117 contacts has been identified and are under follow up. Investigations and response activities are ongoing.",
+        "reports": [
+            {
+                "diseases": [
+                    "ebola"
+                ],
+                "syndromes or symptoms": [
+                    "tic"
+                ],
+                "event_date": "2021-02-07 xx:xx:xx",
+                "locations": []
+            },
+            {
+                "diseases": [
+                    "ebola"
+                ],
+                "syndromes or symptoms": [
+                    "headache",
+                    "liquid stool",
+                    "weakness",
+                    "dizziness",
+                    "tic"
+                ],
+                "event_date": "2021-02-10 xx:xx:xx",
+                "locations": []
+            }
+        ]
+    },
+    {
+        "url": "https://www.who.int/csr/don/05-feb-2021-influenza-a-usa/en/",
+        "date_of_publication": "2021-02-05 xx:xx:xx",
+        "headline": "Influenza A (H3N2) variant virus \u2013 United States of America",
+        "datetime_accessed": "2021-03-26T05:56:05",
+        "data_gathered_by": "Weekly_Cri_Sesh",
+        "main_text": "\nOn 13 January, 2021, a child under 18 years of age in Wisconsin developed respiratory disease. A respiratory specimen was collected on 14 January. Real-time reverse transcriptase polymerase chain reaction (RT-PCR) testing conducted at the Wisconsin State Laboratory of Hygiene indicated a presumptive positive influenza A(H3N2) variant virus infection. The specimen was forwarded to the Influenza Division of the Centers for Disease Control and Prevention (CDC) on 21 January for further testing. On 22 January, CDC confirmed an influenza A (H3N2)v virus infection using RT-PCR and genome sequence analysis. Investigation into the source of the infection has been completed and revealed that the child lives on a farm with swine present.  Sampling of the swine on the property for influenza virus has not yet been conducted but is planned. Five family members of the patient reported respiratory illness during the investigation and were tested for influenza; all tested negative. The patient was prescribed antiviral treatment and was not hospitalized and has made a full recovery.  No human to human transmission has been identified associated with this investigation.\nSequencing of the virus by CDC revealed it is similar to A (H3N2) viruses circulating in swine in the mid-western United States during 2019-2020. Viruses related to this A (H3N2)v virus were previously circulating as human seasonal A (H3N2) viruses until around 2010-2011 when they entered the USA swine population. Thus, past vaccination or infection with human seasonal A (H3N2) virus is likely to offer some protection in humans.\nThis is the first influenza A (H3N2)v virus identified in the United States in 2021. Since 2005, a total of 485 influenza variant virus human infections caused by all subtypes including 437 human infections with A (H3N2)v, including this one, have been reported in the United States.",
+        "reports": [
+            {
+                "diseases": [],
+                "syndromes or symptoms": [],
+                "event_date": "2021-01-13 xx:xx:xx",
+                "locations": []
+            }
+        ]
+    },
+    {
+        "url": "https://www.who.int/csr/don/01-february-2021-mers-saudi-arabia/en/",
+        "date_of_publication": "2021-02-01 xx:xx:xx",
+        "headline": "Middle East respiratory syndrome coronavirus (MERS-CoV) \u2013 The Kingdom of Saudi Arabia",
+        "datetime_accessed": "2021-03-26T05:56:05",
+        "data_gathered_by": "Weekly_Cri_Sesh",
+        "main_text": "\nBetween 1 June through 31 December 2020, the National IHR Focal Point of Saudi Arabia reported four additional cases of Middle East respiratory syndrome (MERS-CoV) with one associated death. The cases were reported from Riyadh (two cases), Taif (one case), and Al-Ahsaa (one case) Regions.\nThe link below provides details of the four reported cases.\nFrom 2012 through 31 December 2020, a total of 2566 laboratory-confirmed cases of MERS-CoV and 882 associated deaths were reported globally to WHO under the International Health regulations (IHR 2005). The total number of deaths includes the deaths that WHO is aware of to date through follow-up with affected member states.",
+        "reports": [
+            {
+                "diseases": [
+                    "mers-cov"
+                ],
+                "syndromes or symptoms": [
+                    "respiratory syndrome"
+                ],
+                "event_date": "2020-12-31 xx:xx:xx",
+                "locations": []
+            },
+            {
+                "diseases": [
+                    "mers-cov"
+                ],
+                "syndromes or symptoms": [
+                    "respiratory syndrome"
+                ],
+                "event_date": "2020-12-31 xx:xx:xx",
+                "locations": []
+            }
+        ]
+    },
+    {
+        "url": "https://www.who.int/csr/don/04-january-2021-cholera-togo/en/",
+        "date_of_publication": "2021-01-04 xx:xx:xx",
+        "headline": "Cholera \u2013 Togo",
+        "datetime_accessed": "2021-03-26T05:56:05",
+        "data_gathered_by": "Weekly_Cri_Sesh",
+        "main_text": "\nFrom 11 November to 28 December, 2020 a total of 67 suspected cholera cases presenting with diarrhea and vomiting, including two deaths a case fatality ratio (CFR: 3%) were reported from the municipalities \u201cGolfe 1\u201d and \u201cGolfe 6\u201d in Lom\u00e9, Togo. A total of four health areas (Katanga, Adakpam\u00e9, Gb\u00e9tsogb\u00e9 in Golfe 1, and Kangnikop\u00e9 in Golfe 6) in the affected municipalities reported at least one case.\nOn 17 November, cholera was confirmed by culture in the laboratory of the National Institute of Hygiene (INH) in Lom\u00e9, Togo and WHO was informed. On 19 November, the Minister of Health, Public Hygiene and Universal Access to Care of Togo issued a press release declaring a cholera outbreak and on 24 November WHO was officially notified. From 11 November to 28 December 2020, a total of 17 out of 41 stool samples tested positive for Vibrio cholerae O1 serotype Ogawa by culture in the National Institute of Hygiene (INH) in Lom\u00e9, Togo.\nThe daily number of cases peaked on 16 November with six cases, including one death. Then, after a decrease in the number of daily cases, they once again peaked with 6 cases reported on both 16 and 22of December. The cases with symptom onset between 11 to 15 November 2020 were found retrospectively by active case searches in health facilities from consultation registers. Of the 67 cases, 19 (28%) were fishermen who move frequently between Togo and neighboring countries (especially Ghana, Benin, and Nigeria). The male / female ratio is 1.48 (40 males and 27 females) with an average age of 24 years.",
+        "reports": [
+            {
+                "diseases": [
+                    "cholera"
+                ],
+                "syndromes or symptoms": [
+                    "vomiting",
+                    "diarrhea"
+                ],
+                "event_date": "2020-12-28 xx:xx:xx",
+                "locations": []
+            },
+            {
+                "diseases": [
+                    "cholera"
+                ],
+                "syndromes or symptoms": [],
+                "event_date": "2021-01-04 xx:xx:xx",
+                "locations": []
+            }
+        ]
+    },
+    {
+        "url": "https://www.who.int/csr/don/04-january-2021-influenza-a-brazil/en/",
+        "date_of_publication": "2021-01-04 xx:xx:xx",
+        "headline": "Influenza A(H1N2) variant virus \u2013 Brazil  ",
+        "datetime_accessed": "2021-03-26T05:56:05",
+        "data_gathered_by": "Weekly_Cri_Sesh",
+        "main_text": "\nOn 15 December 2020, the Brazil Ministry of Health reported the second confirmed human infection with influenza A(H1N2) variant virus [A(H1N2)v] in Brazil in 2020. The case was a 4 year-old female who lives on a farm which also functions as a swine slaughter in Irati municipality, Paran\u00e1 state. On 16 November 2020, the case had illness onset with a fever, cough, coryza, headache and dyspnea, and was provided ambulatory care on the same day at Darcy Vargas Hospital. He was treated with medication for fever and headache and has recovered. No symptomatic contacts were found among the case\u2019s family. \nOn 18 and 19 November, respiratory samples were collected for testing. The Parana State Laboratory detected an unsubtypeable influenza A virus and the samples were sent to the Oswaldo Cruz Institute (Fiocruz), the National Influenza Centre (NIC) in Rio de Janeiro for complete viral genome sequencing, where influenza A(H1N2)v virus was confirmed on 14 December. \nThe A(H1N2)v virus is genetically different from other variant viruses previously detected in humans in Brazil in 2015 and in April 2020, based on preliminary genetic analysis conducted by Fiocruz NIC. The preliminary analysis shows that all genes are most similar to those from currently circulating influenza A(H1N1)pdm09 viruses, except for neuraminidase which is most similar to those from influenza A(H3N2) viruses.  Further characterization of the virus is underway. All influenza type A viruses detected by sentinel surveillance and viruses submitted from non-sentinel sites (hospital and peripheral laboratories) in Brazil are subtyped by properties of hemagglutinin (H) and neuraminidase (N) surface proteins. To date, no other human infections with variant viruses have been reported in Brazil.\nThis case is the third human infection of influenza A(H1N2)v virus reported in Parana state and in Brazil. The first case was detected in 2015 and the second in April 2020. These two confirmed cases lived in rural areas with pig farming and one case worked in a pig slaughterhouse. ",
+        "reports": [
+            {
+                "diseases": [],
+                "syndromes or symptoms": [
+                    "fever",
+                    "headache",
+                    "cough",
+                    "dyspnea",
+                    "tic"
+                ],
+                "event_date": "2020-11-16 xx:xx:xx to 2020-12-15 xx:xx:xx",
+                "locations": []
+            }
+        ]
+    }
+]
+-----------------------------------------------------------------
+testing: location: Russia
+[
+    {
+        "url": "https://www.who.int/csr/don/26-feb-2021-influenza-a-russian-federation/en/",
+        "date_of_publication": "2021-02-26 xx:xx:xx",
+        "headline": "Human infection with avian influenza A (H5N8)  \u2013 the Russian Federation",
+        "datetime_accessed": "2021-03-26T05:56:06",
+        "data_gathered_by": "Weekly_Cri_Sesh",
+        "main_text": "\nOn 18 February 2021, the National IHR Focal Point for the Russian Federation notified WHO of detection of avian influenza A(H5N8) in seven human clinical specimens. These are the first reported detection of avian influenza A(H5N8) in humans. Positive clinical specimens were collected from poultry farm workers who participated in a response operation to contain an avian influenza A(H5N8) outbreak detected in a poultry farm in Astrakhan Oblast in the Russian Federation. The laboratory confirmation of the seven specimens were performed by the State Research Centre for Virology and Biotechnology VECTOR (WHO H5 Reference Laboratory). The age of seven positive cases ranged between 29 to 60 years and five were female.  \nBetween 3 and 11 December, a total of 101 000 of 900 000 egg laying hens on the farm died. This high mortality rate prompted an investigation. Samples were collected from these birds and an initial detection of avian influenza A(H5N8) was performed by the Russian regional veterinary laboratory. On 11 December, the outbreak was confirmed by the World Organisation for Animal Health (OIE) Reference laboratory, and the Federal Centre for Animal Health (FGBI-ARRIAH), in Vladimir, the Russian Federation. Outbreak containment operations started immediately and continued for several days due to the large size of the poultry farm.  \nIn addition to operations on the farm, acute and convalescent sera was collected from the seven positive human cases for serological testing. The results were suggestive of recent infection. \nThe cases remained asymptomatic for the whole follow-up duration (several weeks). Follow-up nasopharyngeal swabs were collected during medical observation period and were tested negative for avian influenza A(H5N8). No obvious clinical manifestations were reported from any farm workers under medical surveillance, their family members, or other close contacts of the seven cases. \nInfluenza A(H5N8) viruses isolated from this poultry outbreak in Astrakhan belonged to clade 2.3.4.4b of avian influenza A(H5Nx) viruses. In 2020, avian influenza A (H5N8) viruses were also detected in poultry or wild birds in Bulgaria, the Czech Republic, Egypt, Germany, Hungary, Iraq, Japan, Kazakhstan, the Netherlands, Poland, Romania, the United Kingdom, and the Russian Federation.",
+        "reports": [
+            {
+                "diseases": [],
+                "syndromes or symptoms": [
+                    "mania",
+                    "tic"
+                ],
+                "event_date": "2021-02-18 xx:xx:xx",
+                "locations": []
+            }
+        ]
+    },
+    {
+        "url": "https://www.who.int/csr/don/17-february-2021-ebola-gin/en/",
+        "date_of_publication": "2021-02-17 xx:xx:xx",
+        "headline": "Ebola virus disease \u2013 Guinea",
+        "datetime_accessed": "2021-03-26T05:56:06",
+        "data_gathered_by": "Weekly_Cri_Sesh",
+        "main_text": "\nOn 14 February 2021, the Ministry of Health (MoH) of Guinea informed WHO of a cluster of Ebola Virus Disease (EVD) cases in the sub-prefecture of Gou\u00e9ck\u00e9, Nz\u00e9r\u00e9kor\u00e9 Region, Guinea between 18 January  and 13 February 2021. The cases showed symptoms of diarrhea, vomiting and bleeding after attending the burial of another relative (a 51 year-old nurse) on 1 February 2021.\nThe index case of the cluster was a nurse who had originally presented at a health centre in Gou\u00e9ck\u00e9 on 18 January 2021 with headache, physical weakness, nausea, vomiting, loss of appetite, abdominal pain, and fever. She was diagnosed with typhoid.  She sought a second consultation at a health facility in Nz\u00e9r\u00e9kor\u00e9 on 23 January 2021 for fever, vomiting, liquid stools, and physical weakness, and she was diagnosed with malaria.  On 24 January she consulted a traditional practitioner in Nz\u00e9r\u00e9kor\u00e9, and she died on 28 January 2021.  She was buried unsafely on 1 February in Gou\u00e9ck\u00e9.  The other six cases are the five family members and the traditional practitioner she visited.   \nAmong the seven cases, five have died (4 probable and 1 confirmed). The other two confirmed cases are currently in isolation in dedicated health care facilities in Conakry and Gou\u00e9ck\u00e9, Nz\u00e9r\u00e9kor\u00e9 region. \nThe Ebolavirus species is not yet determined. Additional laboratory analyses are on-going to ascertain virus species. \nAs of 15 February, one hundred and ninety-two (192) contacts have been identified, including 164 contacts in N\u2019Z\u00e9r\u00e9kor\u00e9 Health District and 28 in Ratoma Health District, Conakry. To date, no contacts have been reported to have travelled in neighboring countries. However, Nz\u00e9r\u00e9kor\u00e9 is the second-largest city in Guinea and lies at the intersection of roads from Ganta (in Liberia), Danan\u00e9 (C\u00f4te d\u2019Ivoire), and roads to other major hubs in Guinea like Kankan and Macenta in (Guinea). Therefore, there is concern about the exportation of EVD cases into the neighboring countries.",
+        "reports": [
+            {
+                "diseases": [
+                    "ebola"
+                ],
+                "syndromes or symptoms": [],
+                "event_date": "2021-02-14 xx:xx:xx",
+                "locations": []
+            },
+            {
+                "diseases": [
+                    "malaria"
+                ],
+                "syndromes or symptoms": [
+                    "fever",
+                    "headache",
+                    "liquid stool",
+                    "loss of appetite",
+                    "nausea",
+                    "vomiting",
+                    "weakness",
+                    "abdominal pain",
+                    "diarrhea"
+                ],
+                "event_date": "2021-01-18 xx:xx:xx to 2021-02-01 xx:xx:xx",
+                "locations": []
+            }
+        ]
+    },
+    {
+        "url": "https://www.who.int/csr/don/12-february-2021-rift-valley-fever-kenya/en/",
+        "date_of_publication": "2021-02-12 xx:xx:xx",
+        "headline": "Rift Valley fever \u2013 Kenya",
+        "datetime_accessed": "2021-03-26T05:56:07",
+        "data_gathered_by": "Weekly_Cri_Sesh",
+        "main_text": "\nRift Valley fever (RVF) has been reported in Kenya in humans in Isiolo and Mandera counties and in animals in Isiolo, Mandera, Murang\u2019a and Garissa counties. As of 4 February 2021, there were a total of 32 human cases (14 confirmed positive), and 11 deaths (CFR 34 %).\nIsiolo County\nThe event is believed to have started on 19 November 2020, with deaths among herders presenting with symptoms of fever, headache, general malaise with or without nausea, epistaxis/hematemesis, and abdominal pain/diarrhoea reported to the County Department of Health in Isiolo. The first human case was reported in late November 2020 from Sericho ward in Garbatulla Subcounty. Deaths have been reported in Gafarsa and Erisaboru within Garbatulla subcounty as well Korbesa in Merti subcounty. On 16 December, RVF was confirmed by PCR at the National Virology Laboratory (NVL), Kenya Medical Research Institute (KEMRI). As of 4 February 2021, a total of 22 human cases had been reported (12 confirmed positive), and 10 deaths (three confirmed positive). Most cases were from Garbatulla subcounty, with the majority being herders, male, and aged 13 to 70 years old.\nSheep and goats were also reported sick on 19 November 2020 in Sericho subcounty, which is mainly pastoral. The communities in this area live in villages and livestock are grazed in communal grazing areas.  Animal samples tested IgM and real time PCR positive for RVF at the Central Veterinary Laboratory (CVL), Kabete and the Regional Veterinary Investigation Laboratory in Garissa. The event was officially confirmed on 7 January 2021 and reported to the World Organisation for Animal Health (OIE) on 15 January 2021 and later on 22 and 29 January 2021. As of 27 January, a total of 20 livestock samples (19 sheep and 1 camel) had tested positive for RVF by IgM-capture ELISA and real-time PCR.\nMandera County\nA patient from Kalmalab village, Mandera North subcounty fell ill after he was involved in the slaughter of four sick camels. He was evacuated to a Nairobi hospital with haemorrhagic symptoms on 18 January. He was later admitted to the Intensive Care Unit with multiple organ failure. RVF was confirmed on 21 January at the NVL. He died on 22 January 2021. As of 4 February 2021, a total of 10 cases (2 confirmed RVF positive), including 1 death had been reported from Mandera North sub county.\nKalmalab village borders the river Dawa which broke its banks following rains in the Ethiopian highlands. The RVF outbreak may be associated with this flooding, as it increases the risk of mosquito-borne zoonosis. Livestock samples have been submitted to CVL Kabete for testing.\nMurang\u2019a County\nLivestock with RVF syndromes (including bleeding and abortions) were first reported on 29 December 2020 in Gatanga subcounty, Kihumbuini ward. The first animal death was reported on 1 January 2021. Samples were collected from the same farm on 1 January and were confirmed RVF positive on 3 January at CVL Kabete using Elisa IgG/IgM testing. More suspected animal cases have been reported in Ng\u2019araria ward in Kandara subcounty. No human cases have been confirmed, however suspected cases were traced and samples from affected households were collected on 25 January for testing at NVL.\nGarissa County\nSamples from suspected livestock (sheep and goats) were collected from Masalani, Ijara Subcounty and Balambala, Balambala Subcountrym on 20 December 2020 for testing and were confirmed positive for RVF on 22 December using Elisa IgM testing. Field investigations are ongoing to determine the extent of the outbreak.\nSurveillance in livestock was initiated after the detection of the RVF outbreak in Isiolo. Outbreaks among animals were observed during this time period. In December 2020, results from CVL Kabete taken from 120 livestock revealed 20 (19 sheep out of which 10 died, and 1 camel) positive RVF cases confirmed by Elisa IgM testing. Further laboratory analysis are ongoing in both human and livestock samples.",
+        "reports": [
+            {
+                "diseases": [
+                    "rift valley fever",
+                    "rvf"
+                ],
+                "syndromes or symptoms": [
+                    "fever"
+                ],
+                "event_date": "2021-02-12 xx:xx:xx",
+                "locations": []
+            },
+            {
+                "diseases": [
+                    "rvf"
+                ],
+                "syndromes or symptoms": [
+                    "fever",
+                    "headache",
+                    "hematemesis",
+                    "malaise",
+                    "nausea",
+                    "abdominal pain",
+                    "epistaxis"
+                ],
+                "event_date": "2020-11-19 xx:xx:xx",
+                "locations": []
+            },
+            {
+                "diseases": [
+                    "rvf"
+                ],
+                "syndromes or symptoms": [],
+                "event_date": "2020-11-19 xx:xx:xx",
+                "locations": []
+            },
+            {
+                "diseases": [
+                    "rvf"
+                ],
+                "syndromes or symptoms": [],
+                "event_date": "2021-01-15 xx:xx:xx to 2021-01-29 xx:xx:xx",
+                "locations": []
+            },
+            {
+                "diseases": [
+                    "rvf"
+                ],
+                "syndromes or symptoms": [],
+                "event_date": "2021-02-04 xx:xx:xx",
+                "locations": []
+            },
+            {
+                "diseases": [
+                    "rvf"
+                ],
+                "syndromes or symptoms": [],
+                "event_date": "2021-01-01 xx:xx:xx",
+                "locations": []
+            }
+        ]
+    },
+    {
+        "url": "https://www.who.int/csr/don/10-february-2021-ebola-drc/en/",
+        "date_of_publication": "2021-02-10 xx:xx:xx",
+        "headline": "Ebola virus disease \u2013 Democratic Republic of the Congo ",
+        "datetime_accessed": "2021-03-26T05:56:07",
+        "data_gathered_by": "Weekly_Cri_Sesh",
+        "main_text": "\nOn 7 February 2021, the Minister of Health of the Democratic Republic of the Congo declared an outbreak of Ebola Virus Disease (EVD) after the laboratory confirmation of one case in North Kivu Province. The case was an adult female living in Biena Health Zone. To date the source of infection is still under investigation.\nOn 25 January 2021, the case presented with nasal bleeding. From 25 January to 1 February, she reportedly received outpatient care at a local health centre. From 1 to 3 February, she was admitted to a second health centre with signs of physical weakness, dizziness, joint pain, epigastric pain, liquid stools, headache and difficulty breathing. On 3 February, a blood sample was collected for EVD testing due to her epidemiological link with an EVD survivor. On the same day, she was referred to a hospital in Katwa Health Zone (part of Butembo city) following the deterioration of her condition. She was admitted to the intensive care unit the same day and died on 4 February. On 5 February, the body was buried in Musienene Health Zone, however not under safe burial practices.\nOn 6 February, Butembo laboratory confirmed the case positive for EVD by GeneXpert. On 7 February, the sample was shipped to Goma laboratory, and tested positive for EVD by GeneXpert on 8 February. Samples were sent to the Institut de Recherche Biomedicale for next generation sequencing in order to determine whether this recent Ebola case is linked to a new spill over event or to a resurgence of the outbreak that affected North Kivu, Ituri and South Kivu Provinces in 2018-2020. \nAs of 8 February 2021, a total of 117 contacts has been identified and are under follow up. Investigations and response activities are ongoing.",
+        "reports": [
+            {
+                "diseases": [
+                    "ebola"
+                ],
+                "syndromes or symptoms": [
+                    "tic"
+                ],
+                "event_date": "2021-02-07 xx:xx:xx",
+                "locations": []
+            },
+            {
+                "diseases": [
+                    "ebola"
+                ],
+                "syndromes or symptoms": [
+                    "headache",
+                    "liquid stool",
+                    "weakness",
+                    "dizziness",
+                    "tic"
+                ],
+                "event_date": "2021-02-10 xx:xx:xx",
+                "locations": []
+            }
+        ]
+    },
+    {
+        "url": "https://www.who.int/csr/don/05-feb-2021-influenza-a-usa/en/",
+        "date_of_publication": "2021-02-05 xx:xx:xx",
+        "headline": "Influenza A (H3N2) variant virus \u2013 United States of America",
+        "datetime_accessed": "2021-03-26T05:56:07",
+        "data_gathered_by": "Weekly_Cri_Sesh",
+        "main_text": "\nOn 13 January, 2021, a child under 18 years of age in Wisconsin developed respiratory disease. A respiratory specimen was collected on 14 January. Real-time reverse transcriptase polymerase chain reaction (RT-PCR) testing conducted at the Wisconsin State Laboratory of Hygiene indicated a presumptive positive influenza A(H3N2) variant virus infection. The specimen was forwarded to the Influenza Division of the Centers for Disease Control and Prevention (CDC) on 21 January for further testing. On 22 January, CDC confirmed an influenza A (H3N2)v virus infection using RT-PCR and genome sequence analysis. Investigation into the source of the infection has been completed and revealed that the child lives on a farm with swine present.  Sampling of the swine on the property for influenza virus has not yet been conducted but is planned. Five family members of the patient reported respiratory illness during the investigation and were tested for influenza; all tested negative. The patient was prescribed antiviral treatment and was not hospitalized and has made a full recovery.  No human to human transmission has been identified associated with this investigation.\nSequencing of the virus by CDC revealed it is similar to A (H3N2) viruses circulating in swine in the mid-western United States during 2019-2020. Viruses related to this A (H3N2)v virus were previously circulating as human seasonal A (H3N2) viruses until around 2010-2011 when they entered the USA swine population. Thus, past vaccination or infection with human seasonal A (H3N2) virus is likely to offer some protection in humans.\nThis is the first influenza A (H3N2)v virus identified in the United States in 2021. Since 2005, a total of 485 influenza variant virus human infections caused by all subtypes including 437 human infections with A (H3N2)v, including this one, have been reported in the United States.",
+        "reports": [
+            {
+                "diseases": [],
+                "syndromes or symptoms": [],
+                "event_date": "2021-01-13 xx:xx:xx",
+                "locations": []
+            }
+        ]
+    },
+    {
+        "url": "https://www.who.int/csr/don/01-february-2021-mers-saudi-arabia/en/",
+        "date_of_publication": "2021-02-01 xx:xx:xx",
+        "headline": "Middle East respiratory syndrome coronavirus (MERS-CoV) \u2013 The Kingdom of Saudi Arabia",
+        "datetime_accessed": "2021-03-26T05:56:07",
+        "data_gathered_by": "Weekly_Cri_Sesh",
+        "main_text": "\nBetween 1 June through 31 December 2020, the National IHR Focal Point of Saudi Arabia reported four additional cases of Middle East respiratory syndrome (MERS-CoV) with one associated death. The cases were reported from Riyadh (two cases), Taif (one case), and Al-Ahsaa (one case) Regions.\nThe link below provides details of the four reported cases.\nFrom 2012 through 31 December 2020, a total of 2566 laboratory-confirmed cases of MERS-CoV and 882 associated deaths were reported globally to WHO under the International Health regulations (IHR 2005). The total number of deaths includes the deaths that WHO is aware of to date through follow-up with affected member states.",
+        "reports": [
+            {
+                "diseases": [
+                    "mers-cov"
+                ],
+                "syndromes or symptoms": [
+                    "respiratory syndrome"
+                ],
+                "event_date": "2020-12-31 xx:xx:xx",
+                "locations": []
+            },
+            {
+                "diseases": [
+                    "mers-cov"
+                ],
+                "syndromes or symptoms": [
+                    "respiratory syndrome"
+                ],
+                "event_date": "2020-12-31 xx:xx:xx",
+                "locations": []
+            }
+        ]
+    },
+    {
+        "url": "https://www.who.int/csr/don/04-january-2021-cholera-togo/en/",
+        "date_of_publication": "2021-01-04 xx:xx:xx",
+        "headline": "Cholera \u2013 Togo",
+        "datetime_accessed": "2021-03-26T05:56:08",
+        "data_gathered_by": "Weekly_Cri_Sesh",
+        "main_text": "\nFrom 11 November to 28 December, 2020 a total of 67 suspected cholera cases presenting with diarrhea and vomiting, including two deaths a case fatality ratio (CFR: 3%) were reported from the municipalities \u201cGolfe 1\u201d and \u201cGolfe 6\u201d in Lom\u00e9, Togo. A total of four health areas (Katanga, Adakpam\u00e9, Gb\u00e9tsogb\u00e9 in Golfe 1, and Kangnikop\u00e9 in Golfe 6) in the affected municipalities reported at least one case.\nOn 17 November, cholera was confirmed by culture in the laboratory of the National Institute of Hygiene (INH) in Lom\u00e9, Togo and WHO was informed. On 19 November, the Minister of Health, Public Hygiene and Universal Access to Care of Togo issued a press release declaring a cholera outbreak and on 24 November WHO was officially notified. From 11 November to 28 December 2020, a total of 17 out of 41 stool samples tested positive for Vibrio cholerae O1 serotype Ogawa by culture in the National Institute of Hygiene (INH) in Lom\u00e9, Togo.\nThe daily number of cases peaked on 16 November with six cases, including one death. Then, after a decrease in the number of daily cases, they once again peaked with 6 cases reported on both 16 and 22of December. The cases with symptom onset between 11 to 15 November 2020 were found retrospectively by active case searches in health facilities from consultation registers. Of the 67 cases, 19 (28%) were fishermen who move frequently between Togo and neighboring countries (especially Ghana, Benin, and Nigeria). The male / female ratio is 1.48 (40 males and 27 females) with an average age of 24 years.",
+        "reports": [
+            {
+                "diseases": [
+                    "cholera"
+                ],
+                "syndromes or symptoms": [
+                    "vomiting",
+                    "diarrhea"
+                ],
+                "event_date": "2020-12-28 xx:xx:xx",
+                "locations": []
+            },
+            {
+                "diseases": [
+                    "cholera"
+                ],
+                "syndromes or symptoms": [],
+                "event_date": "2021-01-04 xx:xx:xx",
+                "locations": []
+            }
+        ]
+    },
+    {
+        "url": "https://www.who.int/csr/don/04-january-2021-influenza-a-brazil/en/",
+        "date_of_publication": "2021-01-04 xx:xx:xx",
+        "headline": "Influenza A(H1N2) variant virus \u2013 Brazil  ",
+        "datetime_accessed": "2021-03-26T05:56:08",
+        "data_gathered_by": "Weekly_Cri_Sesh",
+        "main_text": "\nOn 15 December 2020, the Brazil Ministry of Health reported the second confirmed human infection with influenza A(H1N2) variant virus [A(H1N2)v] in Brazil in 2020. The case was a 4 year-old female who lives on a farm which also functions as a swine slaughter in Irati municipality, Paran\u00e1 state. On 16 November 2020, the case had illness onset with a fever, cough, coryza, headache and dyspnea, and was provided ambulatory care on the same day at Darcy Vargas Hospital. He was treated with medication for fever and headache and has recovered. No symptomatic contacts were found among the case\u2019s family. \nOn 18 and 19 November, respiratory samples were collected for testing. The Parana State Laboratory detected an unsubtypeable influenza A virus and the samples were sent to the Oswaldo Cruz Institute (Fiocruz), the National Influenza Centre (NIC) in Rio de Janeiro for complete viral genome sequencing, where influenza A(H1N2)v virus was confirmed on 14 December. \nThe A(H1N2)v virus is genetically different from other variant viruses previously detected in humans in Brazil in 2015 and in April 2020, based on preliminary genetic analysis conducted by Fiocruz NIC. The preliminary analysis shows that all genes are most similar to those from currently circulating influenza A(H1N1)pdm09 viruses, except for neuraminidase which is most similar to those from influenza A(H3N2) viruses.  Further characterization of the virus is underway. All influenza type A viruses detected by sentinel surveillance and viruses submitted from non-sentinel sites (hospital and peripheral laboratories) in Brazil are subtyped by properties of hemagglutinin (H) and neuraminidase (N) surface proteins. To date, no other human infections with variant viruses have been reported in Brazil.\nThis case is the third human infection of influenza A(H1N2)v virus reported in Parana state and in Brazil. The first case was detected in 2015 and the second in April 2020. These two confirmed cases lived in rural areas with pig farming and one case worked in a pig slaughterhouse. ",
+        "reports": [
+            {
+                "diseases": [],
+                "syndromes or symptoms": [
+                    "fever",
+                    "headache",
+                    "cough",
+                    "dyspnea",
+                    "tic"
+                ],
+                "event_date": "2020-11-16 xx:xx:xx to 2020-12-15 xx:xx:xx",
+                "locations": []
+            }
+        ]
+    }
+]
+-----------------------------------------------------------------
+testing: keywords: malaria
+[
+    {
+        "url": "https://www.who.int/csr/don/26-feb-2021-influenza-a-russian-federation/en/",
+        "date_of_publication": "2021-02-26 xx:xx:xx",
+        "headline": "Human infection with avian influenza A (H5N8)  \u2013 the Russian Federation",
+        "datetime_accessed": "2021-03-26T05:56:09",
+        "data_gathered_by": "Weekly_Cri_Sesh",
+        "main_text": "\nOn 18 February 2021, the National IHR Focal Point for the Russian Federation notified WHO of detection of avian influenza A(H5N8) in seven human clinical specimens. These are the first reported detection of avian influenza A(H5N8) in humans. Positive clinical specimens were collected from poultry farm workers who participated in a response operation to contain an avian influenza A(H5N8) outbreak detected in a poultry farm in Astrakhan Oblast in the Russian Federation. The laboratory confirmation of the seven specimens were performed by the State Research Centre for Virology and Biotechnology VECTOR (WHO H5 Reference Laboratory). The age of seven positive cases ranged between 29 to 60 years and five were female.  \nBetween 3 and 11 December, a total of 101 000 of 900 000 egg laying hens on the farm died. This high mortality rate prompted an investigation. Samples were collected from these birds and an initial detection of avian influenza A(H5N8) was performed by the Russian regional veterinary laboratory. On 11 December, the outbreak was confirmed by the World Organisation for Animal Health (OIE) Reference laboratory, and the Federal Centre for Animal Health (FGBI-ARRIAH), in Vladimir, the Russian Federation. Outbreak containment operations started immediately and continued for several days due to the large size of the poultry farm.  \nIn addition to operations on the farm, acute and convalescent sera was collected from the seven positive human cases for serological testing. The results were suggestive of recent infection. \nThe cases remained asymptomatic for the whole follow-up duration (several weeks). Follow-up nasopharyngeal swabs were collected during medical observation period and were tested negative for avian influenza A(H5N8). No obvious clinical manifestations were reported from any farm workers under medical surveillance, their family members, or other close contacts of the seven cases. \nInfluenza A(H5N8) viruses isolated from this poultry outbreak in Astrakhan belonged to clade 2.3.4.4b of avian influenza A(H5Nx) viruses. In 2020, avian influenza A (H5N8) viruses were also detected in poultry or wild birds in Bulgaria, the Czech Republic, Egypt, Germany, Hungary, Iraq, Japan, Kazakhstan, the Netherlands, Poland, Romania, the United Kingdom, and the Russian Federation.",
+        "reports": [
+            {
+                "diseases": [],
+                "syndromes or symptoms": [
+                    "mania",
+                    "tic"
+                ],
+                "event_date": "2021-02-18 xx:xx:xx",
+                "locations": []
+            }
+        ]
+    },
+    {
+        "url": "https://www.who.int/csr/don/05-feb-2021-influenza-a-usa/en/",
+        "date_of_publication": "2021-02-05 xx:xx:xx",
+        "headline": "Influenza A (H3N2) variant virus \u2013 United States of America",
+        "datetime_accessed": "2021-03-26T05:56:09",
+        "data_gathered_by": "Weekly_Cri_Sesh",
+        "main_text": "\nOn 13 January, 2021, a child under 18 years of age in Wisconsin developed respiratory disease. A respiratory specimen was collected on 14 January. Real-time reverse transcriptase polymerase chain reaction (RT-PCR) testing conducted at the Wisconsin State Laboratory of Hygiene indicated a presumptive positive influenza A(H3N2) variant virus infection. The specimen was forwarded to the Influenza Division of the Centers for Disease Control and Prevention (CDC) on 21 January for further testing. On 22 January, CDC confirmed an influenza A (H3N2)v virus infection using RT-PCR and genome sequence analysis. Investigation into the source of the infection has been completed and revealed that the child lives on a farm with swine present.  Sampling of the swine on the property for influenza virus has not yet been conducted but is planned. Five family members of the patient reported respiratory illness during the investigation and were tested for influenza; all tested negative. The patient was prescribed antiviral treatment and was not hospitalized and has made a full recovery.  No human to human transmission has been identified associated with this investigation.\nSequencing of the virus by CDC revealed it is similar to A (H3N2) viruses circulating in swine in the mid-western United States during 2019-2020. Viruses related to this A (H3N2)v virus were previously circulating as human seasonal A (H3N2) viruses until around 2010-2011 when they entered the USA swine population. Thus, past vaccination or infection with human seasonal A (H3N2) virus is likely to offer some protection in humans.\nThis is the first influenza A (H3N2)v virus identified in the United States in 2021. Since 2005, a total of 485 influenza variant virus human infections caused by all subtypes including 437 human infections with A (H3N2)v, including this one, have been reported in the United States.",
+        "reports": [
+            {
+                "diseases": [],
+                "syndromes or symptoms": [],
+                "event_date": "2021-01-13 xx:xx:xx",
+                "locations": []
+            }
+        ]
+    },
+    {
+        "url": "https://www.who.int/csr/don/04-january-2021-influenza-a-brazil/en/",
+        "date_of_publication": "2021-01-04 xx:xx:xx",
+        "headline": "Influenza A(H1N2) variant virus \u2013 Brazil  ",
+        "datetime_accessed": "2021-03-26T05:56:09",
+        "data_gathered_by": "Weekly_Cri_Sesh",
+        "main_text": "\nOn 15 December 2020, the Brazil Ministry of Health reported the second confirmed human infection with influenza A(H1N2) variant virus [A(H1N2)v] in Brazil in 2020. The case was a 4 year-old female who lives on a farm which also functions as a swine slaughter in Irati municipality, Paran\u00e1 state. On 16 November 2020, the case had illness onset with a fever, cough, coryza, headache and dyspnea, and was provided ambulatory care on the same day at Darcy Vargas Hospital. He was treated with medication for fever and headache and has recovered. No symptomatic contacts were found among the case\u2019s family. \nOn 18 and 19 November, respiratory samples were collected for testing. The Parana State Laboratory detected an unsubtypeable influenza A virus and the samples were sent to the Oswaldo Cruz Institute (Fiocruz), the National Influenza Centre (NIC) in Rio de Janeiro for complete viral genome sequencing, where influenza A(H1N2)v virus was confirmed on 14 December. \nThe A(H1N2)v virus is genetically different from other variant viruses previously detected in humans in Brazil in 2015 and in April 2020, based on preliminary genetic analysis conducted by Fiocruz NIC. The preliminary analysis shows that all genes are most similar to those from currently circulating influenza A(H1N1)pdm09 viruses, except for neuraminidase which is most similar to those from influenza A(H3N2) viruses.  Further characterization of the virus is underway. All influenza type A viruses detected by sentinel surveillance and viruses submitted from non-sentinel sites (hospital and peripheral laboratories) in Brazil are subtyped by properties of hemagglutinin (H) and neuraminidase (N) surface proteins. To date, no other human infections with variant viruses have been reported in Brazil.\nThis case is the third human infection of influenza A(H1N2)v virus reported in Parana state and in Brazil. The first case was detected in 2015 and the second in April 2020. These two confirmed cases lived in rural areas with pig farming and one case worked in a pig slaughterhouse. ",
+        "reports": [
+            {
+                "diseases": [],
+                "syndromes or symptoms": [
+                    "fever",
+                    "headache",
+                    "cough",
+                    "dyspnea",
+                    "tic"
+                ],
+                "event_date": "2020-11-16 xx:xx:xx to 2020-12-15 xx:xx:xx",
+                "locations": []
+            }
+        ]
+    }
+]
+-----------------------------------------------------------------
+testing: keywords: fever
+[
+    {
+        "url": "https://www.who.int/csr/don/12-february-2021-rift-valley-fever-kenya/en/",
+        "date_of_publication": "2021-02-12 xx:xx:xx",
+        "headline": "Rift Valley fever \u2013 Kenya",
+        "datetime_accessed": "2021-03-26T05:56:10",
+        "data_gathered_by": "Weekly_Cri_Sesh",
+        "main_text": "\nRift Valley fever (RVF) has been reported in Kenya in humans in Isiolo and Mandera counties and in animals in Isiolo, Mandera, Murang\u2019a and Garissa counties. As of 4 February 2021, there were a total of 32 human cases (14 confirmed positive), and 11 deaths (CFR 34 %).\nIsiolo County\nThe event is believed to have started on 19 November 2020, with deaths among herders presenting with symptoms of fever, headache, general malaise with or without nausea, epistaxis/hematemesis, and abdominal pain/diarrhoea reported to the County Department of Health in Isiolo. The first human case was reported in late November 2020 from Sericho ward in Garbatulla Subcounty. Deaths have been reported in Gafarsa and Erisaboru within Garbatulla subcounty as well Korbesa in Merti subcounty. On 16 December, RVF was confirmed by PCR at the National Virology Laboratory (NVL), Kenya Medical Research Institute (KEMRI). As of 4 February 2021, a total of 22 human cases had been reported (12 confirmed positive), and 10 deaths (three confirmed positive). Most cases were from Garbatulla subcounty, with the majority being herders, male, and aged 13 to 70 years old.\nSheep and goats were also reported sick on 19 November 2020 in Sericho subcounty, which is mainly pastoral. The communities in this area live in villages and livestock are grazed in communal grazing areas.  Animal samples tested IgM and real time PCR positive for RVF at the Central Veterinary Laboratory (CVL), Kabete and the Regional Veterinary Investigation Laboratory in Garissa. The event was officially confirmed on 7 January 2021 and reported to the World Organisation for Animal Health (OIE) on 15 January 2021 and later on 22 and 29 January 2021. As of 27 January, a total of 20 livestock samples (19 sheep and 1 camel) had tested positive for RVF by IgM-capture ELISA and real-time PCR.\nMandera County\nA patient from Kalmalab village, Mandera North subcounty fell ill after he was involved in the slaughter of four sick camels. He was evacuated to a Nairobi hospital with haemorrhagic symptoms on 18 January. He was later admitted to the Intensive Care Unit with multiple organ failure. RVF was confirmed on 21 January at the NVL. He died on 22 January 2021. As of 4 February 2021, a total of 10 cases (2 confirmed RVF positive), including 1 death had been reported from Mandera North sub county.\nKalmalab village borders the river Dawa which broke its banks following rains in the Ethiopian highlands. The RVF outbreak may be associated with this flooding, as it increases the risk of mosquito-borne zoonosis. Livestock samples have been submitted to CVL Kabete for testing.\nMurang\u2019a County\nLivestock with RVF syndromes (including bleeding and abortions) were first reported on 29 December 2020 in Gatanga subcounty, Kihumbuini ward. The first animal death was reported on 1 January 2021. Samples were collected from the same farm on 1 January and were confirmed RVF positive on 3 January at CVL Kabete using Elisa IgG/IgM testing. More suspected animal cases have been reported in Ng\u2019araria ward in Kandara subcounty. No human cases have been confirmed, however suspected cases were traced and samples from affected households were collected on 25 January for testing at NVL.\nGarissa County\nSamples from suspected livestock (sheep and goats) were collected from Masalani, Ijara Subcounty and Balambala, Balambala Subcountrym on 20 December 2020 for testing and were confirmed positive for RVF on 22 December using Elisa IgM testing. Field investigations are ongoing to determine the extent of the outbreak.\nSurveillance in livestock was initiated after the detection of the RVF outbreak in Isiolo. Outbreaks among animals were observed during this time period. In December 2020, results from CVL Kabete taken from 120 livestock revealed 20 (19 sheep out of which 10 died, and 1 camel) positive RVF cases confirmed by Elisa IgM testing. Further laboratory analysis are ongoing in both human and livestock samples.",
+        "reports": [
+            {
+                "diseases": [
+                    "rift valley fever",
+                    "rvf"
+                ],
+                "syndromes or symptoms": [
+                    "fever"
+                ],
+                "event_date": "2021-02-12 xx:xx:xx",
+                "locations": []
+            },
+            {
+                "diseases": [
+                    "rvf"
+                ],
+                "syndromes or symptoms": [
+                    "fever",
+                    "headache",
+                    "hematemesis",
+                    "malaise",
+                    "nausea",
+                    "abdominal pain",
+                    "epistaxis"
+                ],
+                "event_date": "2020-11-19 xx:xx:xx",
+                "locations": []
+            },
+            {
+                "diseases": [
+                    "rvf"
+                ],
+                "syndromes or symptoms": [],
+                "event_date": "2020-11-19 xx:xx:xx",
+                "locations": []
+            },
+            {
+                "diseases": [
+                    "rvf"
+                ],
+                "syndromes or symptoms": [],
+                "event_date": "2021-01-15 xx:xx:xx to 2021-01-29 xx:xx:xx",
+                "locations": []
+            },
+            {
+                "diseases": [
+                    "rvf"
+                ],
+                "syndromes or symptoms": [],
+                "event_date": "2021-02-04 xx:xx:xx",
+                "locations": []
+            },
+            {
+                "diseases": [
+                    "rvf"
+                ],
+                "syndromes or symptoms": [],
+                "event_date": "2021-01-01 xx:xx:xx",
+                "locations": []
+            }
+        ]
+    }
+]
+-----------------------------------------------------------------
+testing: keywords: cholera
+[
+    {
+        "url": "https://www.who.int/csr/don/04-january-2021-cholera-togo/en/",
+        "date_of_publication": "2021-01-04 xx:xx:xx",
+        "headline": "Cholera \u2013 Togo",
+        "datetime_accessed": "2021-03-26T05:56:11",
+        "data_gathered_by": "Weekly_Cri_Sesh",
+        "main_text": "\nFrom 11 November to 28 December, 2020 a total of 67 suspected cholera cases presenting with diarrhea and vomiting, including two deaths a case fatality ratio (CFR: 3%) were reported from the municipalities \u201cGolfe 1\u201d and \u201cGolfe 6\u201d in Lom\u00e9, Togo. A total of four health areas (Katanga, Adakpam\u00e9, Gb\u00e9tsogb\u00e9 in Golfe 1, and Kangnikop\u00e9 in Golfe 6) in the affected municipalities reported at least one case.\nOn 17 November, cholera was confirmed by culture in the laboratory of the National Institute of Hygiene (INH) in Lom\u00e9, Togo and WHO was informed. On 19 November, the Minister of Health, Public Hygiene and Universal Access to Care of Togo issued a press release declaring a cholera outbreak and on 24 November WHO was officially notified. From 11 November to 28 December 2020, a total of 17 out of 41 stool samples tested positive for Vibrio cholerae O1 serotype Ogawa by culture in the National Institute of Hygiene (INH) in Lom\u00e9, Togo.\nThe daily number of cases peaked on 16 November with six cases, including one death. Then, after a decrease in the number of daily cases, they once again peaked with 6 cases reported on both 16 and 22of December. The cases with symptom onset between 11 to 15 November 2020 were found retrospectively by active case searches in health facilities from consultation registers. Of the 67 cases, 19 (28%) were fishermen who move frequently between Togo and neighboring countries (especially Ghana, Benin, and Nigeria). The male / female ratio is 1.48 (40 males and 27 females) with an average age of 24 years.",
+        "reports": [
+            {
+                "diseases": [
+                    "cholera"
+                ],
+                "syndromes or symptoms": [
+                    "vomiting",
+                    "diarrhea"
+                ],
+                "event_date": "2020-12-28 xx:xx:xx",
+                "locations": []
+            },
+            {
+                "diseases": [
+                    "cholera"
+                ],
+                "syndromes or symptoms": [],
+                "event_date": "2021-01-04 xx:xx:xx",
+                "locations": []
+            }
+        ]
+    }
+]

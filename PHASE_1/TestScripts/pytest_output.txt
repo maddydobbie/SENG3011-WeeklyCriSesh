@@ -1,0 +1,8 @@
+============================== test session starts ==============================
+platform linux -- Python 3.8.5, pytest-6.2.2, py-1.10.0, pluggy-0.13.1
+rootdir: /home/nathan/seng/SENG3011-WeeklyCriSesh/PHASE_1/TestScripts
+collected 17 items                                                              
+
+unit_test.py .................                                            [100%]
+
+============================== 17 passed in 20.38s ==============================
