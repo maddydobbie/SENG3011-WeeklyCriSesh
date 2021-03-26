@@ -21,6 +21,14 @@ This document contains information about:
 - team member responsibilities
 - software tools used to communicate and collaborate within the team.
 
+**Deliverable 2 Content**
+
 URL: http://seng3011.pythonanywhere.com/
 
 API documentation: https://documenter.getpostman.com/view/9202518/TzCJe8w3
+
+Updates made on
+- Reports/Design Details
+- Reports/Management Information
+- PHASE_1/TestScripts
+as well all the API implementation
