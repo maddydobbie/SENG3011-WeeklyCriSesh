@@ -66,9 +66,24 @@ def api_articles():
 			response.error_type = "Bad Request"
 			response.status_code = 400
 			response._content = b'{ "reason" : "End date in incorrect format." }'
+		try:
+			end = datetime.fromisoformat(jsonData['endDate'])
+		except ValueError:
+			response.error_type = "Bad Request"
+			response.status_code = 400
+			response._content = b'{ "reason" : "End date in incorrect format." }'
+			return (response.text, response.status_code, response.headers.items())
+		try:
+			start = datetime.fromisoformat(jsonData['startDate'])
+		except ValueError:
+			response.error_type = "Bad Request"
+			response.status_code = 400
+			response._content = b'{ "reason" : "Start date in incorrect format." }'
+			return (response.text, response.status_code, response.headers.items())
+			
 		# check correct order 
 		# check either date isn't in the future 
-		elif datetime.fromisoformat(jsonData['startDate']) > datetime.fromisoformat(jsonData['endDate']):
+		if datetime.fromisoformat(jsonData['startDate']) > datetime.fromisoformat(jsonData['endDate']):
 			response.error_type = "Bad Request"
 			response.status_code = 400
 			response._content = b'{ "reason" : "End date before start date." }'
