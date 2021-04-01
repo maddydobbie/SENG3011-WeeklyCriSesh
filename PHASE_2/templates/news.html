@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <style>
+  #text1 {
+    padding-left: 30px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+  }
+  </style>
+  <title>MyMed - News</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel = "shortcut icon" type = "image/png" href = "../static/images/logo.png">
+
+  <!-- Custom styles for this template -->
+  <link href="static/css/scrolling-nav.css" rel="stylesheet">
+  <link href="static/css/news.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <div class="container">
+      <img src="static/images/logo.png" alt="logo" width="80"
+         height="80">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top"> </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="medHistory.html">My Medical History</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="searchNews.html">Medical News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="searchEncyclopaedia.html">Encyclopedia</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="searchPriceCompare.html">Price Compare</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-primary text-white">
+    <div class="container text-center">
+      <h1>Medical News</h1>
+    </div>
+  </header>
+  <br>
+  <div class="searchBar container col-lg-8 mx-auto">
+    <form class="example" action="news.html">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-search">Submit</i></button>
+      <!-- sort by button-->
+      <label for="sortby">Sort by:</label>
+      <select id="sortby" name="sort by">
+        <option value="publishedAt">Newest First</option>
+        <option value="relevancy">Relevance</option>
+        <option value="popularity">Popularity</option>
+      </select>
+
+    </form>
+  </div>
+  <div>
+      <h1 id = "results">Showing results for: "coronavirus"</h1>
+    </div>
+    <div id="container">
+
+    </div>
+  <script>
+    let queryTerm = document.location.search;  //getting query term from url
+    //queryTerm = queryTerm.replace(/%20/g,' ');  //getting query term from url
+    queryTerm = queryTerm.split("&")
+    queryTerm = queryTerm[0].split("=")
+    //queryTerm = queryTerm[0].split("=")
+    console.log(queryTerm[1]);
+    let sortby = document.location.search.split("=")
+    console.log(sortby[2])
+    const result = document.getElementById("results")
+    const displayt = queryTerm[1].replace(/\+/g,' ');
+    result.innerHTML = "Showing results for: " + displayt;
+    var url = 'http://newsapi.org/v2/everything?' +
+          'q=' + queryTerm[1] + '&' + 'language=en&' +
+          'from=2020-04-01&' +
+          'sortBy=' + sortby[2] + '&' +
+          'apiKey=a3dd638d91ef45719645d93de7a53f59';
+    console.log(url)
+    var req = new Request(url);
+
+    fetch(req)
+    .then(response => {
+        return response.json();
+      }).then((json) => {
+        let i = 0;
+        const c = document.getElementById("container")
+        c.setAttribute("class", "display")
+        while (json.articles[i]) {
+          // container
+          const article = document.createElement("div")
+          article.setAttribute("class", "article");
+          article.setAttribute("class", "row");
+          article.setAttribute("style", "padding:10px");
+          c.appendChild(article)
+          // image
+          const imgdiv = document.createElement("div")
+          imgdiv.setAttribute("class", "col-md-3");
+          const img = document.createElement("img")
+          img.src = json.articles[i].urlToImage;
+          imgdiv.appendChild(img)
+          article.appendChild(imgdiv)
+          // title
+          const textdiv = document.createElement("div")
+          textdiv.setAttribute("class", "col-md-7");
+          const link = document.createElement("a")
+          link.setAttribute("style", "font-size:30px")
+          link.setAttribute("target", "_blank")
+          link.innerHTML = json.articles[i].title
+          link.href = json.articles[i].url
+          textdiv.appendChild(link)
+          // description
+          const h5 = document.createElement("h5")
+          let text = document.createTextNode(json.articles[i].description)
+          h5.appendChild(text)
+          textdiv.appendChild(h5)
+          article.appendChild(textdiv)
+          // source
+          const source = document.createElement("p")
+          source.innerHTML = json.articles[i].source.name
+          textdiv.appendChild(source)
+          // time
+          const time = document.createElement("p")
+          let clock = json.articles[i].publishedAt.split("T")
+          let text1 = document.createTextNode(clock[0])
+          let text2 = clock[1].split("Z")
+          let text3 = document.createTextNode(text2[0])
+          let text4 = document.createTextNode("    ")
+          time.appendChild(text3)
+          time.appendChild(text4)
+          time.appendChild(text1)
+          textdiv.appendChild(time)
+          i++;
+        }
+        //console.log(json.articles[0])
+      })
+
+  </script>
+
+
+
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="static/vendor/jquery/jquery.min.js"></script>
+  <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="static/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom JavaScript for this theme -->
+  <script src="static/js/scrolling-nav.js"></script>
+
+</body>
+</html>
