@@ -12,6 +12,10 @@ class WebScraper():
             self._symptoms = json.load(json_file)
         with open('objects/diseases.txt') as json_file:
             self._diseases = json.load(json_file)
+        with open('objects/cities.txt') as json_file:
+            self._cities = json.load(json_file)
+        with open('objects/countries.txt') as json_file:
+            self._countries = json.load(json_file)
         #with open('objects/diseases' + '.pkl', 'rb') as f:
         #    self._diseases = pickle.load(f)
 
@@ -72,6 +76,24 @@ class WebScraper():
         else:
             country = "Cannot be found."
         return country
+
+    #check countries and cities
+    def checkCountriesAndCities(self, body):
+        countries = []
+        cities = []
+        for country in self._countries:
+            if country['name'].lower() in body.lower():
+                # add if it is not already in the list
+                if country['name'].lower() not in countries:
+                    countries.append(country['name'].lower())
+        # loop through each country to see if it appears in the paragraph
+        # if it does add it to the country list
+        for city in self._cities:
+            if city['name'].lower() in body.lower():
+                # add if it is not already in the list
+                if city['name'].lower() not in cities:
+                    cities.append(city['name'].lower())
+        return countries, cities
 
     def checkSymptomsAndDiseases(self, body):
         symptoms = []

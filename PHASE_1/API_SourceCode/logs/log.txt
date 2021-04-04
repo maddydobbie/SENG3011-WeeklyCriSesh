@@ -8264,3 +8264,153 @@ Time: 2021-03-22T15:41:25
 Request Content Body:
 {"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00"}
 Response Status Code: 200
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-04T18:29:13
+No request content specifying parameters
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-04T18:29:28
+No request content specifying parameters
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-04T18:29:51
+No request content specifying parameters
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-04T18:31:06
+No request content specifying parameters
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-04T18:38:23
+No request content specifying parameters
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-04T18:44:00
+No request content specifying parameters
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-04T18:44:12
+No request content specifying parameters
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-04T18:46:36
+No request content specifying parameters
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-04T18:47:37
+No request content specifying parameters
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-04T18:47:45
+No request content specifying parameters
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-04T18:51:27
+No request content specifying parameters
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-04T18:51:33
+No request content specifying parameters
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-04T18:52:04
+No request content specifying parameters
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-04T18:52:10
+No request content specifying parameters
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-04T18:52:15
+No request content specifying parameters
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-04T18:52:43
+No request content specifying parameters
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-04T18:52:47
+No request content specifying parameters
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-04T18:54:07
+No request content specifying parameters
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-04T18:55:31
+No request content specifying parameters
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-04T18:55:52
+No request content specifying parameters
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-04T19:00:32
+No request content specifying parameters
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-04T19:01:11
+No request content specifying parameters
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-04T19:05:07
+No request content specifying parameters
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-04T19:13:36
+No request content specifying parameters
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-04T19:20:42
+No request content specifying parameters
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-04T19:20:43
+No request content specifying parameters
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-04T19:20:44
+No request content specifying parameters
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-04T19:20:58
+No request content specifying parameters
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-04T19:21:40
+No request content specifying parameters
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-04T19:26:10
+No request content specifying parameters
+Response Status Code: 400
