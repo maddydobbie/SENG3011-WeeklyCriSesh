@@ -8414,3 +8414,77 @@ Response Status Code: 400
 Time: 2021-04-04T19:26:10
 No request content specifying parameters
 Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-05T01:10:17
+Request Content Body:
+{"maddy": "2020-03-01T00:00:00"}
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-05T01:10:17
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-05T01:10:17
+Request Content Body:
+{"endDate": "2020-03-01T00:00:00"}
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-05T01:10:17
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:00"}
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-05T01:10:17
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00:00:70"}
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-05T01:10:17
+Request Content Body:
+{"startDate": "2020-03-01T00:00:70", "endDate": "2021-01-01T00:00:70"}
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-05T01:10:17
+Request Content Body:
+{"startDate": "2020-03-01T00:00jhjhhjjh:70", "endDate": "2021-01-01T00:00:00"}
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-05T01:10:17
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00", "endDate": "2021-01-01T00hhujh:00:70"}
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-05T01:10:17
+Request Content Body:
+{"startDate": "2020-03-01Tgh00:00:70", "endDate": "2021-01-01T00:00ggg:70"}
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-05T01:10:17
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-05T01:10:18
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2020-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-05T01:10:18
+Request Content Body:
+{"startDate": "2021-03-01T00:00:00", "endDate": "2022-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-05T01:10:18
+Request Content Body:
+{"startDate": "2022-03-01T00:00:00", "endDate": "2023-01-01T00:00:00"}
+Response Status Code: 400
+############################################################
+<Request 'http://127.0.0.1:5000/articles' [GET]>
+Time: 2021-04-05T01:10:18
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00"}

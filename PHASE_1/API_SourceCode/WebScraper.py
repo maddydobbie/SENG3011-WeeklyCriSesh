@@ -143,10 +143,6 @@ class WebScraper():
         else:
             return date
 
-    def getLocations(self, country):
-        locations = []
-        return locations
-
     def getReports(self, country, body, date):
         reports = []
         last = [0, 0]
@@ -160,14 +156,16 @@ class WebScraper():
             for disease in self._diseases:
                 if disease['name'].lower() in body[last[1]:s].lower():
                     symptoms, diseases = self.checkSymptomsAndDiseases(body[last[1]:s])
-                    locations = self.getLocations(country)
+                    countries, cities = self.checkCountriesAndCities(body)
+                    locations = {"country":countries[0], "locations":cities}
                     eventDate = self.getEventDate(body[last[1]:s], date)
                     reports.append({"diseases":diseases,"syndromes or symptoms":symptoms,"event_date":eventDate,"locations":locations})
                     last = [s, e]
         # if there is only one match then there is only one date so process the report on the entire body of team
         if len(reports) <= 1:
             symptoms, diseases = self.checkSymptomsAndDiseases(body)
-            locations = self.getLocations(country)
+            countries, cities = self.checkCountriesAndCities(body)
+            locations = {"country":countries[0], "locations":cities}
             eventDate = self.getEventDate(body, date)
             reports.append({"diseases":diseases,"syndromes or symptoms":symptoms,"event_date":eventDate,"locations":locations})
         return reports
