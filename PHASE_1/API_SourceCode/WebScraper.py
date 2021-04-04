@@ -8,16 +8,14 @@ class WebScraper():
     def __init__(self, name, creationTime):
         self.name = name
         self.creationTime = creationTime
-        with open('objects/symptoms.txt') as json_file:
+        with open('../objects/symptoms.txt') as json_file:
             self._symptoms = json.load(json_file)
-        with open('objects/diseases.txt') as json_file:
+        with open('../objects/diseases.txt') as json_file:
             self._diseases = json.load(json_file)
-        with open('objects/cities.txt') as json_file:
+        with open('../objects/cities.txt') as json_file:
             self._cities = json.load(json_file)
-        with open('objects/countries.txt') as json_file:
+        with open('../objects/countries.txt') as json_file:
             self._countries = json.load(json_file)
-        #with open('objects/diseases' + '.pkl', 'rb') as f:
-        #    self._diseases = pickle.load(f)
 
     def checkRegexString(self, regexString, text):
         if (re.search(regexString, text)):
@@ -78,21 +76,23 @@ class WebScraper():
         return country
 
     #check countries and cities
-    def checkCountriesAndCities(self, body):
+    def checkCountriesAndCities(self, body, country):
         countries = []
         cities = []
         for country in self._countries:
-            if country['name'].lower() in body.lower():
+            if country['name'] in body:
                 # add if it is not already in the list
-                if country['name'].lower() not in countries:
-                    countries.append(country['name'].lower())
+                if country['name'] not in countries:
+                    countries.append(country['name'])
         # loop through each country to see if it appears in the paragraph
         # if it does add it to the country list
         for city in self._cities:
-            if city['name'].lower() in body.lower():
+            if city['name'] in body:
                 # add if it is not already in the list
-                if city['name'].lower() not in cities:
-                    cities.append(city['name'].lower())
+                if city['name'] not in cities:
+                    cities.append(city['name'])
+        if not countries:
+            countries.append(country)
         return countries, cities
 
     def checkSymptomsAndDiseases(self, body):
@@ -156,7 +156,7 @@ class WebScraper():
             for disease in self._diseases:
                 if disease['name'].lower() in body[last[1]:s].lower():
                     symptoms, diseases = self.checkSymptomsAndDiseases(body[last[1]:s])
-                    countries, cities = self.checkCountriesAndCities(body)
+                    countries, cities = self.checkCountriesAndCities(body[last[1]:s], country)
                     locations = {"country":countries[0], "locations":cities}
                     eventDate = self.getEventDate(body[last[1]:s], date)
                     reports.append({"diseases":diseases,"syndromes or symptoms":symptoms,"event_date":eventDate,"locations":locations})
@@ -164,7 +164,7 @@ class WebScraper():
         # if there is only one match then there is only one date so process the report on the entire body of team
         if len(reports) <= 1:
             symptoms, diseases = self.checkSymptomsAndDiseases(body)
-            countries, cities = self.checkCountriesAndCities(body)
+            countries, cities = self.checkCountriesAndCities(body, country)
             locations = {"country":countries[0], "locations":cities}
             eventDate = self.getEventDate(body, date)
             reports.append({"diseases":diseases,"syndromes or symptoms":symptoms,"event_date":eventDate,"locations":locations})
