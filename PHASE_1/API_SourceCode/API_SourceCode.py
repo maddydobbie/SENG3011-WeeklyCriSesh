@@ -5,6 +5,7 @@ import json
 from requests.models import Response
 from datetime import datetime
 from WebScraper import WebScraper
+from dbHandler import dbSave, dbGetLatestDate, dbGetArticles
 import re
 
 app = flask.Flask(__name__)
@@ -23,8 +24,8 @@ def api_articles():
 	# append log file to store the request and request data
 	try:
 		# switch path for local vs pythonanywhere running
-		path = "/home/seng3011/SENG3011-WeeklyCriSesh/PHASE_1/API_SourceCode/logs/"
-		# path = "logs/"
+		# path = "/home/seng3011/SENG3011-WeeklyCriSesh/PHASE_1/API_SourceCode/logs/"
+		path = "logs/"
 		f = open(path + "log.txt", "a")
 		now = datetime.now()
 		f.write("############################################################\n")
@@ -117,14 +118,25 @@ def api_articles():
 			else:
 				location = [jsonData['location']]
 
-			# call crawler here
-			crawler = crawlerWHO()
-			relevantLinks = crawler.searchPage(location, keywords, jsonData['startDate'], jsonData['endDate'])
-			# call the scraper here
-			scraper = WebScraper("scraper", datetime.now())
-			articles = scraper.returnScrapeData(relevantLinks)
-
-			# if there is gibberish in location or disease: 404
+			# check if the dates are outside cached data if they are then run the craler and scraper go get
+			# articles the arent cached
+			dbLastDate = dbGetLatestDate("../objects/cache.db")
+			if datetime.fromisoformat(jsonData['startDate']) > dbLastDate or datetime.fromisoformat(jsonData['endDate']) > dbLastDate:
+				# call crawler here
+				crawler = crawlerWHO()
+				# send the crawler to look for links outside the cached data
+				relevantLinks = crawler.searchPage([], [], dbLastDate.strftime("%Y-%m-%d"), jsonData['endDate'])
+				# call the scraper here
+				scraper = WebScraper("scraper", datetime.now())
+				articles = scraper.returnScrapeData(relevantLinks)	
+				# save each article individually
+				for article in articles:
+					cacheDate = article['date_of_publication']
+					cacheLocation = cacheKeywords = article['headline']
+					dbSave("../objects/cache.db", cacheDate, cacheLocation, cacheKeywords, article)
+			# access the cache to get all the data to output
+			articles = dbGetArticles("../objects/cache.db", jsonData['startDate'], jsonData['endDate'], location, keywords)
+			# if there is gibberish in location or keywords: 404
 			if not articles:
 				response.error_type = "Not Found"
 				response.status_code = 404
@@ -133,6 +145,7 @@ def api_articles():
 				response.error_type = "Success"
 				response.status_code = 200
 				response._content = json.dumps(articles).encode()
+
 	try:
 		f = open("logs/log.txt", "a")
 		f.write("Response Status Code: " + str(response.status_code) + "\n")
@@ -140,4 +153,5 @@ def api_articles():
 	finally:
 		return (response.text, response.status_code, response.headers.items())
 
-#app.run()
+# comment out for pythonanywhere
+app.run()

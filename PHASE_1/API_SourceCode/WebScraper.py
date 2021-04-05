@@ -9,8 +9,8 @@ class WebScraper():
         self.name = name
         self.creationTime = creationTime
         # switch path for local vs pythonanywhere running
-        path = "/home/seng3011/SENG3011-WeeklyCriSesh/PHASE_1/objects/"
-        # path = "objects/"
+        # path = "/home/seng3011/SENG3011-WeeklyCriSesh/PHASE_1/objects/"
+        path = "../objects/"
         with open(path + '/symptoms.txt') as json_file:
             self._symptoms = json.load(json_file)
         with open(path + 'diseases.txt') as json_file:
@@ -136,6 +136,9 @@ class WebScraper():
         if dates:
             dateObjs = []
             for date in dates:
+                # if the month is Sept then fix it September
+                if date.split(" ")[1] == "Sept":
+                    date = date.split(" ")[0] + " September " + date.split(" ")[2]
                 dateObjs.append(datetime.strptime(date.replace(",",""),"%d %B %Y"))
             dateObjs.sort()
             if len(dateObjs) > 1 and dateObjs[0].strftime("%Y-%m-%d") != dateObjs[-1].strftime("%Y-%m-%d"):
@@ -177,7 +180,10 @@ class WebScraper():
 
     def returnScrapeData(self, links):
         articles = []
+        print(len(links))
+        i = 0
         for URL in links:
+            print(i)
             page = requests.get(URL)
             pageParse = BeautifulSoup(page.content, 'html.parser')
 
@@ -190,4 +196,5 @@ class WebScraper():
             reports = self.getReports(country, mainText, dateString)
 
             articles.append({"url":pageURL,"date_of_publication":dateString,"headline":title,"datetime_accessed":datetime.now().strftime("%Y-%m-%dT%H:%M:%S"),"data_gathered_by":"Weekly_Cri_Sesh","main_text":mainText,"reports":reports})
+            i += 1
         return articles
