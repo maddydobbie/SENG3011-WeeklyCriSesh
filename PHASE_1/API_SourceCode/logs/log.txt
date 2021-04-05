@@ -9307,3 +9307,307 @@ Time: 2021-04-05T01:30:41
 Request Content Body:
 {"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00"}
 Response Status Code: 200
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T09:21:12
+Request Content Body:
+{
+    "startDate":"2021-01-01T00:00:00", 
+    "endDate":"2021-03-01T00:00:00"
+}
+############################################################
+<Request 'https://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T09:35:12
+Request Content Body:
+{
+    "endDate": "2021-03-01T00:00:00",
+    "location": "Ethiopia",
+    "keywords": "fever"
+}
+############################################################
+<Request 'https://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T09:35:23
+Request Content Body:
+{
+    "endDate": "2021-03-01T00:00:00",
+    "location": "Ethiopia",
+    "keywords": "fever"
+}
+############################################################
+<Request 'https://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T09:35:36
+Request Content Body:
+{
+    "startDate": "2020-01-01T00:00:00",
+    "endDate": "2021-03-01T00:00:00",
+    "location": "Ethiopia",
+    "keywords": "fever"
+}
+############################################################
+<Request 'https://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T09:35:54
+Request Content Body:
+{
+    "startDate": "2021-01-01T00:00:00",
+    "endDate": "2021-01-01T00:00:00",
+    "location": "Ethiopia",
+    "keywords": "fever"
+}
+############################################################
+<Request 'https://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T09:36:01
+Request Content Body:
+{
+    "endDate": "2021-03-01T00:00:00",
+    "location": "Ethiopia",
+    "keywords": "fever"
+}
+############################################################
+<Request 'https://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T09:36:12
+Request Content Body:
+{
+    "startDate": "2021-03-01T00:00:00",
+    "endDate": "200",
+    "location": "Ethiopia",
+    "keywords": "fever"
+}
+############################################################
+<Request 'https://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T09:36:19
+Request Content Body:
+{
+    "startDate": "2020-01-010",
+    "endDate": "2021-03-01T00:00:00",
+    "location": "Ethiopia",
+    "keywords": "fever"
+}
+############################################################
+<Request 'https://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T09:36:26
+Request Content Body:
+{
+    "endDate": "2021-03-01T00:00:00",
+    "location": "Ethiopia",
+    "keywords": "fever"
+}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T09:49:07
+Request Content Body:
+{}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T09:50:16
+Request Content Body:
+{}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T09:50:16
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T09:50:17
+Request Content Body:
+{"endDate": "2020-03-01T00:00:00"}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T09:50:17
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-01-07T00:00:00"}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T09:50:19
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "location": "China"}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T09:50:21
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "location": "Russia"}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T09:50:25
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "keywords": "flu"}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T09:50:27
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "keywords": "fever"}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T09:50:28
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "keywords": "cholera"}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T09:50:54
+Request Content Body:
+{}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T09:50:55
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T09:53:26
+Request Content Body:
+{}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T09:53:26
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T09:53:55
+Request Content Body:
+{}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T09:54:04
+Request Content Body:
+{}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T09:57:05
+Request Content Body:
+{}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T09:57:22
+Request Content Body:
+{}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T09:59:23
+Request Content Body:
+{}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T09:59:24
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T10:00:31
+Request Content Body:
+{}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T10:00:32
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T10:02:06
+Request Content Body:
+{}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T10:02:06
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T10:03:41
+Request Content Body:
+{}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T10:03:42
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T10:06:51
+Request Content Body:
+{}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T10:06:51
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T10:06:52
+Request Content Body:
+{"endDate": "2020-03-01T00:00:00"}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T10:06:52
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-01-07T00:00:00"}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T10:06:54
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "location": "China"}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T10:07:09
+Request Content Body:
+{}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T10:07:10
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T10:07:10
+Request Content Body:
+{"endDate": "2020-03-01T00:00:00"}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T10:07:11
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-01-07T00:00:00"}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T10:09:57
+Request Content Body:
+{}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T10:09:57
+Request Content Body:
+{"startDate": "2020-03-01T00:00:00"}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T10:09:58
+Request Content Body:
+{"endDate": "2020-03-01T00:00:00"}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T10:09:58
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-01-07T00:00:00"}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T10:09:59
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "location": "China"}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T10:10:03
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "location": "Russia"}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T10:10:06
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "keywords": "flu"}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T10:10:07
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "keywords": "fever"}
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-05T10:10:08
+Request Content Body:
+{"startDate": "2021-01-01T00:00:00", "endDate": "2021-03-01T00:00:00", "keywords": "cholera"}

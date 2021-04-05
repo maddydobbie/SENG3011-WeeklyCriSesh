@@ -48,27 +48,36 @@ def api_articles():
 	else:
 		resp = request.data.decode()
 		jsonData = json.loads(resp)
-
+		# no json input
+		if not jsonData:
+			response.error_type = "Bad Request"
+			response.status_code = 400
+			response._content = b'{ "reason" : "No JSON input." }'
+			return (response.text, response.status_code, response.headers.items())
 		# no start date
-		if not 'startDate' in jsonData:
+		elif not 'startDate' in jsonData:
 			response.error_type = "Bad Request"
 			response.status_code = 400
 			response._content = b'{ "reason" : "No start date." }'
+			return (response.text, response.status_code, response.headers.items())
 		# no end date
 		elif not 'endDate' in jsonData:
 			response.error_type = "Bad Request"
 			response.status_code = 400
 			response._content = b'{ "reason" : "No end date." }'
+			return (response.text, response.status_code, response.headers.items())
 		# check start date in correct format
 		elif not re.findall("[1-2][0-9][0-9][0-9]-[0-1][0-9]-[0-3][0-9]T[0-2][0-9]:[0-5][0-9]:[0-5][0-9]", jsonData['startDate']):
 			response.error_type = "Bad Request"
 			response.status_code = 400
 			response._content = b'{ "reason" : "Start date in incorrect format." }'
+			return (response.text, response.status_code, response.headers.items())
 		# check end date in correct format
 		elif not re.findall("[1-2][0-9][0-9][0-9]-[0-1][0-9]-[0-3][0-9]T[0-2][0-9]:[0-5][0-9]:[0-5][0-9]", jsonData['endDate']):
 			response.error_type = "Bad Request"
 			response.status_code = 400
 			response._content = b'{ "reason" : "End date in incorrect format." }'
+			return (response.text, response.status_code, response.headers.items())
 		try:
 			end = datetime.fromisoformat(jsonData['endDate'])
 		except ValueError:
@@ -90,10 +99,12 @@ def api_articles():
 			response.error_type = "Bad Request"
 			response.status_code = 400
 			response._content = b'{ "reason" : "End date before start date." }'
+			return (response.text, response.status_code, response.headers.items())
 		elif datetime.now() < datetime.fromisoformat(jsonData['startDate']) or datetime.now() < datetime.fromisoformat(jsonData['endDate']):
 			response.error_type = "Bad Request"
 			response.status_code = 400
 			response._content = b'{ "reason" : "Dates are in the future." }'
+			return (response.text, response.status_code, response.headers.items())
 		else:
 			# if there are no keywords then create an empty list
 			if not 'keywords' in jsonData:
