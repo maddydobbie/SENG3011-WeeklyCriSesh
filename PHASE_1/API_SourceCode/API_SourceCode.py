@@ -22,7 +22,10 @@ def api_articles():
 	response = Response()
 	# append log file to store the request and request data
 	try:
-		f = open("logs/log.txt", "a")
+		# switch path for local vs pythonanywhere running
+		path = "/home/seng3011/SENG3011-WeeklyCriSesh/PHASE_1/API_SourceCode/logs/"
+		# path = "logs/"
+		f = open(path + "log.txt", "a")
 		now = datetime.now()
 		f.write("############################################################\n")
 		f.write(str(request) + '\n')
