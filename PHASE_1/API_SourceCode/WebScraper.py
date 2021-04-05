@@ -8,13 +8,16 @@ class WebScraper():
     def __init__(self, name, creationTime):
         self.name = name
         self.creationTime = creationTime
-        with open('../objects/symptoms.txt') as json_file:
+        # switch path for local vs pythonanywhere running
+        path = "/home/seng3011/SENG3011-WeeklyCriSesh/PHASE_1/objects/"
+        # path = "objects/"
+        with open(path + '/symptoms.txt') as json_file:
             self._symptoms = json.load(json_file)
-        with open('../objects/diseases.txt') as json_file:
+        with open(path + 'diseases.txt') as json_file:
             self._diseases = json.load(json_file)
-        with open('../objects/cities.txt') as json_file:
+        with open(path + 'cities.txt') as json_file:
             self._cities = json.load(json_file)
-        with open('../objects/countries.txt') as json_file:
+        with open(path + 'countries.txt') as json_file:
             self._countries = json.load(json_file)
 
     def checkRegexString(self, regexString, text):
