@@ -29,13 +29,13 @@ def dbGetArticles(dbName, startDate, endDate, location, keywords):
 		curr = conn.execute("SELECT REPORTS FROM ARTICLE WHERE DATE >= '{startDate}' AND DATE <= '{endDate}' ORDER BY DATE DESC".format(startDate=startDate[0:10], endDate=endDate[0:10]))
 	# if there is location but no keywords
 	elif location and not keywords:
-		curr = conn.execute("SELECT REPORTS FROM ARTICLE WHERE DATE >= '{startDate}' AND DATE <= '{endDate}' AND LOCATION LIKE ? ORDER BY DATE DESC".format(startDate=startDate[0:10], endDate=endDate[0:10]), ('%'+location[0]+'%',))
+		curr = conn.execute("SELECT REPORTS FROM ARTICLE WHERE DATE >= '{startDate}' AND DATE <= '{endDate}' AND UPPER(LOCATION) LIKE UPPER(?) ORDER BY DATE DESC".format(startDate=startDate[0:10], endDate=endDate[0:10]), ('%'+location[0]+'%',))
 	# if there is keywords but no location
 	elif location and not keywords:
-		curr = conn.execute("SELECT REPORTS FROM ARTICLE WHERE DATE >= '{startDate}' AND DATE <= '{endDate}' AND KEYWORDS LIKE ? ORDER BY DATE DESC".format(startDate=startDate[0:10], endDate=endDate[0:10]), ('%'+keywords[0]+'%',))	
+		curr = conn.execute("SELECT REPORTS FROM ARTICLE WHERE DATE >= '{startDate}' AND DATE <= '{endDate}' AND UPPER(KEYWORDS) LIKE UPPER(?) ORDER BY DATE DESC".format(startDate=startDate[0:10], endDate=endDate[0:10]), ('%'+keywords[0]+'%',))	
 	# if there is location and keywords
 	else:
-		curr = conn.execute("SELECT REPORTS FROM ARTICLE WHERE DATE >= '{startDate}' AND DATE <= '{endDate}' AND LOCATION LIKE ? AND KEYWORDS LIKE ? ORDER BY DATE DESC".format(startDate=startDate[0:10], endDate=endDate[0:10]), ('%'+location[0]+'%','%'+keywords[0]+'%'))	
+		curr = conn.execute("SELECT REPORTS FROM ARTICLE WHERE DATE >= '{startDate}' AND DATE <= '{endDate}' AND UPPER(LOCATION) LIKE UPPER(?) AND UPPER(KEYWORDS) LIKE UPPER(?) ORDER BY DATE DESC".format(startDate=startDate[0:10], endDate=endDate[0:10]), ('%'+location[0]+'%','%'+keywords[0]+'%'))	
 	# pull the articles out of the db cursor and restore their proper json format
 	articles = []
 	for article in curr.fetchall():
