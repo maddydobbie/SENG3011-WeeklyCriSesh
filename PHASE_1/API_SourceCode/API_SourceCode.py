@@ -3,7 +3,7 @@ from flask import request, jsonify
 from crawlerWHO import crawlerWHO
 import json
 from requests.models import Response
-from datetime import datetime
+from datetime import datetime, timedelta
 from WebScraper import WebScraper
 from dbHandler import dbSave, dbGetLatestDate, dbGetArticles
 import re
@@ -121,11 +121,12 @@ def api_articles():
 			# check if the dates are outside cached data if they are then run the craler and scraper go get
 			# articles the arent cached
 			dbLastDate = dbGetLatestDate("../objects/cache.db")
-			if datetime.fromisoformat(jsonData['startDate']) > dbLastDate or datetime.fromisoformat(jsonData['endDate']) > dbLastDate:
+			if datetime.fromisoformat(jsonData['endDate']) > dbLastDate:
 				# call crawler here
 				crawler = crawlerWHO()
 				# send the crawler to look for links outside the cached data
-				relevantLinks = crawler.searchPage([], [], dbLastDate.strftime("%Y-%m-%d"), jsonData['endDate'])
+				dateSearchFrom = dbLastDate + timedelta(days=1)
+				relevantLinks = crawler.searchPage([], [], dateSearchFrom.strftime("%Y-%m-%d"), jsonData['endDate'])
 				# call the scraper here
 				scraper = WebScraper("scraper", datetime.now())
 				articles = scraper.returnScrapeData(relevantLinks)	

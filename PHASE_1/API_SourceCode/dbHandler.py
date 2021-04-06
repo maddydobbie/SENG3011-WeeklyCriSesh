@@ -4,8 +4,10 @@ from datetime import datetime
 
 def dbSave(dbName, date, location, keywords, jsonOutput):
 	conn = sqlite3.connect(dbName)
-	jsonDouble = json.dumps(jsonOutput).replace("'","''")
-	conn.execute("INSERT INTO ARTICLE (DATE, LOCATION, KEYWORDS, REPORTS) VALUES ('{date}', '{location}', '{keywords}', '{reports}')".format(date=date[0:10], location=location, keywords=keywords, reports=jsonDouble))
+	jsonDouble = json.dumps(jsonOutput).replace("'","_|_")
+	locationIn = location.replace("'","''")
+	keywordsIn = keywords.replace("'","''")
+	conn.execute("INSERT INTO ARTICLE (DATE, LOCATION, KEYWORDS, REPORTS) VALUES ('{date}', '{location}', '{keywords}', '{reports}')".format(date=date[0:10], location=locationIn, keywords=keywordsIn, reports=jsonDouble))
 	conn.commit()
 	conn.close()
 
@@ -16,7 +18,7 @@ def dbGetLatestDate(dbName):
 	if date:
 		date = date[0][0]
 	else:
-		date = "1996-01-21"
+		date = "1996-01-01"
 	conn.close()
 	return datetime.strptime(date, "%Y-%m-%d")
 
@@ -37,5 +39,5 @@ def dbGetArticles(dbName, startDate, endDate, location, keywords):
 	# pull the articles out of the db cursor and restore their proper json format
 	articles = []
 	for article in curr.fetchall():
-		articles.append(article[0])
+		articles.append(json.loads(article[0].replace("_|_", "'")))
 	return articles
