@@ -118,9 +118,13 @@ def api_articles():
 			else:
 				location = [jsonData['location']]
 
+			# switch path for local vs pythonanywhere running
+			pathDB = "/home/seng3011/SENG3011-WeeklyCriSesh/PHASE_1/objects/"
+			# pathDB = "../objects/"
+
 			# check if the dates are outside cached data if they are then run the craler and scraper go get
 			# articles the arent cached
-			dbLastDate = dbGetLatestDate("../objects/cache.db")
+			dbLastDate = dbGetLatestDate(pathDB + "cache.db")
 			if datetime.fromisoformat(jsonData['endDate']) > dbLastDate:
 				# call crawler here
 				crawler = crawlerWHO()
@@ -134,9 +138,9 @@ def api_articles():
 				for article in articles:
 					cacheDate = article['date_of_publication']
 					cacheLocation = cacheKeywords = article['headline']
-					dbSave("../objects/cache.db", cacheDate, cacheLocation, cacheKeywords, article)
+					dbSave(pathDB + "cache.db", cacheDate, cacheLocation, cacheKeywords, article)
 			# access the cache to get all the data to output
-			articles = dbGetArticles("../objects/cache.db", jsonData['startDate'], jsonData['endDate'], location, keywords)
+			articles = dbGetArticles(pathDB + "cache.db", jsonData['startDate'], jsonData['endDate'], location, keywords)
 			# if there is gibberish in location or keywords: 404
 			if not articles:
 				response.error_type = "Not Found"
