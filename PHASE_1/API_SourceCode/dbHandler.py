@@ -31,7 +31,7 @@ def dbGetArticles(dbName, startDate, endDate, location, keywords):
 	elif location and not keywords:
 		curr = conn.execute("SELECT REPORTS FROM ARTICLE WHERE DATE >= '{startDate}' AND DATE <= '{endDate}' AND UPPER(LOCATION) LIKE UPPER(?) ORDER BY DATE DESC".format(startDate=startDate[0:10], endDate=endDate[0:10]), ('%'+location[0]+'%',))
 	# if there is keywords but no location
-	elif location and not keywords:
+	elif keywords and not location:
 		curr = conn.execute("SELECT REPORTS FROM ARTICLE WHERE DATE >= '{startDate}' AND DATE <= '{endDate}' AND UPPER(KEYWORDS) LIKE UPPER(?) ORDER BY DATE DESC".format(startDate=startDate[0:10], endDate=endDate[0:10]), ('%'+keywords[0]+'%',))	
 	# if there is location and keywords
 	else:
