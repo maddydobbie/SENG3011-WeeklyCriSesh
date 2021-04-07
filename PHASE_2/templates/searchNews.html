@@ -29,21 +29,29 @@
     <!-- Custom styles for this template -->
     <link href="jumbotron.css" rel="stylesheet">
 
-    <!-- <link href="map.css" rel="stylesheet"> -->
-
+    
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
-
     
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    
     <style type="text/css">
       /* Always set the map height explicitly to define the size of the div
       * element that contains the map. */
       #map {
-        height: 600px;
+        height: 75vh;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding-top: 40px;
+      }
+
+      #latlng {
+        width: 225px;
       }
     </style>
-
-    <!-- <script src="../static/js/map.js"></script> -->
 
     <script>
       function initMap() {
@@ -52,12 +60,17 @@
           zoom: 4,
           center: myLatlng,
         });
+
+        // Create geocoder
+        const geocoder = new google.maps.Geocoder();
+
         // Create the initial InfoWindow.
         let infoWindow = new google.maps.InfoWindow({
-          content: "Click the map to get Lat/Lng!",
+          content: "Click your destination to see information on diseases and outbreaks.",
           position: myLatlng,
         });
         infoWindow.open(map);
+
         // Configure the click listener.
         map.addListener("click", (mapsMouseEvent) => {
           // Close the current InfoWindow.
@@ -66,13 +79,34 @@
           infoWindow = new google.maps.InfoWindow({
             position: mapsMouseEvent.latLng,
           });
-          infoWindow.setContent(
-            JSON.stringify(mapsMouseEvent.latLng.toJSON(), null, 2)
-            );
-            console.log(JSON.stringify(mapsMouseEvent.latLng.toJSON()))
-            infoWindow.open(map);
+
+          const latlng = {
+            lat: parseFloat(mapsMouseEvent.latLng.toJSON().lat),
+            lng: parseFloat(mapsMouseEvent.latLng.toJSON().lng),
+          };
+          
+          // This converts the latitude/longitude information to country
+          geocoder.geocode({ location: latlng }, (results, status) => {
+            if (status === "OK") {
+              if (results[results.length - 2]) {
+                // Country cannot be accessed outisde of this listener, 
+                // so maybe put the function for location input in here
+                // or save to local storage and use it that way.
+                country = results[results.length - 2].formatted_address;
+                infoWindow.setContent(country);
+                infoWindow.open(map);
+              } else {
+                window.alert("No results found");
+              }
+            } else {
+              infoWindow.setContent("Not a country!");
+              infoWindow.open(map);
+            }
           });
+
+        });
       }
+
     </script>
 
   </head>
@@ -104,10 +138,8 @@
 
     <div class="container">
     <!-- Content goes here -->
-      <h3>My Google Maps Demo</h3>
-      <!--The div element for the map -->
-      <div id="map"></div>
 
+      <div id="map"></div>
 
     <!-- Content ends here -->
       <hr>
@@ -116,22 +148,18 @@
       </footer>
     </div> <!-- /container -->
 
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <script src="../../assets/js/docs.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-
-
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
     <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDd9bxIZ8hJ0jI9ia6vAcrhyFyF0cCi7-I&callback=initMap&libraries=&v=weekly"
     async
     ></script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
   </body>
 </html>
