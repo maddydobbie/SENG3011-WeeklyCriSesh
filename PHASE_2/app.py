@@ -28,16 +28,20 @@ def home():
 def homeReroute():
 	return render_template('index.html')
 
-@app.route("/article.html", methods=['POST', 'GET'])
-def article():
-	return render_template('article.html')
+@app.route("/about.html", methods=['POST', 'GET'])
+def about():
+	return render_template('about.html')
 
-@app.route("/news.html", methods=['POST', 'GET'])
-def news():
-	return render_template('news.html')
+@app.route("/apiDocs.html", methods=['POST', 'GET'])
+def apiDocs():
+	return render_template('apiDocs.html')
 
 @app.route("/searchNews.html", methods=['POST', 'GET'])
 def searchNews():
 	return render_template('searchNews.html')
+
+@app.route("/nearMe.html", methods=['POST', 'GET'])
+def nearMe():
+	return render_template('nearMe.html')
 
 app.run()
