@@ -8,12 +8,17 @@ class WebScraper():
     def __init__(self, name, creationTime):
         self.name = name
         self.creationTime = creationTime
-        with open('objects/symptoms.txt') as json_file:
+        # switch path for local vs pythonanywhere running
+        path = "/home/seng3011/SENG3011-WeeklyCriSesh/PHASE_1/objects/"
+        # path = "../objects/"
+        with open(path + '/symptoms.txt') as json_file:
             self._symptoms = json.load(json_file)
-        with open('objects/diseases.txt') as json_file:
+        with open(path + 'diseases.txt') as json_file:
             self._diseases = json.load(json_file)
-        #with open('objects/diseases' + '.pkl', 'rb') as f:
-        #    self._diseases = pickle.load(f)
+        with open(path + 'cities.txt') as json_file:
+            self._cities = json.load(json_file)
+        with open(path + 'countries.txt') as json_file:
+            self._countries = json.load(json_file)
 
     def checkRegexString(self, regexString, text):
         if (re.search(regexString, text)):
@@ -23,12 +28,9 @@ class WebScraper():
 
     def getDateFromRegex(self, regexString, text):
         dateText = re.search(regexString, text)[0] #extracting the date from the text
-        #Lists for different months
-        monthFullList = ["JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"]
-        monthShortList = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "SEP", "OCT", "NOV", "DEC"]
         #if date format is in the form DD Month (in words) YYYY
         dateString = ""
-        if (self.checkRegexString(r"[0-9]{2}-[a-z]+-[0-9]+", text)):
+        if (self.checkRegexString(r"[0-9]{1,2}-[A-Za-z]+-[0-9]+", text)):
             day = (re.search("[0-9]{2}", dateText))[0]
             month = (re.search("[a-zA-Z]{3,}", dateText))[0].upper()
             year = (re.search("[0-9]{4}", dateText))[0]
@@ -40,7 +42,7 @@ class WebScraper():
             month = monthFullList[index]
             #combining all information
 
-        elif (self.checkRegexString(r"[0-9]{4}_[0-9]{2}_[0-9]{2}", text)):
+        elif (self.checkRegexString(r"[0-9]{4}_[0-9]{1,2}_[0-9]{1,2}", text)):
             #attaining all info in YYYY_MM_DD format
             year = (re.search("[0-9]{4}", dateText))[0]
             monthIndex = (re.search("_[0-9]{2}_", dateText))[0]
@@ -52,15 +54,34 @@ class WebScraper():
         return dateString
 
     def checkDate(self, URL):
-        if (self.checkRegexString(r"[0-9]{2}-[a-z]+-[0-9]+", URL)):
-            date = self.getDateFromRegex(r"[0-9]{2}-[a-z]+-[0-9]+", URL)
-            date = datetime.strptime(date.title(), "%d %B %Y").strftime("%Y-%m-%d") + " xx:xx:xx"
-        elif (self.checkRegexString(r"[0-9]{4}_[0-9]{2}_[0-9]{2}",URL)):
-            date = self.getDateFromRegex(r"[0-9]{4}_[0-9]{2}_[0-9]{2}", URL)
-            date = datetime.strptime(date.title(), "%d %B %Y").strftime("%Y-%m-%d") + " xx:xx:xx"
+        #Lists for different months
+        monthShortList = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "SEP", "OCT", "NOV", "DEC"]
+
+        datePortion = URL.split("/")[5]
+        if re.findall("[0-9]{4}_[0-9]{1,2}_[0-9]{1,2}", datePortion):
+            dateString = re.findall("[0-9]{4}_[0-9]{1,2}_[0-9]{1,2}", datePortion)[0]
+            date = datetime.strptime(dateString, "%Y_%m_%d")
+        elif re.findall("[0-9]{1,2}-[A-Za-z]+-[0-9]{4}", datePortion):
+            dateString = re.findall("[0-9]{1,2}-[A-Za-z]+-[0-9]{4}", datePortion)[0]
+            # the month might be full or abbrrieviated so check which form it is in
+            month = dateString.split("-")[1]
+            if month.upper() in monthShortList:
+                date = datetime.strptime(dateString, "%d-%b-%Y")
+            else:
+                date = datetime.strptime(dateString, "%d-%B-%Y")
         else:
-            date = "Could not be found"
-        return date
+            # the case when WHO screwed up their dating of articles and dated it 2014-04-ebola
+            date = datetime.strptime("2014_04_03", "%Y_%m_%d")
+        # if (self.checkRegexString(r"[0-9]{1,2}-[A-Za-z]+-[0-9]+", URL)):
+        #     date = self.getDateFromRegex(r"[0-9]{1,2}-[A-Za-z]+-[0-9]+", URL)
+        #     date = datetime.strptime(date.title(), "%d %B %Y").strftime("%Y-%m-%d") + " xx:xx:xx"
+        # elif (self.checkRegexString(r"[0-9]{4}_[0-9]{1,2}_[0-9]{1,2}",URL)):
+        #     date = self.getDateFromRegex(r"[0-9]{4}_[0-9]{1,2}_[0-9]{1,2}", URL)
+        #     date = datetime.strptime(date.title(), "%d %B %Y").strftime("%Y-%m-%d") + " xx:xx:xx"
+        # else:
+        #     date = "Could not be found"
+        #     print(URL)
+        return date.strftime("%Y-%m-%d") + " xx:xx:xx"
 
     def checkCountry(self, title):
         if (self.checkRegexString(r"in\s[a-zA-z\s]*", title)):
@@ -72,6 +93,26 @@ class WebScraper():
         else:
             country = "Cannot be found."
         return country
+
+    #check countries and cities
+    def checkCountriesAndCities(self, body, country):
+        countries = []
+        cities = []
+        for country in self._countries:
+            if country['name'] in body:
+                # add if it is not already in the list
+                if country['name'] not in countries:
+                    countries.append(country['name'])
+        # loop through each country to see if it appears in the paragraph
+        # if it does add it to the country list
+        for city in self._cities:
+            if city['name'] in body:
+                # add if it is not already in the list
+                if city['name'] not in cities:
+                    cities.append(city['name'])
+        if not countries:
+            countries.append(country)
+        return countries, cities
 
     def checkSymptomsAndDiseases(self, body):
         symptoms = []
@@ -111,6 +152,9 @@ class WebScraper():
         if dates:
             dateObjs = []
             for date in dates:
+                # if the month is Sept then fix it September
+                if date.split(" ")[1] == "Sept":
+                    date = date.split(" ")[0] + " September " + date.split(" ")[2]
                 dateObjs.append(datetime.strptime(date.replace(",",""),"%d %B %Y"))
             dateObjs.sort()
             if len(dateObjs) > 1 and dateObjs[0].strftime("%Y-%m-%d") != dateObjs[-1].strftime("%Y-%m-%d"):
@@ -120,10 +164,6 @@ class WebScraper():
                 return dateObjs[0].strftime("%Y-%m-%d") + " xx:xx:xx"
         else:
             return date
-
-    def getLocations(self, country):
-        locations = []
-        return locations
 
     def getReports(self, country, body, date):
         reports = []
@@ -138,14 +178,16 @@ class WebScraper():
             for disease in self._diseases:
                 if disease['name'].lower() in body[last[1]:s].lower():
                     symptoms, diseases = self.checkSymptomsAndDiseases(body[last[1]:s])
-                    locations = self.getLocations(country)
+                    countries, cities = self.checkCountriesAndCities(body[last[1]:s], country)
+                    locations = {"country":countries[0], "locations":cities}
                     eventDate = self.getEventDate(body[last[1]:s], date)
                     reports.append({"diseases":diseases,"syndromes or symptoms":symptoms,"event_date":eventDate,"locations":locations})
                     last = [s, e]
         # if there is only one match then there is only one date so process the report on the entire body of team
         if len(reports) <= 1:
             symptoms, diseases = self.checkSymptomsAndDiseases(body)
-            locations = self.getLocations(country)
+            countries, cities = self.checkCountriesAndCities(body, country)
+            locations = {"country":countries[0], "locations":cities}
             eventDate = self.getEventDate(body, date)
             reports.append({"diseases":diseases,"syndromes or symptoms":symptoms,"event_date":eventDate,"locations":locations})
         return reports
@@ -154,7 +196,10 @@ class WebScraper():
 
     def returnScrapeData(self, links):
         articles = []
+        print(len(links))
+        i = 0
         for URL in links:
+            print(i)
             page = requests.get(URL)
             pageParse = BeautifulSoup(page.content, 'html.parser')
 
@@ -167,4 +212,5 @@ class WebScraper():
             reports = self.getReports(country, mainText, dateString)
 
             articles.append({"url":pageURL,"date_of_publication":dateString,"headline":title,"datetime_accessed":datetime.now().strftime("%Y-%m-%dT%H:%M:%S"),"data_gathered_by":"Weekly_Cri_Sesh","main_text":mainText,"reports":reports})
+            i += 1
         return articles

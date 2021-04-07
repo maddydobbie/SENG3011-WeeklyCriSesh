@@ -3,8 +3,9 @@ from flask import request, jsonify
 from crawlerWHO import crawlerWHO
 import json
 from requests.models import Response
-from datetime import datetime
+from datetime import datetime, timedelta
 from WebScraper import WebScraper
+from dbHandler import dbSave, dbGetLatestDate, dbGetArticles
 import re
 
 app = flask.Flask(__name__)
@@ -22,7 +23,10 @@ def api_articles():
 	response = Response()
 	# append log file to store the request and request data
 	try:
-		f = open("logs/log.txt", "a")
+		# switch path for local vs pythonanywhere running
+		path = "/home/seng3011/SENG3011-WeeklyCriSesh/PHASE_1/API_SourceCode/logs/"
+		# path = "logs/"
+		f = open(path + "log.txt", "a")
 		now = datetime.now()
 		f.write("############################################################\n")
 		f.write(str(request) + '\n')
@@ -45,27 +49,36 @@ def api_articles():
 	else:
 		resp = request.data.decode()
 		jsonData = json.loads(resp)
-
+		# no json input
+		if not jsonData:
+			response.error_type = "Bad Request"
+			response.status_code = 400
+			response._content = b'{ "reason" : "No JSON input." }'
+			return (response.text, response.status_code, response.headers.items())
 		# no start date
-		if not 'startDate' in jsonData:
+		elif not 'startDate' in jsonData:
 			response.error_type = "Bad Request"
 			response.status_code = 400
 			response._content = b'{ "reason" : "No start date." }'
+			return (response.text, response.status_code, response.headers.items())
 		# no end date
 		elif not 'endDate' in jsonData:
 			response.error_type = "Bad Request"
 			response.status_code = 400
 			response._content = b'{ "reason" : "No end date." }'
+			return (response.text, response.status_code, response.headers.items())
 		# check start date in correct format
 		elif not re.findall("[1-2][0-9][0-9][0-9]-[0-1][0-9]-[0-3][0-9]T[0-2][0-9]:[0-5][0-9]:[0-5][0-9]", jsonData['startDate']):
 			response.error_type = "Bad Request"
 			response.status_code = 400
 			response._content = b'{ "reason" : "Start date in incorrect format." }'
+			return (response.text, response.status_code, response.headers.items())
 		# check end date in correct format
 		elif not re.findall("[1-2][0-9][0-9][0-9]-[0-1][0-9]-[0-3][0-9]T[0-2][0-9]:[0-5][0-9]:[0-5][0-9]", jsonData['endDate']):
 			response.error_type = "Bad Request"
 			response.status_code = 400
 			response._content = b'{ "reason" : "End date in incorrect format." }'
+			return (response.text, response.status_code, response.headers.items())
 		try:
 			end = datetime.fromisoformat(jsonData['endDate'])
 		except ValueError:
@@ -80,17 +93,19 @@ def api_articles():
 			response.status_code = 400
 			response._content = b'{ "reason" : "Start date in incorrect format." }'
 			return (response.text, response.status_code, response.headers.items())
-			
-		# check correct order 
-		# check either date isn't in the future 
+
+		# check correct order
+		# check either date isn't in the future
 		if datetime.fromisoformat(jsonData['startDate']) > datetime.fromisoformat(jsonData['endDate']):
 			response.error_type = "Bad Request"
 			response.status_code = 400
 			response._content = b'{ "reason" : "End date before start date." }'
+			return (response.text, response.status_code, response.headers.items())
 		elif datetime.now() < datetime.fromisoformat(jsonData['startDate']) or datetime.now() < datetime.fromisoformat(jsonData['endDate']):
 			response.error_type = "Bad Request"
 			response.status_code = 400
 			response._content = b'{ "reason" : "Dates are in the future." }'
+			return (response.text, response.status_code, response.headers.items())
 		else:
 			# if there are no keywords then create an empty list
 			if not 'keywords' in jsonData:
@@ -103,14 +118,30 @@ def api_articles():
 			else:
 				location = [jsonData['location']]
 
-			# call crawler here
-			crawler = crawlerWHO()
-			relevantLinks = crawler.searchPage(location, keywords, jsonData['startDate'], jsonData['endDate'])
-			# call the scraper here
-			scraper = WebScraper("scraper", datetime.now())
-			articles = scraper.returnScrapeData(relevantLinks)
+			# switch path for local vs pythonanywhere running
+			pathDB = "/home/seng3011/SENG3011-WeeklyCriSesh/PHASE_1/objects/"
+			# pathDB = "../objects/"
 
-			# if there is gibberish in location or disease: 404
+			# check if the dates are outside cached data if they are then run the craler and scraper go get
+			# articles the arent cached
+			dbLastDate = dbGetLatestDate(pathDB + "cache.db")
+			if datetime.fromisoformat(jsonData['endDate']) > dbLastDate:
+				# call crawler here
+				crawler = crawlerWHO()
+				# send the crawler to look for links outside the cached data
+				dateSearchFrom = dbLastDate + timedelta(days=1)
+				relevantLinks = crawler.searchPage([], [], dateSearchFrom.strftime("%Y-%m-%d"), jsonData['endDate'])
+				# call the scraper here
+				scraper = WebScraper("scraper", datetime.now())
+				articles = scraper.returnScrapeData(relevantLinks)	
+				# save each article individually
+				for article in articles:
+					cacheDate = article['date_of_publication']
+					cacheLocation = cacheKeywords = article['headline']
+					dbSave(pathDB + "cache.db", cacheDate, cacheLocation, cacheKeywords, article)
+			# access the cache to get all the data to output
+			articles = dbGetArticles(pathDB + "cache.db", jsonData['startDate'], jsonData['endDate'], location, keywords)
+			# if there is gibberish in location or keywords: 404
 			if not articles:
 				response.error_type = "Not Found"
 				response.status_code = 404
@@ -119,6 +150,7 @@ def api_articles():
 				response.error_type = "Success"
 				response.status_code = 200
 				response._content = json.dumps(articles).encode()
+
 	try:
 		f = open("logs/log.txt", "a")
 		f.write("Response Status Code: " + str(response.status_code) + "\n")
@@ -126,4 +158,5 @@ def api_articles():
 	finally:
 		return (response.text, response.status_code, response.headers.items())
 
-app.run()
+# comment out for pythonanywhere
+#app.run()
