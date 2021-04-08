@@ -33,6 +33,10 @@
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
     
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <!-- For the toggle switch -->
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
     
     <style type="text/css">
       /* Always set the map height explicitly to define the size of the div
@@ -95,6 +99,8 @@
                 country = results[results.length - 2].formatted_address;
                 infoWindow.setContent(country);
                 infoWindow.open(map);
+                // put country selected into location input box
+                document.getElementById('location').value=country;
               } else {
                 window.alert("No results found");
               }
@@ -138,7 +144,57 @@
 
     <div class="container">
     <!-- Content goes here -->
+      <form>
+        <input type="text" name="keywords" placeholder="Enter keyword(s)" required>
+        <input type="text" name="location" placeholder="Enter location" id="location"value="" required>   
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Advanced search options
+        </button>  
+        <button type="button" type="sumbit" class="btn btn-primary">Search</button>
+        <!-- advanced search collapse card -->
+        <div class="collapse" id="collapseExample">
+          <div class="card card-body">
+            <form>
+              <label>Enter start date:</label>
+              <!-- default value of start date is current date - 1 month. Set below in script tag-->
+              <input type="date" placeholder="Enter start date" id='d2' required >
+              <label>Enter end date:</label>
+              <!-- default value of end date = current date-->
+              <input type="date" placeholder="Enter end date" id="d1" required>
+              <label>Google news articles:</label>
+              <input type="checkbox" name="toggle" data-toggle="toggle" >
+            </form>
+          </div>
+          <script>
+            // script to get current date - put this value as end date
+            var d1 = new Date();
+            var y1= d1.getFullYear();
+            var m1 = d1.getMonth()+1;
+            if(m1<10)
+                m1="0"+m1;
+            var dt1 = d1.getDate();
+            if(dt1<10)
+            dt1 = "0"+dt1;
+            var d2 = y1+"-"+m1+"-"+dt1;
+            document.getElementById('d1').value=d2;
+          </script>
+          <script>
+            // gets date less 1 month
+            var d1 = new Date();
+            var y1= d1.getFullYear();
+            var m1 = d1.getMonth();
+            if(m1<10)
+                m1="0"+m1;
+            var dt1 = d1.getDate();
+            if(dt1<10)
+            dt1 = "0"+dt1;
+            var d2 = y1+"-"+m1+"-"+dt1;
+            document.getElementById('d2').value=d2;
+          </script>
+        </div>
+        
 
+      </form>
       <div id="map"></div>
 
     <!-- Content ends here -->
