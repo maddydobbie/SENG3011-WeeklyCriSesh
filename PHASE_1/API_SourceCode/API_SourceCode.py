@@ -21,6 +21,7 @@ def home():
 @app.route('/articles', methods=['GET'])
 def api_articles():
 	response = Response()
+	response.headers['Access-Control-Allow-Origin']='*'
 	# append log file to store the request and request data
 	try:
 		# switch path for local vs pythonanywhere running

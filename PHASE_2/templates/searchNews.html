@@ -145,8 +145,8 @@
     <div class="container">
     <!-- Content goes here -->
       <form>
-        <input type="text" id="keywords" placeholder="Enter keyword(s)" required>
-        <input type="text" id="location" placeholder="Enter location" id="location"value="" required>   
+        <input type="text" id="keywords" placeholder="Enter keyword(s)" value="" required>
+        <input type="text" id="location" placeholder="Enter location" id="location" value="" required>   
         <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
         Advanced search options
         </button>  
@@ -179,7 +179,7 @@
             document.getElementById('end').value=d2;
           </script>
           <script>
-            // gets date less 1 month
+            // gets date less 1 month - not sure if it works around january
             var d1 = new Date();
             var y1= d1.getFullYear();
             var m1 = d1.getMonth();
@@ -198,22 +198,22 @@
         let submit = document.getElementById("submit")
         //value = button.form.valueId.value;
         submit.onclick = function() {
-          let keywords = document.getElementById("keywords")
-          let location = document.getElementById("location")
-          let start = document.getElementById("start")
-          let end = document.getElementById("end")
+          let keywords = document.getElementById("keywords").value
+          let location = document.getElementById("location").value
+          let start = document.getElementById("start").value + "T00:00:00"
+          let end = document.getElementById("end").value + "T00:00:00"
           //let toggle = document.getElementById("toggle")
-          var json = {
-            startDate: keywords,
-            endDate: location,
-            keywords: start,
-            location: end,
+          let url = "http://seng3011.pythonanywhere.com/articles?" + "startDate=" + start + "&endDate=" + end 
+          if (keywords != "") {
+            url += "&keywords=" + keywords 
+          } else if (location != "") {
+            url += "&location=" + location
           }
-          //JSON.stringify()
-          const request = new Request('http://weeklycrisesh.pythonanywhere.com/?fbclid=IwAR2ygv-lgzTWNhqcWY8SLSUAyzIF2_59JqF_e8pAkmPe1rhoauUzJOo9rj8', {method: 'GET', body: json});
+          const request = new Request(url);
           fetch(request)
             .then(response => {
             if (response.status === 200) {
+              console.log(response.headers)
               return response.json();
             } else {
               throw new Error('Something went wrong on api server!');
