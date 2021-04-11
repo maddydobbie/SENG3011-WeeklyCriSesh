@@ -132,7 +132,7 @@ def api_articles():
 				cacheLocation = cacheKeywords = article['headline']
 				dbSave(pathDB + "cache.db", cacheDate, cacheLocation, cacheKeywords, article)
 		# access the cache to get all the data to output
-		articles = dbGetArticles(pathDB + "cache.db", jrequest.args.get('startDate')), request.args.get('endDate')), location, keywords)
+		articles = dbGetArticles(pathDB + "cache.db", request.args.get('startDate'), request.args.get('endDate'), location, keywords)
 		# if there is gibberish in location or keywords: 404
 		if not articles:
 			response.error_type = "Not Found"
