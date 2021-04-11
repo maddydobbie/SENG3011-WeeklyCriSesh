@@ -168,7 +168,7 @@
           <script>
             // script to get current date - put this value as end date
             var d1 = new Date();
-            var y1= d1.getFullYear();
+            var y1= d1.getFullYear() - 1;//remove - 1 later
             var m1 = d1.getMonth()+1;
             if(m1<10)
               m1="0"+m1;
@@ -181,7 +181,7 @@
           <script>
             // gets date less 1 month - not sure if it works around january
             var d1 = new Date();
-            var y1= d1.getFullYear();
+            var y1= d1.getFullYear() - 1; //remove - 1 later
             var m1 = d1.getMonth();
             if(m1<10)
               m1="0"+m1;
@@ -212,20 +212,28 @@
           const request = new Request(url);
           fetch(request)
             .then(response => {
+              console.log(response)
             if (response.status === 200) {
-              console.log(response.headers)
+              //console.log(response.headers)
               return response.json();
-            } else {
+            }
+             else {
               throw new Error('Something went wrong on api server!');
             }
+            }).then((json) => {
+              console.log(json[0])
+              let i = 0
+              while (json[i]) {
+                // do stuff
+              }
             })
             .then(response => {
-              console.debug(response);
+              //console.debug(response);
             // ...
             }).catch(error => {
               console.error(error);
-            });
-        }
+            })
+          }
       </script>
       <div id="map"></div>
 
