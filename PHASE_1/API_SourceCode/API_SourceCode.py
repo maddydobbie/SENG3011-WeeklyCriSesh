@@ -15,7 +15,7 @@ app.config["DEBUG"] = True
 @app.route('/', methods=['GET'])
 def home():
     return '''<h1>Weekly Cri Sesh WHO API</h1>
-<p>A prototype API for obtaining article data from WHO</p>'''
+<p>A prototype API for obtaining article data from WHO v1</p>'''
 
 # testing taking params in the body
 @app.route('/articles', methods=['GET'])
