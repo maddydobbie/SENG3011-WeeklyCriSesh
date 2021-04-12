@@ -55,6 +55,32 @@
       #latlng {
         width: 225px;
       }
+      /*
+      .modal-lg {
+        max-width: 80%;
+      }
+      */
+
+      .row img{
+        width: calc(100% - 20px);
+        height: 250px;
+      }
+
+      .display{
+          margin: 10px;
+          border: 5px red;
+          padding: 10px;
+      }
+
+      .article{
+          padding: 10px;
+          padding-top: 10px;
+      }
+      
+      
+      .show {
+        background: rgba(0, 0, 0, 0.22);
+      }
     </style>
 
     <script>
@@ -151,7 +177,8 @@
         Advanced search options
         </button>  
         <button type="button" id="submit" type="sumbit" class="btn btn-primary" >Search</button>
-        <!-- advanced search collapse card -->
+        <button type="button" id="button7" type="button" class="btn btn-primary" data-toggle="modal" data-target="#mymodal">show results</button>
+        <!-- advanced search collapse card "-->
         <div class="collapse" id="collapseExample">
           <div class="card card-body">
             <form>
@@ -223,8 +250,51 @@
             }).then((json) => {
               console.log(json[0])
               let i = 0
+              const c = document.getElementById("modal-body")
               while (json[i]) {
-                // do stuff
+                const article = document.createElement("div")
+                article.setAttribute("class", "article");
+                article.setAttribute("class", "row");
+                article.setAttribute("style", "padding:10px");
+                c.appendChild(article)
+                // image
+                /* const imgdiv = document.createElement("div")
+                imgdiv.setAttribute("class", "col-md-3");
+                const img = document.createElement("img")
+                img.src = json[i].urlToImage;
+                imgdiv.appendChild(img)
+                article.appendChild(imgdiv) */
+                // title
+                const textdiv = document.createElement("div")
+                textdiv.setAttribute("style", "text-overflow:ellipsis");
+                textdiv.setAttribute("style", "white-space: nowrap;");
+                textdiv.setAttribute("style", "overflow: hidden");
+                //textdiv.setAttribute("style", "height:100px");
+                const link = document.createElement("a")
+                link.setAttribute("style", "font-size:30px")
+                link.setAttribute("target", "_blank")
+                link.innerHTML = json[i].headline
+                link.href = json[i].url
+                textdiv.appendChild(link)
+                textdiv.appendChild(document.createElement("br"))
+                // time
+                const time = document.createElement("p")
+                let clock = json[i].date_of_publication.split(" ")
+                let text1 = document.createTextNode(clock[0])
+                textdiv.appendChild(text1)
+                // description
+                const h5 = document.createElement("h5")
+                var maintext = json[i].main_text.substr(0, 538) + " ... "
+                let text = document.createTextNode(maintext)
+                h5.appendChild(text)
+                textdiv.appendChild(h5)
+                article.appendChild(textdiv)
+                // source
+                const source = document.createElement("p")
+                source.innerHTML = "Source: " + json[i].url
+                textdiv.appendChild(source)
+                
+                i++;
               }
             })
             .then(response => {
@@ -234,9 +304,48 @@
               console.error(error);
             })
           }
+        //$("#mymodal").modal()
       </script>
       <div id="map"></div>
-
+      <!-- Modal -->
+      <!-- Modal 
+      <div class="modal fade" id="mymodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" id="modal">
+              <h5>Modal titledfdfdfdfdfdfdfdfdf</h5>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      -->
+      <div class="modal" tabindex="-1" role="dialog" id="mymodal">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Search results</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" id="modal-body">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
     <!-- Content ends here -->
       <hr>
       <footer>
