@@ -77,9 +77,12 @@
           padding-top: 10px;
       }
       
-      
       .show {
         background: rgba(0, 0, 0, 0.22);
+      }
+
+      .input {
+        padding-bottom: 20;
       }
     </style>
 
@@ -170,7 +173,7 @@
 
     <div class="container">
     <!-- Content goes here -->
-      <form>
+      <form class="input">
         <input type="text" id="keywords" placeholder="Enter keyword(s)" value="" required>
         <input type="text" id="location" placeholder="Enter location" id="location" value="" required>   
         <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
@@ -206,7 +209,7 @@
             document.getElementById('end').value=d2;
           </script>
           <script>
-            // gets date less 1 month - not sure if it works around january
+            // gets date less 1 month - not sure if it works around january or at the end of a month 
             var d1 = new Date();
             var y1= d1.getFullYear() - 1; //remove - 1 later
             var m1 = d1.getMonth();
@@ -225,12 +228,15 @@
         let submit = document.getElementById("submit")
         //value = button.form.valueId.value;
         submit.onclick = function() {
+          // get rid of everything in the modal body
           const c = document.getElementById("modal-body")
           while(c.firstChild){
-                c.removeChild(c.firstChild);
-              }
+            c.removeChild(c.firstChild);
+          }
+          // add some text telling user we are searcing (maybe)
           let text = document.createTextNode("Searching...")
           c.appendChild(text)
+          // take query params and make api call
           let keywords = document.getElementById("keywords").value
           let location = document.getElementById("location").value
           let start = document.getElementById("start").value + "T00:00:00"
@@ -261,25 +267,20 @@
               console.log(json[0])
               let i = 0
               const c = document.getElementById("modal-body")
-              // clean up modal body
+              // clean up modal body again
               while(c.firstChild){
                 c.removeChild(c.firstChild);
               }
+              // for each article ... 
               while (json[i]) {
                 const article = document.createElement("div")
                 article.setAttribute("class", "article");
                 article.setAttribute("class", "row");
                 article.setAttribute("style", "padding:10px");
                 c.appendChild(article)
-                // image
-                /* const imgdiv = document.createElement("div")
-                imgdiv.setAttribute("class", "col-md-3");
-                const img = document.createElement("img")
-                img.src = json[i].urlToImage;
-                imgdiv.appendChild(img)
-                article.appendChild(imgdiv) */
                 // title
                 const textdiv = document.createElement("div")
+                // not being used the next 3
                 textdiv.setAttribute("style", "text-overflow:ellipsis");
                 textdiv.setAttribute("style", "white-space: nowrap;");
                 textdiv.setAttribute("style", "overflow: hidden");
@@ -298,6 +299,7 @@
                 textdiv.appendChild(text1)
                 // description
                 const h5 = document.createElement("h5")
+                // allowing around 4 lines of description before you get cut off
                 var maintext = json[i].main_text.substr(0, 538) + " ... "
                 let text = document.createTextNode(maintext)
                 h5.appendChild(text)
@@ -307,7 +309,6 @@
                 const source = document.createElement("p")
                 source.innerHTML = "Source: " + json[i].url
                 textdiv.appendChild(source)
-                
                 i++;
               }
             })
@@ -321,7 +322,6 @@
         //$("#mymodal").modal()
       </script>
       <div id="map"></div>
-      <!-- Modal -->
       <!-- Modal 
       <div class="modal fade" id="mymodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -343,6 +343,7 @@
         </div>
       </div>
       -->
+      <!-- Modal -->
       <div class="modal" tabindex="-1" role="dialog" id="mymodal">
         <div class="modal-dialog modal-lg" role="document">
           <div class="modal-content">
