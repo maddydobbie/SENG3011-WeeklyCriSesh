@@ -176,7 +176,7 @@
         <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
         Advanced search options
         </button>  
-        <button type="button" id="submit" type="sumbit" class="btn btn-primary" >Search</button>
+        <button type="button" id="submit" type="sumbit" class="btn btn-primary" data-toggle="modal" data-target="#mymodal">Search</button>
         <button type="button" id="button7" type="button" class="btn btn-primary" data-toggle="modal" data-target="#mymodal">show results</button>
         <!-- advanced search collapse card "-->
         <div class="collapse" id="collapseExample">
@@ -225,6 +225,12 @@
         let submit = document.getElementById("submit")
         //value = button.form.valueId.value;
         submit.onclick = function() {
+          const c = document.getElementById("modal-body")
+          while(c.firstChild){
+                c.removeChild(c.firstChild);
+              }
+          let text = document.createTextNode("Searching...")
+          c.appendChild(text)
           let keywords = document.getElementById("keywords").value
           let location = document.getElementById("location").value
           let start = document.getElementById("start").value + "T00:00:00"
@@ -245,12 +251,20 @@
               return response.json();
             }
              else {
+              // no results!
+              const c = document.getElementById("modal-body")
+              let text = document.createTextNode("No search results for given parameters!")
+              c.appendChild(text)
               throw new Error('Something went wrong on api server!');
             }
             }).then((json) => {
               console.log(json[0])
               let i = 0
               const c = document.getElementById("modal-body")
+              // clean up modal body
+              while(c.firstChild){
+                c.removeChild(c.firstChild);
+              }
               while (json[i]) {
                 const article = document.createElement("div")
                 article.setAttribute("class", "article");
