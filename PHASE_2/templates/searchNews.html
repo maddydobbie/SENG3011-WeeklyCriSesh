@@ -70,14 +70,18 @@
       .article {
         padding: 10px;
         /*background-color: rgb(212, 243, 216);*/
-        border: 2px solid black;
+        border: 1px solid black;
         border-top-style: none;
+        border-left-style: none;
+        border-right-style: none;
       }
 
       .article0 {
         padding: 10px;
         /*background-color: rgb(212, 243, 216);*/
-        border: 2px solid black;
+        border: 1px solid black;
+        border-left-style: none;
+        border-right-style: none;
       }
 
       .row img{
@@ -246,7 +250,7 @@
           c.appendChild(text)
           // take query params and make api call
           let keywords = document.getElementById("keywords").value
-          let location = document.getElementById("location").value
+          var location = document.getElementById("location").value
           let start = document.getElementById("start").value + "T00:00:00"
           let end = document.getElementById("end").value + "T00:00:00"
           let toggle = document.getElementById("toggle")
@@ -262,15 +266,36 @@
                 return resp.json();
               }).then(json=>{
                 location = (json[0].alpha2Code.toLowerCase())
+                console.log(location)
               })
             }
+            // only allowing dates between now and a month ago
+            var d1 = new Date();
+            var y1= d1.getFullYear()// - 1; //remove - 1 later
+            var m1 = d1.getMonth() + 1;
+            var mnew = m1 - 1
+            if(m1<10)
+              m1="0"+m1;
+            if(mnew<10)
+              mnew="0"+mnew;
+            var dt1 = d1.getDate();
+            if(dt1<10)
+              dt1 = "0"+dt1;
+            var d2 = y1+"-"+m1+"-"+dt1; // end
+            var d1 = y1+"-"+mnew+"-"+dt1; // start
+            end = d2
+            start = d1
             // the link at the beginning fixes cors problem with news api
             let url = "https://newsapi.org/v2/everything?"
+            console.log(location)
             if (keywords != "") {
-              url += "q=keywords=" + keywords 
-            } else if (location != "") {
+              url += "q=" + keywords 
+            } 
+            /*
+            TODO
+            if (location != "") {
               url += "&country=" + location
-            }
+            }*/
             url += "&language=en" + "&from=" + start + "&to=" + end + "&apiKey=" + api_key
             const request = new Request(url);
             fetch(request)
@@ -301,14 +326,16 @@
                 // for each article ... 
                 while (json.articles[i]) {
                   const article = document.createElement("div")
-                  article.className += "article row"
                   if (i === 0) {
-                    article.setAttribute("style", "border-top-style: 2px solid black");
+                    //article.style.bordertopstyle = "2px solid black"; - correct practice - but doesnt work
+                    article.className += "article0 row"
+                  } else {
+                    article.className += "article row"
                   }
                   //article.setAttribute("class", "article");
                   
                   //article.setAttribute("class", "row");
-                  article.setAttribute("style", "padding:10px");
+                  //article.setAttribute("style", "padding:10px");
                   console.log(article.getAttribute("class"))
                   c.appendChild(article)
                   // image
