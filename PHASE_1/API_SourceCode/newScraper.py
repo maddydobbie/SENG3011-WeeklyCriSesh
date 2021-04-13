@@ -9,8 +9,8 @@ class WebScraper():
         self.name = name
         self.creationTime = creationTime
         # # switch path for local vs pythonanywhere running
-        # path = "/home/seng3011/SENG3011-WeeklyCriSesh/PHASE_1/objects/"
-        path = "../objects/"
+        path = "/home/seng3011/SENG3011-WeeklyCriSesh/PHASE_1/objects/"
+        #path = "../objects/"
 
         with open(path + 'symptoms.txt') as json_file:
             self._symptoms = json.load(json_file)

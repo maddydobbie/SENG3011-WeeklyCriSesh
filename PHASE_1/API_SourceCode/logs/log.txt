@@ -22148,3 +22148,415 @@ Request Query Parameters:
 <Request 'http://seng3011.pythonanywhere.com/articles?startDate=2020-03-13T00:00:00&endDate=2020-04-13T00:00:00' [GET]>
 Time: 2021-04-13T09:14:02
 Request Query Parameters:
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles?startDate=2021-03-13T00:00:00&endDate=2021-04-13T00:00:00' [GET]>
+Time: 2021-04-13T09:35:39
+Request Query Parameters:
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles?startDate=2021-03-13T00:00:00&endDate=2021-04-13T00:00:00' [GET]>
+Time: 2021-04-13T09:35:50
+Request Query Parameters:
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T09:37:04
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles?startDate=2021-03-13T00:00:00&endDate=2021-04-13T00:00:00' [GET]>
+Time: 2021-04-13T09:37:07
+Request Query Parameters:
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles?startDate=2021-03-13T00:00:00&endDate=2021-04-13T00:00:00' [GET]>
+Time: 2021-04-13T09:37:11
+Request Query Parameters:
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T09:38:56
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T09:39:02
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles?startDate=2021-03-13T00:00:00&endDate=2021-04-13T00:00:00' [GET]>
+Time: 2021-04-13T09:39:42
+Request Query Parameters:
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles?startDate=2021-03-22T00:00:00&endDate=2021-03-27T00:00:00' [GET]>
+Time: 2021-04-13T09:39:48
+Request Query Parameters:
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles?startDate=2021-03-13T00:00:00&endDate=2021-04-13T00:00:00' [GET]>
+Time: 2021-04-13T09:40:09
+Request Query Parameters:
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles?startDate=2021-03-13T00:00:00&endDate=2021-04-13T00:00:00' [GET]>
+Time: 2021-04-13T09:40:25
+Request Query Parameters:
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles?startDate=2021-03-13T00:00:00&endDate=2021-04-13T00:00:00' [GET]>
+Time: 2021-04-13T09:42:31
+Request Query Parameters:
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles?startDate=2021-03-13T00:00:00&endDate=2021-04-13T00:00:00&location=Papua%20New%20Guinea' [GET]>
+Time: 2021-04-13T09:42:44
+Request Query Parameters:
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles?startDate=2021-03-13T00:00:00&endDate=2021-04-13T00:00:00&location=Papua%20New%20Guinea' [GET]>
+Time: 2021-04-13T09:43:09
+Request Query Parameters:
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles?startDate=2021-03-13T00:00:00&endDate=2021-04-13T00:00:00&location=Papua%20New%20Guinea' [GET]>
+Time: 2021-04-13T09:43:26
+Request Query Parameters:
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles?startDate=2021-03-13T00:00:00&endDate=2021-04-13T00:00:00' [GET]>
+Time: 2021-04-13T09:43:41
+Request Query Parameters:
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles?startDate=2021-03-13T00:00:00&endDate=2021-04-13T00:00:00' [GET]>
+Time: 2021-04-13T09:43:48
+Request Query Parameters:
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles?startDate=2021-03-13T00:00:00&endDate=2021-04-13T00:00:00' [GET]>
+Time: 2021-04-13T09:45:13
+Request Query Parameters:
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles?startDate=2021-03-13T00:00:00&endDate=2021-04-13T00:00:00' [GET]>
+Time: 2021-04-13T09:48:00
+Request Query Parameters:
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles?startDate=2021-03-13T00:00:00&endDate=2021-04-13T00:00:00' [GET]>
+Time: 2021-04-13T09:48:44
+Request Query Parameters:
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles?startDate=2021-03-13T00:00:00&endDate=2021-04-13T00:00:00' [GET]>
+Time: 2021-04-13T09:51:34
+Request Query Parameters:
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles?startDate=2021-03-13T00:00:00&endDate=2021-04-13T00:00:00' [GET]>
+Time: 2021-04-13T09:51:44
+Request Query Parameters:
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T09:52:02
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T09:53:57
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T09:54:46
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T09:55:28
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T09:58:26
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T09:58:27
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T09:58:27
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T09:58:28
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T09:58:28
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T09:58:29
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T09:58:30
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T09:58:30
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T09:59:42
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T09:59:43
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T09:59:43
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T09:59:44
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles?startDate=2021-01-01T00:00:00&endDate=2021-03-01T00:00:00&location=Russia' [GET]>
+Time: 2021-04-13T09:59:44
+Request Query Parameters:
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T09:59:45
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T09:59:46
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T09:59:46
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T10:00:52
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T10:00:53
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T10:00:53
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T10:00:54
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles?startDate=2021-01-01T00:00:00&endDate=2021-03-01T00:00:00&location=Russia' [GET]>
+Time: 2021-04-13T10:00:54
+Request Query Parameters:
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T10:00:55
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T10:00:55
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T10:00:56
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T10:02:13
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T10:02:14
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T10:02:14
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T10:02:15
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles?startDate=2021-01-01T00:00:00&endDate=2021-03-01T00:00:00&location=Russia' [GET]>
+Time: 2021-04-13T10:02:15
+Request Query Parameters:
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T10:02:16
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T10:02:16
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T10:02:17
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles?startDate=2021-03-13T00:00:00&endDate=2021-04-13T00:00:00' [GET]>
+Time: 2021-04-13T10:02:58
+Request Query Parameters:
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T10:03:21
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T10:03:22
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T10:03:22
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T10:03:23
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles?startDate=2021-01-01T00:00:00&endDate=2021-03-01T00:00:00&location=Russia' [GET]>
+Time: 2021-04-13T10:03:23
+Request Query Parameters:
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T10:03:24
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T10:03:24
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T10:03:25
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles?startDate=2021-03-13T00:00:00&endDate=2021-04-13T00:00:00' [GET]>
+Time: 2021-04-13T10:03:36
+Request Query Parameters:
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T10:04:01
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T10:04:01
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T10:04:02
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T10:04:02
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles?startDate=2021-01-01T00:00:00&endDate=2021-03-01T00:00:00&location=Russia' [GET]>
+Time: 2021-04-13T10:04:03
+Request Query Parameters:
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T10:04:03
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T10:04:04
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T10:04:05
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles?startDate=2021-03-13T00:00:00&endDate=2021-04-13T00:00:00' [GET]>
+Time: 2021-04-13T10:04:22
+Request Query Parameters:
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles?startDate=2021-03-13T00:00:00&endDate=2021-04-13T00:00:00' [GET]>
+Time: 2021-04-13T10:04:54
+Request Query Parameters:
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles?startDate=2021-03-13T00:00:00&endDate=2021-04-13T00:00:00' [GET]>
+Time: 2021-04-13T10:05:23
+Request Query Parameters:
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles?startDate=2021-03-13T00:00:00&endDate=2021-04-13T00:00:00' [GET]>
+Time: 2021-04-13T10:06:40
+Request Query Parameters:
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T10:09:56
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T10:09:57
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T10:09:57
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T10:09:58
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles?startDate=2021-01-01T00:00:00&endDate=2021-03-01T00:00:00&location=Russia' [GET]>
+Time: 2021-04-13T10:09:58
+Request Query Parameters:
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T10:09:59
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T10:09:59
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T10:10:00
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles?startDate=2021-03-13T00:00:00&endDate=2021-04-13T00:00:00' [GET]>
+Time: 2021-04-13T10:10:48
+Request Query Parameters:
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles?startDate=2021-03-13T00:00:00&endDate=2021-04-13T00:00:00' [GET]>
+Time: 2021-04-13T10:10:59
+Request Query Parameters:
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles?startDate=2021-03-13T00:00:00&endDate=2021-04-13T00:00:00' [GET]>
+Time: 2021-04-13T10:11:17
+Request Query Parameters:
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T10:11:17
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T10:11:18
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T10:11:18
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T10:11:19
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles?startDate=2021-01-01T00:00:00&endDate=2021-03-01T00:00:00&location=Russia' [GET]>
+Time: 2021-04-13T10:11:19
+Request Query Parameters:
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T10:11:20
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T10:11:21
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles' [GET]>
+Time: 2021-04-13T10:11:21
+No request content specifying parameters
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles?startDate=2021-03-13T00:00:00&endDate=2021-04-13T00:00:00' [GET]>
+Time: 2021-04-13T10:11:30
+Request Query Parameters:
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles?startDate=2021-03-13T00:00:00&endDate=2021-04-13T00:00:00' [GET]>
+Time: 2021-04-13T10:12:54
+Request Query Parameters:
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles?startDate=2021-03-13T00:00:00&endDate=2021-04-13T00:00:00' [GET]>
+Time: 2021-04-13T10:13:33
+Request Query Parameters:
+############################################################
+<Request 'http://seng3011.pythonanywhere.com/articles?startDate=2021-03-13T00:00:00&endDate=2021-04-13T00:00:00' [GET]>
+Time: 2021-04-13T10:13:47
+Request Query Parameters:
