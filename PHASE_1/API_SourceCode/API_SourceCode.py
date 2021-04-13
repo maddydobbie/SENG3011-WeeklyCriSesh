@@ -1,10 +1,10 @@
 import flask
 from flask import request, jsonify
-from crawlerWHO import crawlerWHO
+from newCrawler import crawlerWHO
 import json
 from requests.models import Response
 from datetime import datetime, timedelta
-from WebScraper import WebScraper
+from newScraper import WebScraper
 from dbHandler import dbSave, dbGetLatestDate, dbGetArticles
 import re
 
