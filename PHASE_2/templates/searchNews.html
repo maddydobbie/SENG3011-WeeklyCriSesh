@@ -70,9 +70,16 @@
       .article {
         padding: 10px;
         padding-top: 100px;
-        background-color: rgb(212, 243, 216);
+        /*background-color: rgb(212, 243, 216);*/
         border: 2px solid black;
         border-bottom-style: none;
+      }
+
+      .row img{
+        width: calc(100% - 20px);
+        height: 150px;
+        /*max-width: 100%;
+        max-height: 100%;*/
       }
 
     </style>
@@ -291,6 +298,13 @@
                   article.setAttribute("style", "padding:10px");
                   console.log(article.getAttribute("class"))
                   c.appendChild(article)
+                  // image
+                  const imgdiv = document.createElement("div")
+                  imgdiv.setAttribute("class", "col-md-3");
+                  const img = document.createElement("img")
+                  img.src = json.articles[i].urlToImage;
+                  imgdiv.appendChild(img)
+                  article.appendChild(imgdiv)
                   // title
                   const textdiv = document.createElement("div")
                   // not being used the next 3
@@ -367,8 +381,9 @@
                 // for each article ... 
                 while (json[i]) {
                   const article = document.createElement("div")
-                  article.setAttribute("class", "article");
-                  article.setAttribute("class", "row");
+                  //article.setAttribute("class", "article");
+                  //article.setAttribute("class", "row");
+                  article.className += "article row"
                   article.setAttribute("style", "padding:10px");
                   c.appendChild(article)
                   // title
