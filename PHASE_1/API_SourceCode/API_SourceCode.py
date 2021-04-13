@@ -1,10 +1,10 @@
 import flask
 from flask import request, jsonify
-from crawlerWHO import crawlerWHO
+from newCrawler import crawlerWHO
 import json
 from requests.models import Response
 from datetime import datetime, timedelta
-from WebScraper import WebScraper
+from newScraper import WebScraper
 from dbHandler import dbSave, dbGetLatestDate, dbGetArticles
 import re
 
@@ -42,19 +42,19 @@ def api_articles():
 	except:
 		print("ERROR: Log File Not Found\nUnable to record request")
 
-	print(request)
-	if not request.args:
+	if len(request.args) == 0:
 		response.error_type = "Bad Request"
 		response.status_code = 400
 		response._content = b'{ "reason" : "No query parameters." }'
+		return (response.text, response.status_code, response.headers.items())
 	# no start date
-	elif not 'startDate' in request.args:
+	elif request.args.get('startDate') == None:
 		response.error_type = "Bad Request"
 		response.status_code = 400
 		response._content = b'{ "reason" : "No start date." }'
 		return (response.text, response.status_code, response.headers.items())
 	# no end date
-	elif not 'endDate' in request.args:
+	elif request.args.get('endDate') == None:
 		response.error_type = "Bad Request"
 		response.status_code = 400
 		response._content = b'{ "reason" : "No end date." }'
@@ -73,14 +73,14 @@ def api_articles():
 		return (response.text, response.status_code, response.headers.items())
 	try:
 		end = datetime.fromisoformat(request.args.get('endDate'))
-	except ValueError:
+	except:
 		response.error_type = "Bad Request"
 		response.status_code = 400
 		response._content = b'{ "reason" : "End date in incorrect format." }'
 		return (response.text, response.status_code, response.headers.items())
 	try:
 		start = datetime.fromisoformat(request.args.get('startDate'))
-	except ValueError:
+	except:
 		response.error_type = "Bad Request"
 		response.status_code = 400
 		response._content = b'{ "reason" : "Start date in incorrect format." }'
@@ -125,7 +125,7 @@ def api_articles():
 			relevantLinks = crawler.searchPage([], [], dateSearchFrom.strftime("%Y-%m-%d"), request.args.get('endDate'))
 			# call the scraper here
 			scraper = WebScraper("scraper", datetime.now())
-			articles = scraper.returnScrapeData(relevantLinks)	
+			articles = scraper.returnScrapeData(relevantLinks)
 			# save each article individually
 			for article in articles:
 				cacheDate = article['date_of_publication']
