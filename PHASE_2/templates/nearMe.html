@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -30,7 +29,39 @@
     <!-- Custom styles for this template -->
     <link href="jumbotron.css" rel="stylesheet">
 
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+    <!--script src="../../assets/js/ie-emulation-modes-warning.js"></script-->
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <!-- For the toggle switch -->
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+    
+    <style type="text/css">
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding-top: 40px;
+      }
+      #keywords, #proximity{
+        width: 200px;
+      }
+      #latLngInput {
+        width: 200px;
+      }
+      #proximityRange {
+        width: 500px;
+      }
+      #start, #end, #latLngInput, #getLocationButton {
+        margin-right: 20px;
+      }
+
+      #result {
+        display: inline-block;
+      }
+    </style>
 
   </head>
 
@@ -60,6 +91,114 @@
     </nav>
 
     <div class="container">
+      <form>
+        <label>Enter location address:</label>
+        <input type="text" id="keywords" placeholder="42 Wallaby Way, Sydney " value="" required>
+        <br><br>
+        <div class="form-group">
+          <label for="proximityRange" id = proximityLabel>Proximity radius:</label>
+          <input type="range" id="proximityRange" name="proximityRange" min="1" max="10000" value = "100">
+          <p>Radius from me (km): <span id="proximityValue"></span></p>
+        </div>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Advanced search options
+        </button>
+        <button type="button" id="submit" type="sumbit" class="btn btn-primary" >Search</button>
+        <script>
+          var slider = document.getElementById("proximityRange");
+          var output = document.getElementById("proximityValue");
+          output.innerHTML = slider.value;
+          
+          slider.oninput = function() {
+            output.innerHTML = this.value;
+          }
+          </script>
+        <!-- advanced search collapse card -->
+        <div class="collapse" id="collapseExample">
+          <div class="card card-body">
+            <form>
+              <br>
+              <label>Enter latitude and longitude:</label>
+              <input type="text" id="latLngInput" placeholder="(0.000000, 0.000000)" id="latLngInput" value="" required>
+              <label>Number of results:</label>
+              <input type="number" id="numResults" placeholder="10" id="numResults" value="" required>
+              <br><br>
+              <label>Enter start date:</label>
+              <!-- default value of start date is current date - 1 month. Set below in script tag-->
+              <input type="date" id='start' placeholder="Enter start date" required >
+              <label>Enter end date:</label>
+              <!-- default value of end date = current date-->
+              <input type="date" id="end" placeholder="Enter end date" required>
+              <label>Google news articles:</label>
+              <input type="checkbox" id="toggle" data-toggle="toggle" >
+              <br><br>
+              <button type="button" id ="getLocationButton" class="btn btn-primary" onclick="showPosition();">Get my location</button>
+              <p id="result">This will only find your location when you allow us to.</p>
+            </form>
+          </div>
+          <!--  -->
+          <script>
+            // Set up global variable
+            var result;
+            
+            function showPosition() {
+                // Store the element where the page displays the result
+                result = document.getElementById("result");
+                
+                // If geolocation is available, try to get the visitor's position
+                if(navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+                    result.innerHTML = "Getting the position information...";
+                } else {
+                    alert("Sorry, your browser does not support HTML5 geolocation.");
+                }
+            };
+            
+            // Define callback function for successful attempt
+            function successCallback(position) {
+                result.innerHTML = "Your current position is (" + "Latitude: " + position.coords.latitude + ", " + "Longitude: " + position.coords.longitude + ")";
+            }
+            
+            // Define callback function for failed attempt
+            function errorCallback(error) {
+                if(error.code == 1) {
+                    result.innerHTML = "You've decided not to share your position, but it's OK. We won't ask you again.";
+                } else if(error.code == 2) {
+                    result.innerHTML = "The network is down or the positioning service can't be reached.";
+                } else if(error.code == 3) {
+                    result.innerHTML = "The attempt timed out before it could get the location data.";
+                } else {
+                    result.innerHTML = "Geolocation failed due to unknown error.";
+                }
+            }
+        </script>
+          <!--  -->
+          <script>
+            // script to get current date - put this value as end date
+            var d1 = new Date();
+            var y1 = d1.getFullYear();
+            var m1 = d1.getMonth()+1;
+            if (m1 < 10) m1 = "0" + m1;
+            var dt1 = d1.getDate();
+            if (dt1 < 10) dt1 = "0"+dt1;
+            var d2 = y1 + "-" + m1 + "-" + dt1;
+            document.getElementById('end').value = d2;
+          </script>
+          <script>
+            // gets date less 1 month - not sure if it works around january
+            var d1 = new Date();
+            var y1= d1.getFullYear();
+            var m1 = d1.getMonth();
+            if(m1<10)
+              m1="0"+m1;
+            var dt1 = d1.getDate();
+            if(dt1<10)
+              dt1 = "0"+dt1;
+            var d2 = y1+"-"+m1+"-"+dt1;
+            document.getElementById('start').value=d2;
+          </script>
+        </div>
+      </form>
     
       <hr>
 

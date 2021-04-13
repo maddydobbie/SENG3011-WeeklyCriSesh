@@ -50,8 +50,6 @@ class crawlerWHO:
 		while(True):
 			content = self._page.soup.find(id="PageContent_C010_Col00")
 			if self.checkEmptyPage(content) == True:
-				for year in yearLinks:
-					print(year)
 				return yearLinks
 			content = content.select('a')
 			# isolate each link to check date
@@ -72,12 +70,7 @@ class crawlerWHO:
 							if webDate <= endDate:
 								yearLinks.append(address)
 						else:
-							for year in yearLinks:
-								print(year)
 							return yearLinks
 			n += 1
 			self.incrementUrl(n)
 		return yearLinks
-
-c = crawlerWHO()
-links = c.searchPage("China","covid","2021-02-10T00:00:00","2021-04-27T00:00:00")
