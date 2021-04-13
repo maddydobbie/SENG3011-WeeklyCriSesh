@@ -23,12 +23,12 @@
     <!-- Bootstrap core CSS -->
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug 
     <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
+    -->
+    <!-- Custom styles for this template 
     <link href="jumbotron.css" rel="stylesheet">
-
+    -->
     
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
     
@@ -38,6 +38,9 @@
     <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
     
+    <!-- link css -->
+    <link rel="stylesheet" type="text/css" href="../static/css/styles.css">
+
     <style type="text/css">
       /* Always set the map height explicitly to define the size of the div
       * element that contains the map. */
@@ -60,30 +63,18 @@
         max-width: 80%;
       }
       */
-
-      .row img{
-        width: calc(100% - 20px);
-        height: 250px;
-      }
-
-      .display{
-          margin: 10px;
-          border: 5px red;
-          padding: 10px;
-      }
-
-      .article{
-          padding: 10px;
-          padding-top: 10px;
-      }
-      
       .show {
         background: rgba(0, 0, 0, 0.22);
       }
-
-      .input {
-        padding-bottom: 20;
+      
+      .article {
+        padding: 10px;
+        padding-top: 100px;
+        background-color: rgb(212, 243, 216);
+        border: 2px solid black;
+        border-bottom-style: none;
       }
+
     </style>
 
     <script>
@@ -293,9 +284,12 @@
                 // for each article ... 
                 while (json.articles[i]) {
                   const article = document.createElement("div")
-                  article.setAttribute("class", "article");
-                  article.setAttribute("class", "row");
+                  article.className += "article row"
+                  //article.setAttribute("class", "article");
+                  
+                  //article.setAttribute("class", "row");
                   article.setAttribute("style", "padding:10px");
+                  console.log(article.getAttribute("class"))
                   c.appendChild(article)
                   // title
                   const textdiv = document.createElement("div")
@@ -305,7 +299,7 @@
                   textdiv.setAttribute("style", "overflow: hidden");
                   //textdiv.setAttribute("style", "height:100px");
                   const link = document.createElement("a")
-                  link.setAttribute("style", "font-size:30px")
+                  link.setAttribute("style", "font-size:24px")
                   link.setAttribute("target", "_blank")
                   link.innerHTML = json.articles[i].title
                   link.href = json.articles[i].url
@@ -314,12 +308,13 @@
                   // time
                   const time = document.createElement("p")
                   let clock = json.articles[i].publishedAt.split("T")
-                  let text1 = document.createTextNode(clock[0])
+                  let text1 = document.createTextNode("Posted " + clock[0])
                   textdiv.appendChild(text1)
                   // description
                   const h5 = document.createElement("h5")
                   // allowing around 4 lines of description before you get cut off
-                  var maintext = json.articles[i].content.substr(0, 538) + " ... "
+                  //var maintext = json.articles[i].content.substr(0, 538) + " ... "
+                  var maintext = json.articles[i].description
                   let text = document.createTextNode(maintext)
                   h5.appendChild(text)
                   textdiv.appendChild(h5)
