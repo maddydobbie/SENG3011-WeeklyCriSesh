@@ -288,6 +288,10 @@
             // the link at the beginning fixes cors problem with news api
             let url = "https://newsapi.org/v2/everything?"
             console.log(location)
+            // no keywords - give them one
+            if (keywords === "") {
+              keywords = "outbreak"
+            }
             if (keywords != "") {
               url += "q=" + keywords 
             } 
