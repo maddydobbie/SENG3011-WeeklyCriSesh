@@ -185,6 +185,11 @@
 
     <div class="container">
     <!-- Content goes here -->
+      <form class = "input" method="POST" action="/searchFlights">
+        <input type="text" name="origin" placeholder="Enter origin" value="" required>
+        <input type="text" name="destination" placeholder="Enter destination" value="" required>
+        <input type="submit" value="Search">
+      </form>
       <form class="input">
         <input type="text" id="keywords" placeholder="Enter keyword(s)" value="" required>
         <input type="text" id="location" placeholder="Enter location" id="location" value="" required>   
@@ -480,6 +485,7 @@
         }
         //$("#mymodal").modal()
       </script>
+      <script src="../static/js/flight.js"></script>
       <div id="map"></div>
       <!-- Modal 
       <div class="modal fade" id="mymodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
