@@ -1,0 +1,54 @@
+/* Always set the map height explicitly to define the size of the div
+* element that contains the map. */
+#map {
+  height: 75vh;
+}
+/* Optional: Makes the sample page fill the window. */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding-top: 40px;
+}
+
+#latlng {
+  width: 225px;
+}
+/*
+.modal-lg {
+  max-width: 80%;
+}
+*/
+.show {
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.article {
+  padding: 10px;
+  /*background-color: rgb(212, 243, 216);*/
+  border: 1px solid black;
+  border-top-style: none;
+  border-left-style: none;
+  border-right-style: none;
+}
+
+.article0 {
+  padding: 10px;
+  /*background-color: rgb(212, 243, 216);*/
+  border: 1px solid black;
+  border-left-style: none;
+  border-right-style: none;
+}
+
+.row img{
+  width: calc(100% - 20px);
+  height: 150px;
+  /*max-width: 100%;
+  max-height: 100%;*/
+}
+
+/*
+.modal-header {
+  display: inline;
+}
+*/

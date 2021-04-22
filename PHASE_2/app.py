@@ -3,8 +3,6 @@ import json
 from datetime import datetime, timedelta
 import sqlite3
 import requests
-#import wikipedia
-#import requests
 
 app = Flask(__name__)
 app.config["DEBUG"] = True
