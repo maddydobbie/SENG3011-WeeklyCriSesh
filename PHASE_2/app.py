@@ -36,9 +36,9 @@ def apiDocs():
 	return render_template('apiDocs.html')
 
 @app.route("/searchFlights", methods=['POST', 'GET'])
-def searchNews():
+def searchFlights():
 	if request.method == "GET":
-		return render_template('searchNews.html')
+		return render_template('searchFlights.html')
 	else:
 		origin = request.form.get("origin")
 		dest = request.form.get("destination")
@@ -52,7 +52,7 @@ def searchNews():
 		flights = json.dumps(response.json(), indent=4)
 		print(flights)
 		
-		return render_template('searchNews.html', flights=flights)
+		return render_template('searchFlights.html', flights=flights)
 
 @app.route("/outbreakMap", methods=['POST', 'GET'])
 def outbreakMap():
