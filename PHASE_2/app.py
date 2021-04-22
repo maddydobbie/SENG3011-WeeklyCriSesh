@@ -38,7 +38,7 @@ def apiDocs():
 @app.route("/searchFlights", methods=['POST', 'GET'])
 def searchFlights():
 	if request.method == "GET":
-		return render_template('searchNews.html', flightFlag=0)
+		return render_template('searchFlights.html', flightFlag=0)
 	else:
 		flightList = []
 		origin = request.form.get("origin")
@@ -69,7 +69,7 @@ def searchFlights():
 				break
 
 		if originCode == "" or destCode == "":
-			return render_template('searchNews.html', flightFlag=3)
+			return render_template('searchFlights.html', flightFlag=3)
 
 		url = "https://api.travelpayouts.com/v1/prices/cheap"
 		querystring = {"origin":originCode,"destination":destCode,"depart_date":start,"return_date":end,"currency":"AUD"}
@@ -79,14 +79,14 @@ def searchFlights():
 
 		flights = response.json()["data"]
 		if not flights:
-			return render_template('searchNews.html', flights=flightList, origin=origin, dest=dest, flightFlag=2)
+			return render_template('searchFlights.html', flights=flightList, origin=origin, dest=dest, flightFlag=2)
 		for key, value in flights.items():
 			for flightID, flightValues in flights.get(key).items():
 				flightNum = flightValues.get("airline")+str(flightValues.get("flight_number"))
 				f = {"price":flightValues.get("price"),"flight_number":flightNum,"depart_date":flightValues.get("departure_at"),"return_date":flightValues.get("return_at")}
 				flightList.append(f)
 
-		return render_template('searchNews.html', flights=flightList, origin=origin, dest=dest, flightFlag=1)
+		return render_template('searchFlights.html', flights=flightList, origin=origin, dest=dest, flightFlag=1)
 
 @app.route("/outbreakMap", methods=['POST', 'GET'])
 def outbreakMap():
