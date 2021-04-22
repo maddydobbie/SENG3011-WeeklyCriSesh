@@ -38,21 +38,55 @@ def apiDocs():
 @app.route("/searchFlights", methods=['POST', 'GET'])
 def searchNews():
 	if request.method == "GET":
-		return render_template('searchNews.html')
+		return render_template('searchNews.html', flightFlag=0)
 	else:
+		flightList = []
 		origin = request.form.get("origin")
 		dest = request.form.get("destination")
+		start = request.form.get("start")
+		end = request.form.get("end")
+
+		print(type(start))
+		print(end)
+
+
+		# convert city to IATA code
+		with open("./static/json/airports.json") as json_file:
+			airportsJSON = json.load(json_file)
+		airports = []
+		for a in list(airportsJSON.values()):
+			airports.append({"city":a["city"], "iata":a["iata"], "country":a["country"]})
+		
+		originCode = destCode = ""
+		for d in airports:
+		
+			if d["city"].lower() == origin.lower():
+				originCode = d["iata"].upper()
+				break
+		for d in airports:
+			if d["city"].lower() == dest.lower():
+				destCode = d["iata"].upper()
+				break
+
+		if originCode == "" or destCode == "":
+			return render_template('searchNews.html', flightFlag=3)
 
 		url = "https://api.travelpayouts.com/v1/prices/cheap"
-		querystring = {"origin":origin,"destination":dest,"depart_date":"2021-05","return_date":"2021-12","currency":"AUD"}
+		querystring = {"origin":originCode,"destination":destCode,"depart_date":start,"return_date":end,"currency":"AUD"}
 		headers = {'x-access-token': 'c4ae3203facd6e9ea55b3f7f3cf03cd6'}
 		
 		response = requests.request("GET", url, headers=headers, params=querystring)
 
-		flights = json.dumps(response.json(), indent=4)
-		print(flights)
-		
-		return render_template('searchNews.html', flights=flights)
+		flights = response.json()["data"]
+		if not flights:
+			return render_template('searchNews.html', flights=flightList, origin=origin, dest=dest, flightFlag=2)
+		for key, value in flights.items():
+			for flightID, flightValues in flights.get(key).items():
+				flightNum = flightValues.get("airline")+str(flightValues.get("flight_number"))
+				f = {"price":flightValues.get("price"),"flight_number":flightNum,"depart_date":flightValues.get("departure_at"),"return_date":flightValues.get("return_at")}
+				flightList.append(f)
+
+		return render_template('searchNews.html', flights=flightList, origin=origin, dest=dest, flightFlag=1)
 
 @app.route("/nearMe.html", methods=['POST', 'GET'])
 def nearMe():
