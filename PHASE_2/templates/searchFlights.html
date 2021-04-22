@@ -75,6 +75,45 @@
 
     <div class="container">
     <!-- Content goes here -->
+      <form class = "input" method="POST" action="/searchFlights">
+        <input type="text" name="origin" placeholder="Enter origin" value="" required>
+        <input type="text" name="destination" placeholder="Enter destination" value="" required>
+        <label>Enter start date:</label>   
+        <!-- default value of start date is current date - 1 month. Set below in script tag-->
+        <input type="date" name='start' placeholder="Enter start date" required >
+        <label>Enter end date:</label>
+        <!-- default value of end date = current date-->
+        <input type="date" name="end" placeholder="Enter end date" required>
+        <input type="submit" value="Search">
+      </form>
+      <div id="flightResults">
+        {% if flightFlag == 1 %}
+          <h4>Available Flights from {{ origin }} to {{ dest }}</h4>
+          <ul class="list-group">
+            {% for flight in flights %}
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <b>Flight Number: {{ flight.get("flight_number")}}</b>
+                <br>
+                Departure Date: {{ flight.get("depart_date")}}
+
+                <br>
+                Return Date: {{ flight.get("return_date")}}
+
+                <br>
+                Price: {{ flight.get("price")}}
+                <span class="badge bg-primary rounded-pill">420</span>
+              </li>
+            {% endfor %}
+          </ul>
+        {% elif flightFlag == 2 %}
+          <h4>No Available Flights from {{ origin }} to {{ dest }}</h4>
+          <h6>Please expand the date range and try again.</h6>
+
+        {% elif flightFlag == 3 %}
+          <h4>No Available Flights</h4>
+          <h6>Please check the spelling of origin and destination as they don't result in real cities.</h6>
+        {% endif %}
+      </div>
     <!-- Content ends here -->
       <hr>
       <footer>
