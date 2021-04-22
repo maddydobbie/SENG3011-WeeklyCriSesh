@@ -64,7 +64,7 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a class="nav-link js-scroll-trigger" href="/">Home</a></li>
-            <li class="active"><a class="nav-link js-scroll-trigger" href="searchFlights">Find Flights</a></li>
+            <li class="active"><a class="nav-link js-scroll-trigger" href="searchNews.html">Search health risks</a></li>
             <li><a class="nav-link js-scroll-trigger" href="outbreakMap">Interactive Outbreak Map</a></li>
             <li><a class="nav-link js-scroll-trigger" href="nearMe.html">Near me</a></li>
             <li><a class="nav-link js-scroll-trigger" href="apiDocs.html">API documentation</a></li>
@@ -79,7 +79,6 @@
         <input type="text" name="origin" placeholder="Enter origin" value="" required>
         <input type="text" name="destination" placeholder="Enter destination" value="" required>
         <label>Enter start date:</label>   
-        <!-- default value of start date is current date - 1 month. Set below in script tag-->
         <input type="date" name='start' placeholder="Enter departure date" required >
         <input type="submit" value="Search">
       </form>
@@ -92,15 +91,19 @@
                 <b>Flight Number: {{ flight.get("flight_number")}}</b>
                 <br>
                 Departure Date: {{ flight.get("depart_date")}}
+
                 <br>
-                Price: AUD${{ flight.get("price")}}
+                Return Date: {{ flight.get("return_date")}}
+
+                <br>
+                Price: {{ flight.get("price")}}
                 <span class="badge bg-primary rounded-pill">420</span>
               </li>
             {% endfor %}
           </ul>
         {% elif flightFlag == 2 %}
           <h4>No Available Flights from {{ origin }} to {{ dest }}</h4>
-          <h6>Please choose a different departure date.</h6>
+          <h6>Please expand the date range and try again.</h6>
 
         {% elif flightFlag == 3 %}
           <h4>No Available Flights</h4>

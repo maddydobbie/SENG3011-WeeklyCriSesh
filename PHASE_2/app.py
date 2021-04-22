@@ -44,10 +44,6 @@ def searchFlights():
 		origin = request.form.get("origin")
 		dest = request.form.get("destination")
 		start = request.form.get("start")
-		end = request.form.get("end")
-
-		print(type(start))
-		print(end)
 
 
 		# convert city to IATA code
@@ -72,7 +68,7 @@ def searchFlights():
 			return render_template('searchFlights.html', flightFlag=3)
 
 		url = "https://api.travelpayouts.com/v1/prices/cheap"
-		querystring = {"origin":originCode,"destination":destCode,"depart_date":start,"return_date":end,"currency":"AUD"}
+		querystring = {"origin":originCode,"destination":destCode,"depart_date":start,"currency":"AUD"}
 		headers = {'x-access-token': 'c4ae3203facd6e9ea55b3f7f3cf03cd6'}
 		
 		response = requests.request("GET", url, headers=headers, params=querystring)
