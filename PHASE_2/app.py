@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 import json
 from datetime import datetime, timedelta
 import sqlite3
+import requests
 
 app = Flask(__name__)
 app.config["DEBUG"] = True
@@ -34,9 +35,24 @@ def about():
 def apiDocs():
 	return render_template('apiDocs.html')
 
-@app.route("/searchNews.html", methods=['POST', 'GET'])
+@app.route("/searchFlights", methods=['POST', 'GET'])
 def searchNews():
-	return render_template('searchNews.html')
+	if request.method == "GET":
+		return render_template('searchNews.html')
+	else:
+		origin = request.form.get("origin")
+		dest = request.form.get("destination")
+
+		url = "https://api.travelpayouts.com/v1/prices/cheap"
+		querystring = {"origin":origin,"destination":dest,"depart_date":"2021-05","return_date":"2021-12","currency":"AUD"}
+		headers = {'x-access-token': 'c4ae3203facd6e9ea55b3f7f3cf03cd6'}
+		
+		response = requests.request("GET", url, headers=headers, params=querystring)
+
+		flights = json.dumps(response.json(), indent=4)
+		print(flights)
+		
+		return render_template('searchNews.html', flights=flights)
 
 @app.route("/outbreakMap", methods=['POST', 'GET'])
 def outbreakMap():
