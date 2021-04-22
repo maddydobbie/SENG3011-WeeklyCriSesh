@@ -38,6 +38,10 @@ def apiDocs():
 def searchNews():
 	return render_template('searchNews.html')
 
+@app.route("/outbreakMap", methods=['POST', 'GET'])
+def outbreakMap():
+	return render_template('outbreakMap.html')
+
 @app.route("/nearMe.html", methods=['POST', 'GET'])
 def nearMe():
 	return render_template('nearMe.html')

@@ -64,8 +64,8 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a class="nav-link js-scroll-trigger" href="/">Home</a></li>
-            <li class="active"><a class="nav-link js-scroll-trigger" href="searchNews.html">Search health risks</a></li>
-            <li><a class="nav-link js-scroll-trigger" href="outbreakMap">Interactive Outbreak Map</a></li>
+            <li><a class="nav-link js-scroll-trigger" href="searchNews.html">Search health risks</a></li>
+            <li class="active"><a class="nav-link js-scroll-trigger" href="outbreakMap">Interactive Outbreak Map</a></li>
             <li><a class="nav-link js-scroll-trigger" href="nearMe.html">Near me</a></li>
             <li><a class="nav-link js-scroll-trigger" href="apiDocs.html">API documentation</a></li>
           </ul>
@@ -75,6 +75,75 @@
 
     <div class="container">
     <!-- Content goes here -->
+      <form class="input">
+        <input type="text" id="keywords" placeholder="Enter keyword(s)" value="" required>
+        <input type="text" id="location" placeholder="Enter location" id="location" value="" required>   
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Advanced search options
+        </button>  
+        <button type="button" id="submit" type="sumbit" class="btn btn-primary" data-toggle="modal" data-target="#mymodal">Search</button>
+        <button type="button" id="button7" type="button" class="btn btn-primary" data-toggle="modal" data-target="#mymodal">show results</button>
+        <!-- advanced search collapse card "-->
+        <div class="collapse" id="collapseExample">
+          <div class="card card-body">
+            <form>
+              <label>Enter start date:</label>
+              <!-- default value of start date is current date - 1 month. Set below in script tag-->
+              <input type="date" id='start' placeholder="Enter start date" required >
+              <label>Enter end date:</label>
+              <!-- default value of end date = current date-->
+              <input type="date" id="end" placeholder="Enter end date" required>
+              <label>NewsAPI:</label>
+              <input type="checkbox" id="toggle" data-toggle="toggle" >
+            </form>
+          </div>
+          <script src="../static/js/getCurrentDate.js"></script>
+          <script src="../static/js/subtractMonth.js"></script>
+        </div>
+      </form>
+      <!-- process form -->
+      <script src="../static/js/submitSearchMap.js"></script>
+      <div id="map"></div>
+      <!-- Modal 
+      <div class="modal fade" id="mymodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" id="modal">
+              <h5>Modal titledfdfdfdfdfdfdfdfdf</h5>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      -->
+      <!-- Modal -->
+      <div class="modal" tabindex="-1" role="dialog" id="mymodal">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Search results</h4>
+              <!-- Modal close button -->
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" id="modal-body">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
     <!-- Content ends here -->
       <hr>
       <footer>
