@@ -80,7 +80,10 @@
                   <span class="badge alert-success rounded-pill"><h4>Safe to Travel</h4></span>
                 {% endif %}
                 <h4> Departure Date: {{ flight.get("depart_date") }} at {{ flight.get("depart_time") }} UTC</h4>
-                <h5> AUD${{ flight.get("price")}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Flight Number: {{ flight.get("flight_number")}} </h5>
+                <h5> AUD${{ flight.get("price")}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Flight Number: {{ flight.get("flight_number")}}</h5>
+<!-- Use this instead if searching countries instead
+                <h5> AUD${{ flight.get("price")}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Flight Number: {{ flight.get("flight_number")}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Destination City: {{ flight.get("destination") }}</h5>
+-->
               </li>
             {% endfor %}
           </ul>

@@ -53,7 +53,7 @@ def searchFlights():
 			airports.append({"city":a["city"], "iata":a["iata"], "country":a["country"]})
 		
 		#get the corresponding codes for the origin and dest cities		
-		originCode = destCode = ""
+		originCode = ""
 		for d in airports:
 			if d["city"].lower() == origin.lower():
 				originCode = d["iata"].upper()
@@ -62,13 +62,13 @@ def searchFlights():
 		for d in airports:
 			if d["city"].lower() == dest.lower():
 				destAirports.append({"dest_code":d["iata"].upper(), "dest_city":d["city"].title(), "dest_country":d["country"]})
+		# THIS IS THE CODE FOR IMPLEMENTING ALL CITIES FROM A COUNTRY
+		# # if the destCity has returned no match check if it is a country
+		# if not destAirports:
+		# 	for d in airports:
+		# 		if d["country"].lower() == dest.lower():
+		# 			destAirports.append({"dest_code":d["iata"].upper(), "dest_city":d["city"].title(), "dest_country":d["country"]})
 		print(destAirports)
-		# if the destCity has returned no match check if it is a country
-		if destCode == "":
-			for d in airports:
-				if d["country"].lower() == dest.lower():
-					destAirports.append({"dest_code":d["iata"].upper(), "dest_city":d["city"].title(), "dest_country":d["country"]})
-		
 		if originCode == "" or not destAirports:
 			return render_template('searchFlights.html', flightFlag=3, riskScore=0)
 
@@ -82,7 +82,7 @@ def searchFlights():
 			flights = response.json()["data"]
 			print(flights)
 			if not flights:
-				return render_template('searchFlights.html', flights=flightList, origin=origin.title(), dest=dest.title(), flightFlag=2, riskScore=0)
+				continue
 			for key, value in flights.items():
 				for flightID, flightValues in flights.get(key).items():
 					flightNum = flightValues.get("airline")+str(flightValues.get("flight_number"))
@@ -105,19 +105,23 @@ def searchFlights():
 					else:
 						departDate = departDay + departDate
 					# create a dictionary for all the relevant flight data
-					f = {"price":flightValues.get("price"),"flight_number":flightNum,"depart_date_OG": departDateOG, "depart_date":departDate,"depart_time":departTime}
+					f = {"price":flightValues.get("price"),"flight_number":flightNum,"depart_date_OG": departDateOG, "depart_date":departDate,"depart_time":departTime, "destination":destAirport.get("dest_city")}
 					flightList.append(f)
 			# remove duplicates from the list occurs due to a bug in the API
 			flightList = [dict(t) for t in {tuple(d.items()) for d in flightList}]
 			# sort the list by depature date
 			flightList = sorted(flightList, key=lambda i: i.get("depart_date_OG"))
-
-			# do WHOAPI call to get warnings for potential outbreaks. at the destination
-			url = "http://seng3011.pythonanywhere.com/articles"
-			endDate = (datetime.now() - timedelta(days=1)).strftime("%Y-%m-%d") + "T00:00:00"
-			startDate = (datetime.now() - timedelta(weeks=52)).strftime("%Y-%m-%d") + "T00:00:00"
-			querystring = {"startDate":startDate,"endDate":endDate, "location":destAirports[0].get("dest_country")}
-			r = requests.request("GET", url, params=querystring)
+		
+		# if there are no flights then dont bother with a risk score
+		if not flightList:
+			return render_template('searchFlights.html', flights=flightList, origin=origin.title(), dest=dest.title(), flightFlag=2, riskScore=0)
+		
+		# do WHOAPI call to get warnings for potential outbreaks. at the destination
+		url = "http://seng3011.pythonanywhere.com/articles"
+		endDate = (datetime.now() - timedelta(days=1)).strftime("%Y-%m-%d") + "T00:00:00"
+		startDate = (datetime.now() - timedelta(weeks=52)).strftime("%Y-%m-%d") + "T00:00:00"
+		querystring = {"startDate":startDate,"endDate":endDate, "location":destAirports[0].get("dest_country")}
+		r = requests.request("GET", url, params=querystring)
 		# if there is data in the response then identify how recent it was and calculate risk score
 		currentRiskScore = 0
 		articles = []
@@ -145,8 +149,7 @@ def searchFlights():
 				if riskScore < 0:
 					riskScore = 0
 				cumulativeRiskScore += riskScore
-			flight.update({"risk_score": cumulativeRiskScore})
-
+			flight.update({"risk_score": cumulativeRiskScore})	
 		return render_template('searchFlights.html', flights=flightList, origin=origin.title(), dest=dest.title(), flightFlag=1, riskScore=currentRiskScore, articles=articles)
 
 @app.route("/outbreakMap", methods=['POST', 'GET'])
