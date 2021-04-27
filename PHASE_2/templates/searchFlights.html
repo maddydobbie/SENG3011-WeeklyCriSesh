@@ -79,11 +79,8 @@
                 {% else %}
                   <span class="badge alert-success rounded-pill"><h4>Safe to Travel</h4></span>
                 {% endif %}
-                <b>Flight Number: {{ flight.get("flight_number")}}</b>
-                <br>
-                Departure Date: {{ flight.get("depart_date")}}
-                <br>
-                Price: AUD${{ flight.get("price")}}
+                <h4> Departure Date: {{ flight.get("depart_date") }} at {{ flight.get("depart_time") }} UTC</h4>
+                <h5> AUD${{ flight.get("price")}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Flight Number: {{ flight.get("flight_number")}} </h5>
               </li>
             {% endfor %}
           </ul>

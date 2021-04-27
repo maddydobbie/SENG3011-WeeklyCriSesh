@@ -79,7 +79,24 @@ def searchFlights():
 		for key, value in flights.items():
 			for flightID, flightValues in flights.get(key).items():
 				flightNum = flightValues.get("airline")+str(flightValues.get("flight_number"))
-				f = {"price":flightValues.get("price"),"flight_number":flightNum,"depart_date":flightValues.get("departure_at"),"return_date":flightValues.get("return_at")}
+				departDate = datetime.strptime(flightValues.get("departure_at"), "%Y-%m-%dT%H:%M:%SZ")
+				departTime = departDate.strftime("%H:%M")
+				departDay = departDate.strftime("%A") + " "
+				departDate = departDate.strftime("%d %B %Y")
+				if int(departDate[1]) in [1,2,3] and int(departDate[0:2]) not in [11,12,13]:
+					if departDate[1] == "1":
+						departDate = departDate[0:2] + "st" + departDate[2:]
+					elif departDate[1] == "2":
+						departDate = departDate[0:2] + "nd" + departDate[2:]
+					else:
+						departDate = departDate[0:2] + "rd" + departDate[2:]
+				else:
+					departDate = departDate[0:2] + "th" + departDate[2:]
+				if departDate[0] == "0":
+					departDate = departDay + departDate[1:]
+				else:
+					departDate = departDay + departDate
+				f = {"price":flightValues.get("price"),"flight_number":flightNum,"depart_date":departDate,"depart_time":departTime}
 				flightList.append(f)
 
 		# do WHOAPI call to get warnings for potential outbreaks. at the destination
