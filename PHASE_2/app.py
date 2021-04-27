@@ -107,23 +107,35 @@ def searchFlights():
 		querystring = {"startDate":startDate,"endDate":endDate, "location":destCountry}
 		r = requests.request("GET", url, params=querystring)
 		# if there is data in the response then identify how recent it was and calculate risk score
-		riskScore = 0
+		currentRiskScore = 0
 		articles = []
 		if r.status_code == 200:
 			articles = r.json()
+			currDate = datetime.now()
 			# analyse the data to find calculate a risk score
 			# risk score of 10 or above is high risk
 			# risk score between 3 and 10 is medium risk
 			# risk score between 0 and 3 is low risk 
 			# risk score of 0 is safe
-			currDate = datetime.now()
 			for article in articles:
 				date = datetime.strptime(article.get("date_of_publication")[0:10], "%Y-%m-%d")
 				month = int(date.strftime("%m"))
 				# gives a minimum score of 1 for an incident 12 months ago up to a max of 13 for an
 				# incident this month
-				riskScore += 13 - ((currDate.year - date.year) * 12 + currDate.month - date.month)
-		return render_template('searchFlights.html', flights=flightList, origin=origin.title(), dest=dest.title(), flightFlag=1, riskScore=riskScore, articles=articles)
+				currentRiskScore += 13 - ((currDate.year - date.year) * 12 + currDate.month - date.month)
+		# get individual riskScores for each flight dependent on their date
+		for flight in flightList:
+			date = flight.get("depart_date_OG")
+			cumulativeRiskScore = 0
+			for article in articles:
+				articleDate = datetime.strptime(article.get("date_of_publication")[0:10], "%Y-%m-%d")
+				riskScore = 13 - ((date.year - articleDate.year) * 12 +  date.month - articleDate.month)
+				if riskScore < 0:
+					riskScore = 0
+				cumulativeRiskScore += riskScore
+			flight.update({"risk_score": cumulativeRiskScore})
+
+		return render_template('searchFlights.html', flights=flightList, origin=origin.title(), dest=dest.title(), flightFlag=1, riskScore=currentRiskScore, articles=articles)
 
 @app.route("/outbreakMap", methods=['POST', 'GET'])
 def outbreakMap():

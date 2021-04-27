@@ -70,11 +70,11 @@
           <ul class="list-group">
             {% for flight in flights %}
               <li class="list-group-item d-flex justify-content-between align-items-center">
-                {% if riskScore > 10 %}
+                {% if flight.get("risk_score") > 10 %}
                   <span class="badge alert-danger rounded-pill"><h4>High Risk</h4></span>
-                {% elif riskScore > 3 %}
+                {% elif flight.get("risk_score") > 3 %}
                   <span class="badge alert-warning rounded-pill"><h4>Medium Risk</h4></span>
-                {% elif riskScore > 0 %}
+                {% elif flight.get("risk_score") > 0 %}
                   <span class="badge alert-warning rounded-pill"><h4>Low Risk</h4></span>
                 {% else %}
                   <span class="badge alert-success rounded-pill"><h4>Safe to Travel</h4></span>
