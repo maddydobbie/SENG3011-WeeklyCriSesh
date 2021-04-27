@@ -41,10 +41,13 @@
     <!-- link css 
     <link rel="stylesheet" type="text/css" href="../static/css/styles.css">
     -->
-    <!-- MAP RELATED STUFF -->
+    <!-- MAP RELATED STUFF 
     <script src="../static/js/map.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCWeQqmIBeMj0-HG79MNSNZe8Uxogxx8f4"></script>
+    -->
+    <script src="../static/js/showhotels.js"></script>
+    <link rel="stylesheet" type="text/css" href="../static/css/styles.css">
     <link href="../static/css/map.css" rel="stylesheet">
-
   </head>
 
   <body>
@@ -81,7 +84,7 @@
         <label>Enter start date:</label>   
         <!-- default value of start date is current date - 1 month. Set below in script tag-->
         <input type="date" name='start' placeholder="Enter departure date" required >
-        <input type="submit" value="Search">
+        <input type="submit" value="Search" id="submit">
       </form>
       <div id="flightResults">
         {% if flightFlag == 1 %}
@@ -107,6 +110,7 @@
           <h6>Please check the spelling of origin and destination as they don't result in real cities.</h6>
         {% endif %}
       </div>
+      <div id = "map"></div>
     <!-- Content ends here -->
       <hr>
       <footer>
@@ -116,7 +120,8 @@
 
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
     <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDd9bxIZ8hJ0jI9ia6vAcrhyFyF0cCi7-I&callback=initMap&libraries=&v=weekly"
+    
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDd9bxIZ8hJ0jI9ia6vAcrhyFyF0cCi7-I&callback=initMap&libraries=places&v=weekly"
     async
     ></script>
 
