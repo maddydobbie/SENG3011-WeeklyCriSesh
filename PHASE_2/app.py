@@ -38,7 +38,7 @@ def apiDocs():
 @app.route("/searchFlights", methods=['POST', 'GET'])
 def searchFlights():
 	if request.method == "GET":
-		return render_template('searchFlights.html', flightFlag=0)
+		return render_template('searchFlights.html', flightFlag=0, riskScore=0)
 	else:
 		flightList = []
 		origin = request.form.get("origin")
@@ -55,17 +55,17 @@ def searchFlights():
 		
 		originCode = destCode = ""
 		for d in airports:
-		
 			if d["city"].lower() == origin.lower():
 				originCode = d["iata"].upper()
 				break
 		for d in airports:
 			if d["city"].lower() == dest.lower():
 				destCode = d["iata"].upper()
+				destCountry = d["country"]
 				break
 
 		if originCode == "" or destCode == "":
-			return render_template('searchFlights.html', flightFlag=3)
+			return render_template('searchFlights.html', flightFlag=3, riskScore=0)
 
 		url = "https://api.travelpayouts.com/v1/prices/cheap"
 		querystring = {"origin":originCode,"destination":destCode,"depart_date":start,"currency":"AUD"}
@@ -75,14 +75,37 @@ def searchFlights():
 
 		flights = response.json()["data"]
 		if not flights:
-			return render_template('searchFlights.html', flights=flightList, origin=origin, dest=dest, flightFlag=2)
+			return render_template('searchFlights.html', flights=flightList, origin=origin.title(), dest=dest.title(), flightFlag=2, riskScore=0)
 		for key, value in flights.items():
 			for flightID, flightValues in flights.get(key).items():
 				flightNum = flightValues.get("airline")+str(flightValues.get("flight_number"))
 				f = {"price":flightValues.get("price"),"flight_number":flightNum,"depart_date":flightValues.get("departure_at"),"return_date":flightValues.get("return_at")}
 				flightList.append(f)
 
-		return render_template('searchFlights.html', flights=flightList, origin=origin, dest=dest, flightFlag=1)
+		# do WHOAPI call to get warnings for potential outbreaks. at the destination
+		url = "http://seng3011.pythonanywhere.com/articles"
+		endDate = (datetime.now() - timedelta(days=1)).strftime("%Y-%m-%d") + "T00:00:00"
+		startDate = (datetime.now() - timedelta(weeks=52)).strftime("%Y-%m-%d") + "T00:00:00"
+		querystring = {"startDate":startDate,"endDate":endDate, "location":destCountry}
+		r = requests.request("GET", url, params=querystring)
+		# if there is data in the response then identify how recent it was and calculate risk score
+		riskScore = 0
+		articles = []
+		if r.status_code == 200:
+			articles = r.json()
+			# analyse the data to find calculate a risk score
+			# risk score of 10 or above is high risk
+			# risk score between 3 and 10 is medium risk
+			# risk score between 0 and 3 is low risk 
+			# risk score of 0 is safe
+			currDate = datetime.now()
+			for article in articles:
+				date = datetime.strptime(article.get("date_of_publication")[0:10], "%Y-%m-%d")
+				month = int(date.strftime("%m"))
+				# gives a minimum score of 1 for an incident 12 months ago up to a max of 13 for an
+				# incident this month
+				riskScore += 13 - ((currDate.year - date.year) * 12 + currDate.month - date.month)
+		return render_template('searchFlights.html', flights=flightList, origin=origin.title(), dest=dest.title(), flightFlag=1, riskScore=riskScore, articles=articles)
 
 @app.route("/outbreakMap", methods=['POST', 'GET'])
 def outbreakMap():
@@ -91,5 +114,4 @@ def outbreakMap():
 @app.route("/nearMe.html", methods=['POST', 'GET'])
 def nearMe():
 	return render_template('nearMe.html')
-
 app.run()
