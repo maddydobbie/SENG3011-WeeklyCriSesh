@@ -80,7 +80,7 @@
     <!-- Content goes here -->
       <form class = "input" method="POST" action="/searchFlights">
         <input type="text" name="origin" placeholder="Enter origin" value="" required>
-        <input type="text" name="destination" placeholder="Enter destination" value="" required>
+        <input type="text" name="destination" id="destination" placeholder="Enter destination" required>
         <label>Enter start date:</label>   
         <!-- default value of start date is current date - 1 month. Set below in script tag-->
         <input type="date" name='start' placeholder="Enter departure date" required >
@@ -110,7 +110,10 @@
           <h6>Please check the spelling of origin and destination as they don't result in real cities.</h6>
         {% endif %}
       </div>
+      {% if flightFlag != 0 %}
       <div id = "map"></div>
+      <div id="mydiv" data-geocode='{{ dest }}'></div>
+      {% endif %}
     <!-- Content ends here -->
       <hr>
       <footer>

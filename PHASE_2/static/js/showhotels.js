@@ -5,9 +5,33 @@ var infoWindow;
 var request;
 var service;
 var markers = [];
-
+var dest = null;
+var result = null;
 function initMap() {
-    var center = new google.maps.LatLng(-33.917347, 151.2290788);
+    // get destination from html
+    dest = document.getElementById("mydiv").dataset.geocode;
+    console.log(dest)
+    // find latitude and 
+    var geocoder = new google.maps.Geocoder();
+    geocoder.geocode( { 'address': dest}, function(results, status) {
+    if (status == 'OK') {
+        console.log(status)
+        result = results[0].geometry.location
+        console.log(result)
+        //map.setCenter(results[0].geometry.location);
+        //var marker = new google.maps.Marker({
+        //    map: map,
+        //    position: results[0].geometry.location
+       // });
+    } else {
+        alert('Geocode was not successful for the following reason: ' + status);
+        console.log('Geocode was not successful for the following reason: ' + status)
+    }
+    });
+    //var center = new google.maps.LatLng(-33.917347, 151.2290788);
+    //if (result != null) {
+        var center = new google.maps.LatLng(result);
+    //}
     map = new google.maps.Map(document.getElementById('map'), {
         center: center,
         zoom: 15
@@ -40,6 +64,7 @@ function callback(results, status) {
     if(status == google.maps.places.PlacesServiceStatus.OK) {
         for (var i = 0; i < results.length; i++) {
             markers.push(createMarker(results[i]));
+            console.log(results[i])
         }
     }
 }
@@ -63,9 +88,4 @@ function clearResults(markers) {
     markers[m].setMap(null)
     }
     markers=[]
-}
-let submit = document.getElementById("submit")
-//google.maps.event.addDomListener(submit, 'load', initMap);
-submit.onclick = function() {
-    initMap()
 }
