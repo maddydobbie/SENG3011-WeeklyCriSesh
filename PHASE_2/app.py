@@ -45,7 +45,6 @@ def searchFlights():
 		dest = request.form.get("destination")
 		start = request.form.get("start")
 
-
 		# convert city to IATA code
 		with open("./static/json/airports.json") as json_file:
 			airportsJSON = json.load(json_file)
@@ -53,59 +52,72 @@ def searchFlights():
 		for a in list(airportsJSON.values()):
 			airports.append({"city":a["city"], "iata":a["iata"], "country":a["country"]})
 		
+		#get the corresponding codes for the origin and dest cities		
 		originCode = destCode = ""
 		for d in airports:
 			if d["city"].lower() == origin.lower():
 				originCode = d["iata"].upper()
 				break
+		destAirports = []
 		for d in airports:
 			if d["city"].lower() == dest.lower():
-				destCode = d["iata"].upper()
-				destCountry = d["country"]
-				break
-
-		if originCode == "" or destCode == "":
+				destAirports.append({"dest_code":d["iata"].upper(), "dest_city":d["city"].title(), "dest_country":d["country"]})
+		print(destAirports)
+		# if the destCity has returned no match check if it is a country
+		if destCode == "":
+			for d in airports:
+				if d["country"].lower() == dest.lower():
+					destAirports.append({"dest_code":d["iata"].upper(), "dest_city":d["city"].title(), "dest_country":d["country"]})
+		
+		if originCode == "" or not destAirports:
 			return render_template('searchFlights.html', flightFlag=3, riskScore=0)
 
-		url = "https://api.travelpayouts.com/v1/prices/cheap"
-		querystring = {"origin":originCode,"destination":destCode,"depart_date":start,"currency":"AUD"}
-		headers = {'x-access-token': 'c4ae3203facd6e9ea55b3f7f3cf03cd6'}
-		
-		response = requests.request("GET", url, headers=headers, params=querystring)
+		for destAirport in destAirports:
+			url = "https://api.travelpayouts.com/v1/prices/cheap"
+			querystring = {"origin":originCode,"destination":destAirport.get("dest_code"),"depart_date":start,"currency":"AUD"}
+			headers = {'x-access-token': 'c4ae3203facd6e9ea55b3f7f3cf03cd6'}
+			
+			response = requests.request("GET", url, headers=headers, params=querystring)
 
-		flights = response.json()["data"]
-		if not flights:
-			return render_template('searchFlights.html', flights=flightList, origin=origin.title(), dest=dest.title(), flightFlag=2, riskScore=0)
-		for key, value in flights.items():
-			for flightID, flightValues in flights.get(key).items():
-				flightNum = flightValues.get("airline")+str(flightValues.get("flight_number"))
-				departDateOG = datetime.strptime(flightValues.get("departure_at"), "%Y-%m-%dT%H:%M:%SZ")
-				departTime = departDateOG.strftime("%H:%M")
-				departDay = departDateOG.strftime("%A") + " "
-				departDate = departDateOG.strftime("%d %B %Y")
-				if int(departDate[1]) in [1,2,3] and int(departDate[0:2]) not in [11,12,13]:
-					if departDate[1] == "1":
-						departDate = departDate[0:2] + "st" + departDate[2:]
-					elif departDate[1] == "2":
-						departDate = departDate[0:2] + "nd" + departDate[2:]
+			flights = response.json()["data"]
+			print(flights)
+			if not flights:
+				return render_template('searchFlights.html', flights=flightList, origin=origin.title(), dest=dest.title(), flightFlag=2, riskScore=0)
+			for key, value in flights.items():
+				for flightID, flightValues in flights.get(key).items():
+					flightNum = flightValues.get("airline")+str(flightValues.get("flight_number"))
+					# edit dates to make them readable
+					departDateOG = datetime.strptime(flightValues.get("departure_at"), "%Y-%m-%dT%H:%M:%SZ")
+					departTime = departDateOG.strftime("%H:%M")
+					departDay = departDateOG.strftime("%A") + " "
+					departDate = departDateOG.strftime("%d %B %Y")
+					if int(departDate[1]) in [1,2,3] and int(departDate[0:2]) not in [11,12,13]:
+						if departDate[1] == "1":
+							departDate = departDate[0:2] + "st" + departDate[2:]
+						elif departDate[1] == "2":
+							departDate = departDate[0:2] + "nd" + departDate[2:]
+						else:
+							departDate = departDate[0:2] + "rd" + departDate[2:]
 					else:
-						departDate = departDate[0:2] + "rd" + departDate[2:]
-				else:
-					departDate = departDate[0:2] + "th" + departDate[2:]
-				if departDate[0] == "0":
-					departDate = departDay + departDate[1:]
-				else:
-					departDate = departDay + departDate
-				f = {"price":flightValues.get("price"),"flight_number":flightNum,"depart_date_OG": departDateOG, "depart_date":departDate,"depart_time":departTime}
-				flightList.append(f)
-		flightList = sorted(flightList, key=lambda i: i.get("depart_date_OG"))
+						departDate = departDate[0:2] + "th" + departDate[2:]
+					if departDate[0] == "0":
+						departDate = departDay + departDate[1:]
+					else:
+						departDate = departDay + departDate
+					# create a dictionary for all the relevant flight data
+					f = {"price":flightValues.get("price"),"flight_number":flightNum,"depart_date_OG": departDateOG, "depart_date":departDate,"depart_time":departTime}
+					flightList.append(f)
+			# remove duplicates from the list occurs due to a bug in the API
+			flightList = [dict(t) for t in {tuple(d.items()) for d in flightList}]
+			# sort the list by depature date
+			flightList = sorted(flightList, key=lambda i: i.get("depart_date_OG"))
 
-		# do WHOAPI call to get warnings for potential outbreaks. at the destination
-		url = "http://seng3011.pythonanywhere.com/articles"
-		endDate = (datetime.now() - timedelta(days=1)).strftime("%Y-%m-%d") + "T00:00:00"
-		startDate = (datetime.now() - timedelta(weeks=52)).strftime("%Y-%m-%d") + "T00:00:00"
-		querystring = {"startDate":startDate,"endDate":endDate, "location":destCountry}
-		r = requests.request("GET", url, params=querystring)
+			# do WHOAPI call to get warnings for potential outbreaks. at the destination
+			url = "http://seng3011.pythonanywhere.com/articles"
+			endDate = (datetime.now() - timedelta(days=1)).strftime("%Y-%m-%d") + "T00:00:00"
+			startDate = (datetime.now() - timedelta(weeks=52)).strftime("%Y-%m-%d") + "T00:00:00"
+			querystring = {"startDate":startDate,"endDate":endDate, "location":destAirports[0].get("dest_country")}
+			r = requests.request("GET", url, params=querystring)
 		# if there is data in the response then identify how recent it was and calculate risk score
 		currentRiskScore = 0
 		articles = []
