@@ -59,7 +59,7 @@
       <form class = "input" method="POST" action="/searchFlights">
         <input type="text" name="origin" placeholder="Enter origin" value="" required>
         <input type="text" name="destination" placeholder="Enter destination" value="" required>
-        <label>Enter start date:</label>   
+        <label>Select Departure Date:</label>   
         <!-- default value of start date is current date - 1 month. Set below in script tag-->
         <input type="date" name='start' placeholder="Enter departure date" required >
         <input type="submit" value="Search">
@@ -70,6 +70,15 @@
           <ul class="list-group">
             {% for flight in flights %}
               <li class="list-group-item d-flex justify-content-between align-items-center">
+                {% if riskScore > 10 %}
+                  <span class="badge alert-danger rounded-pill"><h4>High Risk</h4></span>
+                {% elif riskScore > 3 %}
+                  <span class="badge alert-warning rounded-pill"><h4>Medium Risk</h4></span>
+                {% elif riskScore > 0 %}
+                  <span class="badge alert-warning rounded-pill"><h4>Low Risk</h4></span>
+                {% else %}
+                  <span class="badge alert-success rounded-pill"><h4>Safe to Travel</h4></span>
+                {% endif %}
                 <b>Flight Number: {{ flight.get("flight_number")}}</b>
                 <br>
                 Departure Date: {{ flight.get("depart_date")}}
@@ -93,7 +102,7 @@
           <div class="modal-dialog">
               <div class="modal-content">
                   <div class="modal-header">
-                      <h2 class="modal-title col-md-8">
+                      <h2 class="modal-title col-md-8" style="padding-left: -50px;">
                         Travel Warning: 
                         {% if riskScore > 10 %}
                           High Risk
