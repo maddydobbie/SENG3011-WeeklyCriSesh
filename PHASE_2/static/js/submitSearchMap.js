@@ -176,6 +176,18 @@ submit.onclick = function() {
       }
       }).then((json) => {
         console.log(json[0])
+        // console.log(json[5])
+        
+        // List of countries with articles on them
+        for (let i = 0; i < json.length; i++) {
+          for (let j = 0; j < json[i].reports.length; j++) {
+            if (json[i].reports[j].locations.country.name) {
+              console.log(json[i].reports[j].locations.country.name);
+            } else if (json[i].reports[j].locations.country) {
+              console.log(json[i].reports[j].locations.country);
+            }
+          }
+        }
         let i = 0
         const c = document.getElementById("modal-body")
         // clean up modal body again
