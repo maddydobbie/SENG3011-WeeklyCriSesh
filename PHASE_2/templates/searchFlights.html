@@ -67,15 +67,95 @@
     </nav>
 
     <div class="container">
+      <div class="row">
+        <div class="col-sm-10">
+          <form class = "input" method="POST" action="/searchFlights">
+            <div class="row">
+              <div class="col-sm-3">
+                <input class="form-control" id="originField" type="text" name="origin" placeholder="Enter origin" value="" required>
+              </div>
+              <div class="col-sm-3">
+                <input class="form-control" id="destField" type="text" name="destination" placeholder="Enter destination" value="" required>
+              </div>
+              <div class="col-sm-2">
+                <label for="departDateField">Departure Date:</label>
+              </div>
+              <div class="col-sm-3">
+                <!-- default value of start date is current date - 1 month. Set below in script tag-->
+                <input class="form-control" id="departDateField" type="date" name='start' placeholder="Enter departure date" required >
+              </div>
+            </div>
+            <br><input class="btn btn-primary" type="submit" value="Search" id="submit">
+          </form>
+        </div>
+        <div class="col-sm-2">
+          <!-- Help button for Help Modal -->
+          {% if flightFlag == 1 %}
+            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#helpModal">Help</button>
+          {% endif %}
+          <!-- Modal -->
+          <div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="helpModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <br>
+                  <h2 class="modal-title" id="helpModalLabel">Risk Calculation</h2>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <ul class="list-group">
+                    <li class="list-group-item">
+                      <div class="container" id="helpModalHighRisk">
+                        <div class="row">
+                          <div class="col-sm-1">
+                            <span class="badge alert-danger rounded-pill"><h5>High Risk</h5></span>
+                          </div>
+                          <div class="col-sm-4">
+                            <p>We do not recommend any travel to this destination. There has been a recent outbreak, or several outbreaks over the past year. If there are no outbreaks between now and a potential flight, the risk will be lower.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item">
+                      <div class="container" id="helpModalMildRisk">
+                        <div class="row">
+                          <div class="col-sm-1">
+                            <span class="badge alert-warning rounded-pill"><h5>Mild Risk</h5></span>
+                          </div>
+                          <div class="col-sm-4">
+                            <p>We recommend caution travelling to these destinations. Do not travel unless necessary. Wear mask at destination, ensure that you have done further investigation including vaccination options for outbreaks at your destination.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item">
+                      <div class="container" id="helpModalLowRisk">
+                        <div class="row">
+                          <div class="col-sm-1">
+                            <span class="badge alert-success rounded-pill"><h5>Low Risk</h5></span>
+                          </div>
+                          <div class="col-sm-4">
+                            <p>Destination is safe for travel. There have been no outbreaks in the past year or the flight is far enough in the future that the destination likely will no longer be a risk.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
     <!-- Content goes here -->
-      <form class = "input" method="POST" action="/searchFlights">
-        <input type="text" name="origin" placeholder="Enter origin" value="" required>
-        <input type="text" name="destination" placeholder="Enter destination" value="" required>
-        <label>Select Departure Date:</label>   
-        <!-- default value of start date is current date - 1 month. Set below in script tag-->
-        <input type="date" name='start' placeholder="Enter departure date" required >
-        <input type="submit" value="Search" id="submit">
-      </form>
       <div id="flightResults">
         {% if flightFlag == 1 %}
           <h4>Available Flights from {{ origin }} to {{ dest }}</h4>
@@ -161,12 +241,14 @@
       <div id = "map"></div>
       <div id="mydiv" data-geocode='{{ dest }}'></div>
       {% endif %}
-    <!-- Content ends here -->
+
+      <!-- Content ends here -->
       <hr>
       <footer>
-        <p>&copy; 2021 Weekly Cri Sesh</p>
+          <p>&copy; 2021 Weekly Cri Sesh</p>
       </footer>
     </div> <!-- /container -->
+
 
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
     <script
