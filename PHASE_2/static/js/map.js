@@ -70,9 +70,6 @@ function initMap() {
               origin: new google.maps.Point(0,0), // origin
               anchor: new google.maps.Point(0, 0) // anchor
             };
-            const infowindow = new google.maps.InfoWindow({
-              content: 'This is some info!',
-            });
             let marker = new google.maps.Marker({
               position: coords,
               map,
