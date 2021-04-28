@@ -7,6 +7,14 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
+    <style>
+      body  {
+        background-image: url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+    </style>
     <link rel="icon" href="../../favicon.ico">
 
     <!-- Latest compiled and minified CSS -->
@@ -95,12 +103,30 @@
         </div>
       </div>
       <form class="input">
-        <input type="text" id="keywords" placeholder="Enter keyword(s)" value="" required>
-        <input type="text" id="location" placeholder="Enter location" id="location" value="" required>   
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-        Advanced search options
-        </button>  
-        <button type="button" id="submit" type="sumbit" class="btn btn-primary" data-toggle="modal" data-target="#mymodal">Search</button>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="input-group input-group-sm">
+              <div class="input-group-addon">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Keyword(s)</span>
+              </div>
+              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Please Enter" id="keywords" required>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="input-group input-group-sm">
+              <div class="input-group-addon">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Location</span>
+              </div>
+              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Please Enter" id="location" required>
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Advanced search options</button>  
+          </div>
+          <div class="col-sm-2">
+            <button type="button" id="submit" type="sumbit" class="btn btn-primary" data-toggle="modal" data-target="#mymodal">Search</button>
+          </div>
+        </div>
         <!-- advanced search collapse card "-->
         <div class="collapse" id="collapseExample">
           <div class="card card-body">
