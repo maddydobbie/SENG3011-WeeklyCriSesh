@@ -69,10 +69,15 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
+    <div class="jumbotron">
+      <div class="container">
+        <h2>Plan Your Trip</h2>
+        <p>Find flights and hotels at your destination. Be alterted to any outbreaks.</p>
+      </div>
+    </div>
     {% if flightFlag == 0 %}
     <div class="container" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); padding: 10px;">
-      <h1 style="font-size:80px;">Plan Your Trip...</h1>
-      <br>
+      <br><br><br><br><br><br><br>
     {% else %}
     <div class="container">    
     {% endif %}
@@ -125,16 +130,28 @@
           <form class = "input" method="POST" action="/planTrip">
             <div class="row">
               <div class="col-sm-3">
-                <input class="form-control" id="originField" type="text" name="origin" placeholder="Enter origin" value="" required>
+                <div class="input-group input-group-sm">
+                  <div class="input-group-addon">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Origin</span>
+                  </div>
+                  <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="origin" placeholder="Please Enter" id="originField" required>
+                </div>
               </div>
               <div class="col-sm-3">
-                <input class="form-control" id="destField" type="text" name="destination" placeholder="Enter destination" value="" required>
+                <div class="input-group input-group-sm">
+                  <div class="input-group-addon">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Destination</span>
+                  </div>
+                  <input type="text" class="form-control" id="destField" aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="destination" placeholder="Please Enter" required>
+                </div>
               </div>
-              <div class="col-sm-2">
-                <label for="departDateField">Departure Date:</label>
-              </div>
-              <div class="col-sm-3">
-                <input class="form-control" id="departDateField" type="date" name='start' required>
+              <div class="col-sm-4">
+                <div class="input-group input-group-sm">
+                  <div class="input-group-addon">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Departure Date</span>
+                  </div>
+                  <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="departDate" placeholder="Please Enter" id="departDateField" type="date" name='start' required>
+                </div>
                 <script>
                   var today = new Date();
                   var dd = today.getDate();
@@ -151,17 +168,15 @@
                   document.getElementById("departDateField").setAttribute("value", today);
                 </script>
               </div>
+              <div class="col-sm-1">
+                <input class="btn btn-primary" type="submit" value="Search" id="submit">
+              </div>
             </div>
-            <br><input class="btn btn-primary" type="submit" value="Search" id="submit">
           </form>
         </div>
     {% endif %}
         <div class="col-sm-2">
-          <!-- Help button for Help Modal -->
-          {% if flightFlag == 1 %}
-            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#helpModal">Help</button>
-          {% endif %}
-          <!-- Modal -->
+          <!-- Help Modal -->
           <div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="helpModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
@@ -226,7 +241,18 @@
     <!-- Content goes here -->
       <div id="flightResults">
         {% if flightFlag == 1 %}
-          <h3><b>Available Flights from {{ origin }} to {{ dest }}</b></h3>
+        <div class="row">
+          <div class="col-sm-11">
+            <h3><b>Available Flights from {{ origin }} to {{ dest }}</b></h3>
+          </div>
+          <div class="col-sm-1">
+            <!-- Help button for Help Modal -->
+            {% if flightFlag == 1 %}
+              <button type="button" class="btn btn-info" data-toggle="modal" data-target="#helpModal" style="position: relative; top: 15px">Help</button>
+            {% endif %}
+          </div>
+        </div>
+
           <ul class="list-group">
             {% for flight in flights %}
               <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -246,12 +272,16 @@
             {% endfor %}
           </ul>
         {% elif flightFlag == 2 %}
-          <h4>No Available Flights from {{ origin }} to {{ dest }}</h4>
-          <h6>Please choose a different departure date.</h6>
+          <div>
+            <h3><b>No Available Flights from {{ origin }} to {{ dest }}</b></h3>
+            <h4>Please choose a different departure date.</h4>
+          </div>
 
         {% elif flightFlag == 3 %}
-          <h4>No Available Flights</h4>
-          <h6>Please check the spelling of origin and destination as they don't result in real cities.</h6>
+          <div>
+            <h3><b>No Available Flights</b></h3>
+            <h4>Please check the spelling of origin and destination as they don't result in real cities.</h4>
+          </div>
         {% endif %}
       </div>
       <!-- Modal -->
@@ -306,13 +336,18 @@
       {% endif %}
       {% if flightFlag != 0 %}
       <br>
-      <h3><b>Hotels at {{ dest }}</b></h3>
+      {% if flightFlag == 1 or flightFlag==2 %}
+        <h3><b>Hotels at {{ dest }}</b></h3>
+      {% endif %}
       <div id = "map"></div>
       <div id="mydiv" data-geocode='{{ dest }}'></div>
       {% endif %}
 
       <!-- Content ends here -->
-      <div style="position:absolute; bottom:0; width:50%;">
+      {% if flightFlag == 0 %}
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      {% endif %}
+      <div style="position:relative; bottom:0; width:50%;">
         <hr>
         <footer>
             <p>&copy; 2021 Weekly Cri Sesh</p>
