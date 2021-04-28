@@ -5,7 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+    <style>
+      body  {
+        background-image: url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+    </style>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 
@@ -41,7 +48,6 @@
   </head>
 
   <body>
-
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
@@ -57,19 +63,66 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a class="nav-link js-scroll-trigger" href="/">Home</a></li>
-            <li class="active"><a class="nav-link js-scroll-trigger" href="searchFlights">Find Flights</a></li>
+            <li class="active"><a class="nav-link js-scroll-trigger" href="planTrip">Plan Trip</a></li>
             <li><a class="nav-link js-scroll-trigger" href="outbreakMap">Interactive Outbreak Map</a></li>
-            <li><a class="nav-link js-scroll-trigger" href="nearMe.html">Near me</a></li>
-            <li><a class="nav-link js-scroll-trigger" href="apiDocs.html">API documentation</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-
-    <div class="container">
+    {% if flightFlag == 0 %}
+    <div class="container" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); padding: 10px;">
+      <h1 style="font-size:80px;">Plan Your Trip...</h1>
+      <br>
+    {% else %}
+    <div class="container">    
+    {% endif %}
+    {% if flightFlag == 0 %}
       <div class="row">
         <div class="col-sm-10">
-          <form class = "input" method="POST" action="/searchFlights">
+          <form class = "input" method="POST" action="/planTrip">
+            <div class="input-group input-group-lg">
+              <div class="input-group-addon">
+                <span class="input-group-text" id="inputGroup-sizing-lg">Origin</span>
+              </div>
+              <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" name="origin" placeholder="Please Enter" id="originField" required>
+            </div>
+            <br>
+            <div class="input-group input-group-lg">
+              <div class="input-group-addon">
+                <span class="input-group-text" id="inputGroup-sizing-lg">Destination</span>
+              </div>
+              <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" name="destination" placeholder="Please Enter" id="destField" required>
+            </div>
+            <br>
+            <div class="input-group input-group-lg">
+              <div class="input-group-addon">
+                <span class="input-group-text" id="inputGroup-sizing-lg">Departure Date</span>
+              </div>
+              <input type="date" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" type="date" name='start' id="departDateField" required>
+              <script>
+                  var today = new Date();
+                  var dd = today.getDate();
+                  var mm = today.getMonth() + 1; //January is 0!
+                  var yyyy = today.getFullYear();
+                  if (dd < 10) {
+                    dd = '0' + dd
+                  }
+                  if (mm < 10) {
+                    mm = '0' + mm
+                  }
+                  today = yyyy + '-' + mm + '-' + dd;
+                  document.getElementById("departDateField").setAttribute("min", today);
+                  document.getElementById("departDateField").setAttribute("value", today);
+                </script>
+            </div>
+            <br>
+            <input class="btn btn-primary btn-lg btn-block" type="submit" value="Search" id="submit">
+          </form>
+        </div>
+    {% else %}
+      <div class="row">
+        <div class="col-sm-10">
+          <form class = "input" method="POST" action="/planTrip">
             <div class="row">
               <div class="col-sm-3">
                 <input class="form-control" id="originField" type="text" name="origin" placeholder="Enter origin" value="" required>
@@ -81,13 +134,28 @@
                 <label for="departDateField">Departure Date:</label>
               </div>
               <div class="col-sm-3">
-                <!-- default value of start date is current date - 1 month. Set below in script tag-->
-                <input class="form-control" id="departDateField" type="date" name='start' placeholder="Enter departure date" required >
+                <input class="form-control" id="departDateField" type="date" name='start' required>
+                <script>
+                  var today = new Date();
+                  var dd = today.getDate();
+                  var mm = today.getMonth() + 1; //January is 0!
+                  var yyyy = today.getFullYear();
+                  if (dd < 10) {
+                    dd = '0' + dd
+                  }
+                  if (mm < 10) {
+                    mm = '0' + mm
+                  }
+                  today = yyyy + '-' + mm + '-' + dd;
+                  document.getElementById("departDateField").setAttribute("min", today);
+                  document.getElementById("departDateField").setAttribute("value", today);
+                </script>
               </div>
             </div>
             <br><input class="btn btn-primary" type="submit" value="Search" id="submit">
           </form>
         </div>
+    {% endif %}
         <div class="col-sm-2">
           <!-- Help button for Help Modal -->
           {% if flightFlag == 1 %}
@@ -158,7 +226,7 @@
     <!-- Content goes here -->
       <div id="flightResults">
         {% if flightFlag == 1 %}
-          <h4>Available Flights from {{ origin }} to {{ dest }}</h4>
+          <h3><b>Available Flights from {{ origin }} to {{ dest }}</b></h3>
           <ul class="list-group">
             {% for flight in flights %}
               <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -237,16 +305,19 @@
       </div>
       {% endif %}
       {% if flightFlag != 0 %}
-      <h4>Hotels at {{ dest }}</h4>
+      <br>
+      <h3><b>Hotels at {{ dest }}</b></h3>
       <div id = "map"></div>
       <div id="mydiv" data-geocode='{{ dest }}'></div>
       {% endif %}
 
       <!-- Content ends here -->
-      <hr>
-      <footer>
-          <p>&copy; 2021 Weekly Cri Sesh</p>
-      </footer>
+      <div style="position:absolute; bottom:0; width:50%;">
+        <hr>
+        <footer>
+            <p>&copy; 2021 Weekly Cri Sesh</p>
+        </footer>
+      </div>
     </div> <!-- /container -->
 
 

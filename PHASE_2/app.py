@@ -31,12 +31,8 @@ def homeReroute():
 def about():
 	return render_template('about.html')
 
-@app.route("/apiDocs.html", methods=['POST', 'GET'])
-def apiDocs():
-	return render_template('apiDocs.html')
-
-@app.route("/searchFlights", methods=['POST', 'GET'])
-def searchFlights():
+@app.route("/planTrip", methods=['POST', 'GET'])
+def planTrip():
 	if request.method == "GET":
 		return render_template('searchFlights.html', flightFlag=0, riskScore=0)
 	else:
@@ -156,7 +152,4 @@ def searchFlights():
 def outbreakMap():
 	return render_template('outbreakMap.html')
 
-@app.route("/nearMe.html", methods=['POST', 'GET'])
-def nearMe():
-	return render_template('nearMe.html')
 app.run()
