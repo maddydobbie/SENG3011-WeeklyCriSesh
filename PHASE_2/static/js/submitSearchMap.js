@@ -1,6 +1,5 @@
-let submit = document.getElementById("submit")
-//value = button.form.valueId.value;
-submit.onclick = function() {
+let searchReports = () => {
+  console.log('submitted');
   // get rid of everything in the modal body
   const c = document.getElementById("modal-body")
   while(c.firstChild){
@@ -175,19 +174,6 @@ submit.onclick = function() {
         throw new Error('Something went wrong on api server!');
       }
       }).then((json) => {
-        console.log(json[0])
-        // console.log(json[5])
-        
-        // List of countries with articles on them
-        for (let i = 0; i < json.length; i++) {
-          for (let j = 0; j < json[i].reports.length; j++) {
-            if (json[i].reports[j].locations.country.name) {
-              console.log(json[i].reports[j].locations.country.name);
-            } else if (json[i].reports[j].locations.country) {
-              console.log(json[i].reports[j].locations.country);
-            }
-          }
-        }
         let i = 0
         const c = document.getElementById("modal-body")
         // clean up modal body again
@@ -250,4 +236,5 @@ submit.onclick = function() {
       })
   }
 }
-//$("#mymodal").modal()
+let submit = document.getElementById("submit")
+submit.onclick = searchReports;

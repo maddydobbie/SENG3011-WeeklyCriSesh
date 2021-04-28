@@ -21,7 +21,6 @@ function initMap() {
   // use our api to get a list of reports from the past year
   fetch(request)
     .then(response => {
-      console.log(response)
       if (response.status === 200) {
         //console.log(response.headers)
         return response.json();
@@ -40,40 +39,53 @@ function initMap() {
       for (let i = 0; i < json.length; i++) {
         for (let j = 0; j < json[i].reports.length; j++) {
           if (json[i].reports[j].locations.country.name) {
-            // console.log(json[i].reports[j].locations.country.name);
             countries.push(json[i].reports[j].locations.country.name);
           } else if (json[i].reports[j].locations.country) {
-            // console.log(json[i].reports[j].locations.country);
             countries.push(json[i].reports[j].locations.country);
           }
         }
       }
-      console.log(countries)
+      // console.log(countries)
       return countries;
     }).then(countries => {
       for (let c = 0; c < countries.length; c++) {
+        if (countries[c] === 'Congo') {
+          countries[c] = 'Democratic Republic of the Congo';
+        }
         let country = countries[c].replace(/ /g,"+");
-        let url2 = `https://maps.googleapis.com/maps/api/geocode/json?components=country:${country}&key=AIzaSyDd9bxIZ8hJ0jI9ia6vAcrhyFyF0cCi7-I`;
-        // console.log(countries[c].replace(/ /g,"+"));
+        let key = 'AIzaSyDd9bxIZ8hJ0jI9ia6vAcrhyFyF0cCi7-I';
+        // console.log(country);
+        let url2 = `https://maps.googleapis.com/maps/api/geocode/json?components=country:${country}&key=${key}`;
         fetch (new Request(url2))
         .then(response => {
           if (response.status === 200) {
             return response.json();
           }
         }).then((json) => {
-          console.log(json.results);
-          // console.log(json.results.geometry.location);
-          // new google.maps.Marker({
-          //   position: json.results.geometry.location,
-          //   map,
-          // });
+          if (json.results[0]) {
+            let coords = json.results[0].geometry.location;
+            let img = {
+              url: "https://img.icons8.com/fluent/48/000000/virus.png", // url
+              // scaledSize: new google.maps.Size(50, 50), // scaled size
+              origin: new google.maps.Point(0,0), // origin
+              anchor: new google.maps.Point(0, 0) // anchor
+            };
+            const infowindow = new google.maps.InfoWindow({
+              content: 'This is some info!',
+            });
+            let marker = new google.maps.Marker({
+              position: coords,
+              map,
+              icon: img
+            });
+            marker.addListener('click', () => {
+              document.getElementById('location').value=countries[c];
+              document.getElementById("submit").click();
+            });
+          }
         })
       }
     })
-  // use the results to place markers on all countries with articles
-
-  // fetch(new Request(url))
-
 
   // Create geocoder
   const geocoder = new google.maps.Geocoder();
@@ -103,9 +115,6 @@ function initMap() {
     geocoder.geocode({ location: latlng }, (results, status) => {
       if (status === "OK") {
         if (results[results.length - 2]) {
-          // Country cannot be accessed outisde of this listener, 
-          // so maybe put the function for location input in here
-          // or save to local storage and use it that way.
           country = results[results.length - 2].formatted_address;
           infoWindow.setContent(country);
           infoWindow.open(map);
