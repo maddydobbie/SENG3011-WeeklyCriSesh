@@ -3,6 +3,7 @@ import json
 from datetime import datetime, timedelta
 import sqlite3
 import requests
+import csv
 
 app = Flask(__name__)
 app.config["DEBUG"] = True
@@ -118,6 +119,18 @@ def planTrip():
 		startDate = (datetime.now() - timedelta(weeks=52)).strftime("%Y-%m-%d") + "T00:00:00"
 		querystring = {"startDate":startDate,"endDate":endDate, "location":destAirports[0].get("dest_country")}
 		r = requests.request("GET", url, params=querystring)
+		# get the population density modifier
+		# 25 is the average world population density if no population density can be found
+		maxPopDensity = 21789
+		popDensityMod = 25
+
+		with open("static/popDensity.csv") as csvFile:
+			csvReader = csv.reader(csvFile, delimiter=',')
+			for row in csvReader:
+				if row[0].lower() == destAirports[0].get("dest_country").lower():
+					popDensityMod = int(float(row[1]))
+					break
+		popDensityMod = ((popDensityMod-(maxPopDensity/2))/(maxPopDensity/2))*0.25
 		# if there is data in the response then identify how recent it was and calculate risk score
 		currentRiskScore = 0
 		articles = []
@@ -135,6 +148,7 @@ def planTrip():
 				# gives a minimum score of 1 for an incident 12 months ago up to a max of 13 for an
 				# incident this month
 				currentRiskScore += 13 - ((currDate.year - date.year) * 12 + currDate.month - date.month)
+			currentRiskScore = int(popDensityMod*currentRiskScore) + currentRiskScore
 		# get individual riskScores for each flight dependent on their date
 		for flight in flightList:
 			date = flight.get("depart_date_OG")
@@ -145,7 +159,10 @@ def planTrip():
 				if riskScore < 0:
 					riskScore = 0
 				cumulativeRiskScore += riskScore
-			flight.update({"risk_score": cumulativeRiskScore})	
+			cumulativeRiskScore = int(popDensityMod*cumulativeRiskScore) + cumulativeRiskScore
+			flight.update({"risk_score": cumulativeRiskScore})
+		#add the population density modify 
+
 		return render_template('searchFlights.html', flights=flightList, origin=origin.title(), dest=dest.title(), flightFlag=1, riskScore=currentRiskScore, articles=articles)
 
 @app.route("/outbreakMap", methods=['POST', 'GET'])
