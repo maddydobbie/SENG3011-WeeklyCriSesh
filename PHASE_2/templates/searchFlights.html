@@ -69,11 +69,13 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-    <div class="jumbotron">
-      <div class="container">
-        <h2>Plan Your Trip</h2>
-        <p>Find flights and hotels at your destination. Be alterted to any outbreaks.</p>
-      </div>
+    {% if flightFlag == 0 %}
+    <div class="container" style="position: relative; top:80px">
+    {% else %}
+    <div class="container">
+    {% endif %}
+      <h1 style="font-size:80px;">Plan Your Trip</h1>
+      <h3>Find flights and hotels at your destination. Be alterted to any outbreaks.</h3>
     </div>
     {% if flightFlag == 0 %}
     <div class="container" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); padding: 10px;">
